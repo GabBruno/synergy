@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Synergy</title>
+</head>
+<body>
+  <h2>Faça seu login</h2>
+  <input type="text" id="usuario" placeholder="Usuário" /><br />
+  <input type="password" id="senha" placeholder="Senha" /><br />
+  <button onclick="fazerLogin()">Entrar</button>
+
+  <script>
+    function fazerLogin() {
+      const user = document.getElementById('usuario').value;
+      const pass = document.getElementById('senha').value;
+
+      // Simulação simples de login
+      if (user === 'admin' && pass === '123') {
+        localStorage.setItem('logado', 'true'); // Marca o login
+        window.location.href = 'pages/home.html'; // Redireciona para a home
+      } else {
+        alert('Usuário ou senha inválidos!');
+      }
+    }
+
+    // Se já estiver logado, vai direto pra home
+    if (localStorage.getItem('logado') === 'true') {
+      window.location.href = 'pages/home.html';
+    }
+  </script>
+</body>
+</html>

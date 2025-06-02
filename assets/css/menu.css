@@ -1,0 +1,36 @@
+.menu {
+  width: 220px;
+  padding: 20px;
+  background-color: #fff5f0;
+  height: 100vh;
+  border-right: 1px solid #ddd;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile .avatar {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 12px 0;
+  color: #333;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.menu li.active {
+  color: #f05a28;
+  font-weight: bold;
+}

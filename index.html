@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Synergy</title>
+  <title>Synergy - Login</title>
 </head>
 <body>
   <h2>Faça seu login</h2>
@@ -17,16 +17,15 @@
 
       // Simulação simples de login
       if (user === 'admin' && pass === '123') {
-        localStorage.setItem('logado', 'true'); // Marca o login
-        window.location.href = 'pages/home.html'; // Redireciona para a home
+        localStorage.setItem('logado', 'true');
+        window.location.href = 'home.html?page=feed'; // Vai para a "home real"
       } else {
         alert('Usuário ou senha inválidos!');
       }
-    }
-
-    // Se já estiver logado, vai direto pra home
-    if (localStorage.getItem('logado') === 'true') {
-      window.location.href = 'pages/home.html';
+     // Se já estiver logado, vai direto pra home
+     if (localStorage.getItem('logado') === 'true') {
+      window.location.href = 'home.html?page=feed';
+      }
     }
   </script>
 </body>

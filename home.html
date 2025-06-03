@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Synergy</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+   <!-- Header no topo -->
+  <div id="header"></div>
+
+  <!-- Container principal com 3 colunas: Menu | Conteúdo | Amigos -->
+  <div class="layout">
+    <!-- Menu lateral esquerdo -->
+    <div id="menu"></div>
+
+    <!-- Conteúdo principal -->
+    <div id="conteudo"></div>
+
+    <!-- Amigos à direita -->
+    <div id="friends"></div>
+  </div>
+
+  <!-- Rodapé -->
+  <div id="footer"></div>
+
+  <script>
+    // Protege a página: se não estiver logado, volta pro login
+    if (localStorage.getItem('logado') !== 'true') {
+      window.location.href = 'index.html';
+    }
+
+    // Função que carrega arquivos externos como header.html e menu.html
+    async function carregarParcial(id, arquivo) {
+      const el = document.getElementById(id); // Pega o elemento (ex: div com id 'header')
+      try {
+        const resposta = await fetch(arquivo); // Busca o arquivo HTML (ex: header.html)
+        el.innerHTML = await resposta.text(); // Coloca o conteúdo dentro da div correspondente
+      } catch {
+        el.innerHTML = `<p>Erro ao carregar ${arquivo}</p>`; // Se der erro, mostra mensagem
+      }
+    }
+
+    // Função que carrega o conteúdo da página principal com base na URL (?page=...)
+    async function carregarConteudoPrincipal() {
+      const params = new URLSearchParams(window.location.search); // Pega os parâmetros da URL
+      const pagina = params.get('page') || 'feed'; // Se não tiver nada, mostra 'inicial'
+      const url = `pages/${pagina}.html`; // Ex: pages/sobre.html
+
+      try {
+        const resposta = await fetch(url); // Busca o conteúdo da página
+        if (!resposta.ok) throw new Error(); // Se a página não existir, lança erro
+        document.getElementById('conteudo').innerHTML = await resposta.text(); // Coloca conteúdo na div 'conteudo'
+      } catch {
+        document.getElementById('conteudo').innerHTML = '<h2>Página não encontrada</h2>'; // Mensagem se a página não existir
+      }
+    }
+
+    // Função que intercepta cliques em links internos e evita que a página recarregue
+    function configurarLinksInternos() {
+      document.body.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('?page=')) {
+          e.preventDefault(); // Impede o link de recarregar a página
+          const url = new URL(e.target.href); // Cria um objeto com a nova URL
+          history.pushState({}, '', url); // Muda o endereço no navegador sem recarregar
+          carregarConteudoPrincipal(); // Carrega o novo conteúdo da página
+        }
+      });
+    }
+
+    // Quando o site carregar, ele executa estas funções:
+    window.addEventListener('load', () => {
+      carregarParcial('header', 'includes/header.html');      // Carrega o cabeçalho
+      carregarParcial('menu', 'includes/menu.html');         // Carrega o menu
+      carregarParcial('friends', 'includes/friends.html');  // Carrega o menu de amigos
+      carregarParcial('footer', 'includes/footer.html');
+      carregarConteudoPrincipal();                         // Carrega a página principal (inicial, sobre etc)
+      configurarLinksInternos();                          // Configura os links para funcionar sem recarregar a página
+    });
+
+    // Se o usuário clicar em voltar ou avançar no navegador, recarrega o conteúdo certo
+    window.addEventListener('popstate', carregarConteudoPrincipal);
+
+  function sair() {
+    localStorage.removeItem('logado');
+    window.location.href = 'index.html';
+  }
+  </script>
+
+</body>
+</html>

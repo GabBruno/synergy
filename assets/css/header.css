@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0px 0px 10px #00000030;
+}
+
+.logo {
+  color: #f05a28;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.icons img {
+  width: 24px;
+  margin-left: 15px;
+  cursor: pointer;
+}

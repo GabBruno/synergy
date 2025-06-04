@@ -1,2 +1,4 @@
 # synergy
-Projeto para Ferramentas Web e UX
+Projeto para a disciplina Ferramentas Web e UX
+
+teste

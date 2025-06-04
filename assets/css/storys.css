@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background-color: #0d0d0d;
+  color: white;
+}
+
+/* Stories horizontal */
+.stories-container {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  overflow-x: auto;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 90px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.story:hover {
+  transform: scale(1.05);
+}
+
+.story img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e1306c;
+  margin-bottom: 6px;
+}
+
+.story p {
+  color: white;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal-content {
+  position: relative;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#modalUser {
+  color: #fff;
+  font-weight: bold;
+}

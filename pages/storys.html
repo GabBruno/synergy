@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Stories Estilo Instagram</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/storys.css">
+
+</head>
+<body>
+
+  <!-- Stories -->
+  <div class="stories-container">
+    <div class="story" onclick="abrirStory('../assets/images/woman.png', '@YRA_Patel')">
+      <img src="../assets/images/woman.png" alt="Story 1">
+      <p>@YRA_Patel</p>
+    </div>
+    <div class="story" onclick="abrirStory('../assets/images/camera2.png', '@Rahul_Sidly')">
+      <img src="../assets/images/camera2.png" alt="Story 2">
+      <p>@Rahul_Sidly</p>
+    </div>
+    <div class="story" onclick="abrirStory('../assets/images/yoda2.png', '@Kunal_Biju')">
+      <img src="../assets/images/yoda2.png" alt="Story 3">
+      <p>@Kunal_Biju</p>
+    </div>
+  </div>
+
+  <!-- Modal para visualizar story -->
+  <div class="modal" id="storyModal" onclick="fecharStory()">
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Story">
+      <span id="modalUser">@usuário</span>
+    </div>
+  </div>
+
+  <script>
+    function abrirStory(src, user) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('modalUser').textContent = user;
+      document.getElementById('storyModal').style.display = 'flex';
+    }
+
+    function fecharStory() {
+      document.getElementById('storyModal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

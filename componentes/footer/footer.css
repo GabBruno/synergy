@@ -1,0 +1,16 @@
+/* componentes/footer/footer.css */
+#footer-component {
+    margin-top: 2rem; /* mt-8 */
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--synergy-gray-600);
+}
+
+#footer-component a {
+    font-weight: 600; /* font-semibold */
+    color: var(--synergy-orange);
+}
+
+#footer-component a:hover {
+    text-decoration: underline;
+}

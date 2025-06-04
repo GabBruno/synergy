@@ -15,10 +15,10 @@
       const user = document.getElementById('usuario').value;
       const pass = document.getElementById('senha').value;
 
-      // Simulação simples de login
+      //Login simples
       if (user === 'admin' && pass === '123') {
         localStorage.setItem('logado', 'true');
-        window.location.href = 'home.html?page=feed'; // Vai para a "home real"
+        window.location.href = 'home.html?page=feed'; 
       } else {
         alert('Usuário ou senha inválidos!');
       }

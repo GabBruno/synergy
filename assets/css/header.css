@@ -3,18 +3,31 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  padding: 10px 20px;
+  padding: 8px 20px;
   box-shadow: 0px 0px 10px #00000030;
 }
 
 .logo {
   color: #f05a28;
-  font-size: 24px;
+  font-size: 25px;
   font-weight: bold;
 }
 
-.icons img {
-  width: 24px;
+.icons{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons .config,.notifications {
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
   margin-left: 15px;
   cursor: pointer;
+  background-color: #F1F4F5;
+  border-radius: 100%;
+  display: flex;
+  font-size: 20px;
 }

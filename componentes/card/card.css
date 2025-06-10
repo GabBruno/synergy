@@ -166,3 +166,13 @@
     white-space: nowrap;
     border-width: 0;
 }
+
+.btn-secondary .icon-google {
+    width: 25px;
+    height: 25px;
+}
+
+.btn-secondary .icon-apple {
+    width: 20px; 
+    height: 20px; 
+}

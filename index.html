@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -27,14 +28,17 @@
                     <div class="form-group">
                         <input type="text" name="email" id="email" class="form-input" placeholder="Telefone, nome de usuário ou email">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group password-input-container"> 
                         <input type="password" name="password" id="password" class="form-input" placeholder="Senha">
+                        <button type="button" id="togglePassword" class="password-toggle-btn-inside">
+                            <i class="fas fa-eye"></i>
+                        </button>
                     </div>
                     <div>
                         <a href="#" class="forgot-password-link">Esqueceu a senha?</a>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <button type="submit" id="loginButton" class="btn btn-primary">Entrar</button>
                     </div>
                     <div class="divider-container">
                         <hr class="divider-line">
@@ -43,21 +47,21 @@
                     </div>
                     <div class="form-group">
                         <button class="btn btn-secondary">
-                            <img src="" alt="Ícone do Google">
+                            <img class="icon-google" src="assets/images/iconGoogle.svg" alt="Ícone do Google">
                             Continuar com Google
                         </button>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-secondary">
-                           <img src="" alt="Ícone da Apple">
-                            Continuar com Apple
+                           <img class="icon-apple" src="assets/images/iconApple.svg" alt="Ícone da Apple">
+                           Continuar com Apple
                         </button>
                     </div>
                 </main>
 
                 <footer id="footer-component">
                     <p>
-                        Não tem uma conta? <a href="signup.html">Cadastre-se</a>
+                        Não tem uma conta? <a href="pages/signup.html">Cadastre-se</a>
                     </p>
                 </footer>
             </div>
@@ -67,14 +71,14 @@
             <div class="phone-mockups-container">
                 <div class="phone-mockup phone-1">
                     <div class="phone-mockup-screen">
-                        <img src="" alt="Tela do Aplicativo 1">
+                        <img src="https://placehold.co/256x512/FFFFFF/333333?text=App+Screen+1" alt="Tela do Aplicativo 1">
                     </div>
                     <div class="phone-mockup-notch"></div>
                     <div class="phone-mockup-speaker"></div>
                 </div>
                 <div class="phone-mockup phone-2">
                      <div class="phone-mockup-screen">
-                         <img src="" alt="Tela do Aplicativo 2">
+                         <img src="https://placehold.co/256x512/FFFFFF/333333?text=App+Screen+2" alt="Tela do Aplicativo 2">
                     </div>
                     <div class="phone-mockup-notch"></div>
                     <div class="phone-mockup-speaker"></div>

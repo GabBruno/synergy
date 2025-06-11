@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Stories Estilo Instagram</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/storys.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Viewer</title>
+    <link rel="stylesheet" href="/assets/css/storys.css">
 </head>
 <body>
+    <div class="story-container">
+        <!-- Story Image -->
+        <img src="/assets/images/woman.png" alt="Story" class="story-image">
+        
+        <!-- Overlay -->
+        <div class="story-overlay"></div>
+        
+        <!-- Header -->
+        <div class="story-header">
+            <div class="user-info">
+                <img src="/assets/images/woman.png" alt="User Avatar" class="user-avatar">
+                <span class="username">Vish_Patil</span>
+            </div>
+            <button class="close-btn" onclick="closeStory()">
+                <svg class="close-icon" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6"/>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Next Button -->
+        <!-- Botão de voltar -->
+<button class="prev-btn" onclick="prevStory()">
+    <svg class="prev-icon" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/>
+    </svg>
+  </button>
+  
+  <!-- Botão de próximo -->
+  <button class="next-btn" onclick="nextStory()">
+    ...
+  </button>
+  
 
-  <!-- Stories -->
-  <div class="stories-container">
-    <div class="story" onclick="abrirStory('../assets/images/woman.png', '@YRA_Patel')">
-      <img src="../assets/images/woman.png" alt="Story 1">
-      <p>@YRA_Patel</p>
+        <button class="next-btn" onclick="nextStory()">
+            <svg class="next-icon" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/>
+            </svg>
+        </button>
+        
+        <!-- Message Section -->
+        <div class="message-section">
+            <div class="message-input-container">
+                <input type="text" class="message-input" placeholder="Enviar mensagem" id="messageInput">
+            </div>
+            <button class="send-btn" onclick="sendMessage()">
+                <svg class="send-icon" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+            </button>
+        </div>
     </div>
-    <div class="story" onclick="abrirStory('../assets/images/camera2.png', '@Rahul_Sidly')">
-      <img src="../assets/images/camera2.png" alt="Story 2">
-      <p>@Rahul_Sidly</p>
-    </div>
-    <div class="story" onclick="abrirStory('../assets/images/yoda2.png', '@Kunal_Biju')">
-      <img src="../assets/images/yoda2.png" alt="Story 3">
-      <p>@Kunal_Biju</p>
-    </div>
-  </div>
-
-  <!-- Modal para visualizar story -->
-  <div class="modal" id="storyModal" onclick="fecharStory()">
-    <div class="modal-content">
-      <img id="modalImage" src="" alt="Story">
-      <span id="modalUser">@usuário</span>
-    </div>
-  </div>
-
-  <script>
-    function abrirStory(src, user) {
-      document.getElementById('modalImage').src = src;
-      document.getElementById('modalUser').textContent = user;
-      document.getElementById('storyModal').style.display = 'flex';
-    }
-
-    function fecharStory() {
-      document.getElementById('storyModal').style.display = 'none';
-    }
-  </script>
+    <script src="/assets/js/story.js"></script>
 
 </body>
 </html>

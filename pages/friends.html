@@ -1,0 +1,109 @@
+
+<DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synergy - Comunidade</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Botão de menu mobile -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Overlay para mobile -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <!-- Perfil -->
+                <div class="profile">
+                    <div class="profile-image-container">
+                        <img src="https://via.placeholder.com/60" alt="Daniel Trindade" class="profile-image">
+                        <span class="status-indicator online"></span>
+                    </div>
+                    <span class="profile-name">Daniel Trindade</span>
+                </div>
+
+                <!-- Navegação -->
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="#" class="nav-link"><i class="fas fa-home"></i> Página Inicial</a></li>
+                        <li><a href="#" class="nav-link active"><i class="fas fa-users"></i> Comunidade</a></li>
+                        <li><a href="#" class="nav-link"><i class="fas fa-comments"></i> Conversas</a></li>
+                        <li><a href="#" class="nav-link"><i class="fas fa-plus"></i> Criar Publicação</a></li>
+                        <li><a href="#" class="nav-link"><i class="fas fa-cog"></i> Configurações</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Lista de amigos próximos -->
+                <div class="close-friends">
+                    <h3>Amigos</h3>
+                    <ul id="closeFriendsList">
+                        <!-- Será preenchido via JavaScript -->
+                    </ul>
+                    <a href="#" class="see-more">
+                        Ver mais <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Cabeçalho -->
+                <header class="page-header">
+                    <div class="header-top">
+                        <h1 class="page-title">
+                            AMIGOS <span class="subtitle">GRUPOS</span>
+                        </h1>
+
+                        <!-- Barra de pesquisa -->
+                        <div class="search-container">
+                            <input 
+                                type="text" 
+                                placeholder="Pesquisar amigos..." 
+                                class="search-input"
+                                id="searchInput"
+                            >
+                            <i class="fas fa-search search-icon"></i>
+                        </div>
+                    </div>
+
+                    <!-- Carrossel de amigos -->
+                    <div class="friends-carousel">
+                        <div class="carousel-container" id="friendsCarousel">
+                            <!-- Será preenchido via JavaScript -->
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Lista de solicitações de amizade -->
+                <section class="friends-section">
+                    <h2 class="section-title">Solicitações de amizade</h2>
+                    <div class="friends-grid" id="friendsGrid">
+                        <!-- Será preenchido via JavaScript -->
+                    </div>
+                    <div class="no-results" id="noResults" style="display: none;">
+                        <i class="fas fa-user-friends"></i>
+                        <p>Nenhuma solicitação de amizade encontrada</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<ahref=script.js></ahref>
+<ahref=style.css></ahref>

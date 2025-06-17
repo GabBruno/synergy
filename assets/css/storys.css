@@ -16,8 +16,8 @@
 .story-container {
   position: relative;
   width: 100%;
-  max-width: 540px; /* Mais largo */
-  aspect-ratio: 9 / 16; /* Mantém proporção */
+  max-width: 540px; 
+  aspect-ratio: 9 / 16; 
   background: #000;
   border-radius: 12px;
   overflow: hidden;

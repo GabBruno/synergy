@@ -66,16 +66,41 @@
        padding-top: 10px;
    }
 
-   .action-button {
-       flex-grow: 1;
-       max-width: 150px;
+    .create-action-button {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       width: 150px;
+       height: 34px;
        background-color: #F1F4F5;
-       padding: 8px;
        text-align: center;
        font-weight: 600;
        color: var(--cor-texto-secundario);
        cursor: pointer;
-       border-radius: 12px;
+       border-radius: 10px;
+       transition: background-color 0.2s;
+       font-size: 15px;
+       gap: 10px;
+   }
+
+   .buttons {
+        display: flex;
+        justify-content: space-around;
+        gap: 15px;
+   }
+
+   .action-button {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       width: 40px;
+       height: 40px;
+       background-color: #F1F4F5;
+       text-align: center;
+       font-weight: 600;
+       color: var(--cor-texto-secundario);
+       cursor: pointer;
+       border-radius: 100%;
        transition: background-color 0.2s;
    }
 
@@ -258,7 +283,7 @@
 
    .post-actions {
        display: flex;
-       justify-content: space-around;
+       justify-content: space-between;
    }
 
    /* --- Seção de Comentários --- */

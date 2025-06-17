@@ -7,9 +7,19 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="/assets/js/criarPublicacao.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="criarPublicacao.css">
+  </link>
 </head>
 
 <body>
@@ -35,11 +45,14 @@
     }
 
     // Carrega arquivos externos
-    async function carregarParcial(id, arquivo) {
+    async function carregarParcial(id, arquivo, callback = null) { // Adiciona 'callback = null'
       const el = document.getElementById(id);
       try {
         const resposta = await fetch(arquivo);
         el.innerHTML = await resposta.text();
+        if (callback && typeof callback === 'function') { // Se um callback for fornecido e for uma função
+          callback(); // Executa o callback
+        }
       } catch {
         el.innerHTML = `<p>Erro ao carregar ${arquivo}</p>`;
       }
@@ -73,10 +86,21 @@
       });
     }
 
-    // Quando o site carregar, ele inclui os componentes:
+    // Dentro do window.addEventListener('load', async () => { ... });
     window.addEventListener('load', async () => {
       carregarParcial('header', 'includes/header.html');
-      await carregarParcial('menu', 'includes/menu.html'); // Aguarda o menu carregar
+
+      // CHAME A FUNÇÃO openPostCreationModal APÓS O MENU SER CARREGADO
+      await carregarParcial('menu', 'includes/menu.html', () => {
+        // Esta função é executada APÓS o conteúdo de includes/menu.html ser inserido
+        const createPostDiv = document.getElementById('openPostModal');
+        if (createPostDiv) { // Sempre bom verificar se o elemento existe
+          createPostDiv.addEventListener('click', openPostCreationModal);
+        } else {
+          console.error("Elemento com ID 'openPostModal' não encontrado após o carregamento do menu.");
+        }
+      });
+
       marcarLinkAtivo(); // Só chama depois que os links existem
 
       carregarParcial('friends', 'includes/friends.html');
@@ -84,7 +108,6 @@
       carregarConteudoPrincipal();
       configurarLinksInternos();
     });
-
     // Se o usuário clicar em voltar ou avançar no navegador, recarrega o conteúdo certo
     window.addEventListener('popstate', carregarConteudoPrincipal);
 
@@ -115,6 +138,12 @@
       marcarLinkAtivo();
     });
 
+  </script>
+
+  <script>
+    // Adiciona um listener à div para chamar a função openPostCreationModal
+    // Note que o ID mudou para 'openPostModalDiv'
+    document.getElementById('openPostModal').addEventListener('click', openPostCreationModal);
   </script>
 
 </body>

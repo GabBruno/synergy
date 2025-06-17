@@ -1,0 +1,126 @@
+/* Estilos básicos para simular o layout dentro da SweetAlert */
+.swal2-html-container {
+    text-align: left;
+    padding: 0 1.5em; /* Ajusta o padding do conteúdo HTML */
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.post-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-header .user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header .user-info strong {
+    font-size: 1.1em;
+}
+
+.post-header .options {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.post-header .option-button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.post-content textarea {
+    width: calc(100% - 20px); /* Ajusta a largura para considerar o padding */
+    min-height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.post-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee; /* Linha divisória antes dos ícones */
+}
+
+.post-actions .add-to-post {
+    font-weight: bold;
+    color: #666;
+    margin-right: 15px;
+}
+
+.post-actions .icon-group {
+    display: flex;
+    gap: 20px;
+    font-size: 1.5em;
+    color: #666;
+}
+
+.post-actions .icon-group i {
+    cursor: pointer;
+}
+
+/* Estilo para o botão "Publicar" dentro da SweetAlert */
+.swal2-confirm {
+    background-color: #f77f00 !important; /* Cor do botão da imagem */
+    color: white !important;
+    font-size: 1.1em !important;
+    padding: 10px 20px !important;
+    border-radius: 25px !important;
+    border: none !important;
+}
+
+/* Ajustes no modal para parecer mais com a imagem */
+.swal2-popup {
+    border-radius: 15px !important;
+    padding: 0 !important; /* Remover padding padrão para controlar o layout interno */
+    width: 450px !important; /* Ajuste a largura conforme necessário */
+    max-width: 90vw !important; /* Garante que seja responsivo em telas menores */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.swal2-title {
+    background-color: #f77f00; /* Cor do título da imagem */
+    color: white !important;
+    padding: 1.2em 0 !important;
+    margin: 0 !important;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 1.5em !important;
+    position: relative;
+}
+
+.swal2-close-button {
+    color: white !important;
+    font-size: 2em !important;
+    top: 0.5em !important;
+    right: 0.5em !important;
+}
+
+.swal2-actions {
+    margin-top: 0 !important; /* Remover margem superior para o botão */
+    padding: 1.5em !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #eee; /* Linha divisória antes do botão */
+}

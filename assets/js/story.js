@@ -50,19 +50,18 @@ const stories = [
     } else {
       window.close();
     }
+  
+}
+function responder (){
+    console.log(`Você respondeu o story de  ${stories[currentIndex].username}`);
+    alert(`Você respondeu o story de ${stories[currentIndex].username}`)
+}
+
+  
+  function curtir() {
+    console.log(`Você curtiu o story de ${stories[currentIndex].username}`);
+    alert(`Você curtiu o story de ${stories[currentIndex].username}`);
   }
-  
-  function sendMessage() {
-    const messageInput = document.getElementById('messageInput');
-    const message = messageInput.value.trim();
-  
-    if (message) {
-      console.log('Enviando mensagem:', message);
-      alert(`Mensagem enviada: "${message}"`);
-      messageInput.value = '';
-    }
-  }
-  
   function updateButtons() {
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');

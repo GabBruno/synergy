@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Synergy Login</title>
-    <link rel="stylesheet" href="styles/variables.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/loginSignup.css">
     <link rel="stylesheet" href="componentes/card/card.css">
     <link rel="stylesheet" href="componentes/header/header.css">
     <link rel="stylesheet" href="componentes/footer/footer.css">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- O script da API do Google foi removido, pois não é mais necessário para esta simulação -->
 </head>
 <body>
 
@@ -26,7 +33,7 @@
 
                 <main id="card-component">
                     <div class="form-group">
-                        <input type="text" name="email" id="email" class="form-input" placeholder="Telefone, nome de usuário ou email">
+                        <input type="text" name="email" id="email" class="form-input" placeholder="Telefone, nome de utilizador ou email">
                     </div>
                     <div class="form-group password-input-container"> 
                         <input type="password" name="password" id="password" class="form-input" placeholder="Senha">
@@ -45,14 +52,17 @@
                         <span class="divider-text">OU</span>
                         <hr class="divider-line">
                     </div>
+
+                    <!-- Botão do Google restaurado para um botão HTML padrão -->
                     <div class="form-group">
-                        <button class="btn btn-secondary">
+                        <button id="googleLoginBtn" class="btn btn-secondary">
                             <img class="icon-google" src="assets/images/iconGoogle.svg" alt="Ícone do Google" onerror="this.onerror=null;this.src='https://placehold.co/20x20/4285F4/FFFFFF?text=G';">
                             Continuar com Google
                         </button>
                     </div>
+
                     <div class="form-group">
-                        <button class="btn btn-secondary">
+                        <button id="appleLoginButton" class="btn btn-secondary">
                            <img class="icon-apple" src="assets/images/iconApple.svg" alt="Ícone da Apple" onerror="this.onerror=null;this.src='https://placehold.co/20x20/000000/FFFFFF?text=A';">
                            Continuar com Apple
                         </button>
@@ -67,15 +77,12 @@
             </div>
         </div>
 
-        <!-- Seção de showcase agora está vazia, pronta para receber a imagem de fundo via CSS -->
         <div class="showcase-section-wrapper">
-            <!-- Todo o conteúdo dos mockups foi removido daqui -->
+            <!-- A imagem de fundo é aplicada via CSS -->
         </div>
     </div>
 
-    <script src="scripts/main.js"></script>
+    <!-- Scripts -->
     <script src="componentes/card/card.js"></script>
-    <script src="componentes/header/header.js"></script>
-    <script src="componentes/footer/footer.js"></script>
 </body>
 </html>

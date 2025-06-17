@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Synergy</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
   <script>
     // Se não estiver logado, volta pro login
     if (localStorage.getItem('logado') !== 'true') {
-      window.location.href = 'index.html';
+      window.location.href = '../index.html';
     }
 
     // Carrega arquivos externos
@@ -45,7 +45,7 @@
     async function carregarConteudoPrincipal() {
       const params = new URLSearchParams(window.location.search); 
       const pagina = params.get('page') || 'feed'; 
-      const url = `pages/${pagina}.html`; 
+      const url = `${pagina}.html`; 
 
       try {
         const resposta = await fetch(url); 
@@ -70,10 +70,10 @@
 
     // Quando o site carregar, ele inclui os componentes:
     window.addEventListener('load', () => {
-      carregarParcial('header', 'includes/header.html');      
-      carregarParcial('menu', 'includes/menu.html');         
-      carregarParcial('friends', 'includes/friends.html');  
-      carregarParcial('footer', 'includes/footer.html');
+      carregarParcial('header', '../includes/header.html');      
+      carregarParcial('menu', '../includes/menu.html');         
+      carregarParcial('friends', '../includes/friends.html');  
+      carregarParcial('footer', '../includes/footer.html');
       carregarConteudoPrincipal();                         
       configurarLinksInternos();                          
     });
@@ -83,7 +83,7 @@
 
   function sair() {
     localStorage.removeItem('logado');
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
   }
   </script>
 

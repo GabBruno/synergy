@@ -36,7 +36,7 @@
 .showcase-section-wrapper {
     width: 100%;
     /* Removido o gradiente e adicionada a imagem de fundo */
-    background-image: url('../assets/images/fundoCapa.jpg');
+    background-image: url('../images/fundoCapa.jpg');
     background-size: cover; /* Faz a imagem cobrir toda a área */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Impede que a imagem se repita */

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Synergy</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <div class="layout">
+
+    <div id="menu"></div>
+
+
+    <div id="conteudo"></div>
+
+    <div id="friends"></div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    // Se não estiver logado, volta pro login
+    if (localStorage.getItem('logado') !== 'true') {
+      window.location.href = 'index.html';
+    }
+
+    // Carrega arquivos externos
+    async function carregarParcial(id, arquivo) {
+      const el = document.getElementById(id);
+      try {
+        const resposta = await fetch(arquivo);
+        el.innerHTML = await resposta.text();
+      } catch {
+        el.innerHTML = `<p>Erro ao carregar ${arquivo}</p>`;
+      }
+    }
+
+    // Carrega o conteúdo da página principal 
+    async function carregarConteudoPrincipal() {
+      const params = new URLSearchParams(window.location.search);
+      const pagina = params.get('page') || 'feed';
+      const url = `pages/${pagina}.html`;
+
+      try {
+        const resposta = await fetch(url);
+        if (!resposta.ok) throw new Error();
+        document.getElementById('conteudo').innerHTML = await resposta.text();
+      } catch {
+        document.getElementById('conteudo').innerHTML = '<h2>Página não encontrada</h2>';
+      }
+    }
+
+    // Função que evita que a página recarregue
+    function configurarLinksInternos() {
+      document.body.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('?page=')) {
+          e.preventDefault();
+          const url = new URL(e.target.href);
+          history.pushState({}, '', url);
+          carregarConteudoPrincipal();
+          marcarLinkAtivo(); // <- Adicione esta linha aqui
+        }
+      });
+    }
+
+    // Quando o site carregar, ele inclui os componentes:
+    window.addEventListener('load', async () => {
+      carregarParcial('header', 'includes/header.html');
+      await carregarParcial('menu', 'includes/menu.html'); // Aguarda o menu carregar
+      marcarLinkAtivo(); // Só chama depois que os links existem
+
+      carregarParcial('friends', 'includes/friends.html');
+      carregarParcial('footer', 'includes/footer.html');
+      carregarConteudoPrincipal();
+      configurarLinksInternos();
+    });
+
+    // Se o usuário clicar em voltar ou avançar no navegador, recarrega o conteúdo certo
+    window.addEventListener('popstate', carregarConteudoPrincipal);
+
+    function sair() {
+      localStorage.removeItem('logado');
+      window.location.href = 'index.html';
+    }
+
+    function marcarLinkAtivo() {
+      const links = document.querySelectorAll('.menu-link');
+      const paginaAtual = new URLSearchParams(window.location.search).get('page') || 'feed';
+
+      links.forEach(link => {
+        const href = new URL(link.href).searchParams.get('page');
+        link.classList.toggle('active', href === paginaAtual);
+      });
+    }
+
+    // Adicione isso dentro do `load`:
+    window.addEventListener('load', () => {
+      // ... outras funções
+      marcarLinkAtivo();
+    });
+
+    // Também quando trocar com pushState:
+    window.addEventListener('popstate', () => {
+      carregarConteudoPrincipal();
+      marcarLinkAtivo();
+    });
+
+  </script>
+
+</body>
+
+</html>

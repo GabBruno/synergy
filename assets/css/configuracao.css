@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.config-container {
+  width: 350px;
+  background: #fff4ef;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.config-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.config-header h2 {
+  color: #ec6c32;
+  font-size: 20px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #ec6c32;
+  cursor: pointer;
+}
+
+.config-section {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.config-section h3 {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.config-section ul {
+  list-style: none;
+}
+
+.config-section li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 15px;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.config-section li:hover {
+  background-color: #ffece4;
+  border-radius: 8px;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #ec6c32;
+  width: 24px;
+  display: inline-block;
+  text-align: center;
+}

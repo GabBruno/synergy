@@ -1,0 +1,91 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar, .friends-list {
+  width: 20%;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar nav a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #333;
+}
+
+.profile {
+  flex: 1;
+  padding: 20px;
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 200px;
+}
+
+.social-icons img {
+  width: 38px;
+  margin: 0 20px;
+}
+
+.buttons button {
+  margin: 10px 5px;
+  padding: 8px 16px;
+  background-color: #F68548;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.stats span {
+  display: inline-block;
+  margin: 10px;
+  font-weight: bold;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.friends-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.friends-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.friends-list img {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

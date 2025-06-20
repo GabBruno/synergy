@@ -1,4 +1,4 @@
-/*Variáveis*/
+/* Variáveis */
 :root {
     --synergy-orange: #FF6B00;
     --synergy-orange-dark: #E65F00;
@@ -21,10 +21,10 @@
 
     --text-sm: 0.875rem;
     --text-lg: 1.125rem;
-    --text-xl: 1.25rem; 
+    --text-xl: 1.25rem;
 }
 
-/*CSS Base*/
+/* CSS Base */
 *,
 *::before,
 *::after {
@@ -84,10 +84,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: inherit;
 }
 
-/*CSS Main*/
+/* CSS Main */
 #app-container {
     display: flex;
-    flex-direction: column; /* Mobile first */
+    flex-direction: column;
     min-height: 100vh;
     width: 100%;
 }
@@ -122,9 +122,9 @@ h1, h2, h3, h4, h5, h6 {
 .showcase-section-wrapper {
     width: 100%;
     background-image: url('../images/fundoCapa.jpg');
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
 
     display: flex;
     flex-direction: column;
@@ -154,25 +154,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .password-input-container {
-    position: relative; 
-    display: flex; 
-    align-items: center; 
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .form-input {
     width: 100%;
-    padding: 0.75rem 1rem; 
-    border-radius: 0.5rem; 
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
     border: 1px solid var(--synergy-gray-300);
     font-size: 1rem;
-    background-color: var(--synergy-white); 
-    color: var(--synergy-gray-800); 
+    background-color: var(--synergy-white);
+    color: var(--synergy-gray-800);
 }
 
 .password-input-container .form-input {
-    padding-right: 2.8rem; 
+    padding-right: 2.8rem;
 }
-
 
 .form-input::placeholder {
     color: var(--synergy-gray-500);
@@ -187,18 +186,18 @@ h1, h2, h3, h4, h5, h6 {
 .password-toggle-btn-inside {
     position: absolute;
     top: 50%;
-    right: 0.75rem; 
-    transform: translateY(-50%); 
+    right: 0.75rem;
+    transform: translateY(-50%);
     background-color: transparent;
     border: none;
     padding: 0.25rem;
     cursor: pointer;
     color: var(--synergy-gray-600);
-    font-size: 1.1rem; 
-    display: flex; 
+    font-size: 1.1rem;
+    display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2; 
+    z-index: 2;
 }
 
 .password-toggle-btn-inside:hover {
@@ -214,8 +213,8 @@ h1, h2, h3, h4, h5, h6 {
     text-align: right;
     font-size: var(--text-sm);
     color: var(--synergy-orange);
-    margin-top: -0.5rem; 
-    margin-bottom: 0.5rem; 
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .forgot-password-link:hover {
@@ -224,9 +223,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn {
     width: 100%;
-    padding: 0.85rem 1rem; 
-    border-radius: 0.5rem; 
-    font-weight: 600; 
+    padding: 0.85rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     text-align: center;
     font-size: 1rem;
@@ -250,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem; 
+    gap: 0.75rem;
 }
 
 .btn-secondary:hover {
@@ -259,8 +258,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-secondary img {
-    width: 1.25rem; 
-    height: 1.25rem; 
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 .divider-container {
@@ -275,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .divider-text {
-    padding-left: 0.75rem; 
+    padding-left: 0.75rem;
     padding-right: 0.75rem;
     font-size: var(--text-sm);
     color: var(--synergy-gray-500);
@@ -318,19 +317,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-secondary .icon-apple {
-    width: 20px; 
-    height: 20px; 
+    width: 20px;
+    height: 20px;
 }
 
 #footer-component {
-    margin-top: 2rem; 
+    margin-top: 2rem;
     text-align: center;
     font-size: var(--text-sm);
     color: var(--synergy-gray-600);
 }
 
 #footer-component a {
-    font-weight: 600; 
+    font-weight: 600;
     color: var(--synergy-orange);
 }
 
@@ -338,7 +337,7 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: underline;
 }
 
-/*Mobile*/
+/* Responsivo - Desktop */
 @media (min-width: 768px) {
     #app-container {
         flex-direction: row;
@@ -356,5 +355,20 @@ h1, h2, h3, h4, h5, h6 {
 
     .showcase-text-content {
         margin-top: 3rem;
+    }
+}
+
+/* Responsivo - Mobile */
+@media (max-width: 767px) {
+    .showcase-section-wrapper {
+        display: none;
+    }
+
+    .login-section-wrapper {
+        width: 100%;
+        min-height: 100vh;
+        background-color: var(--synergy-white);
+        justify-content: center;
+        align-items: center;
     }
 }

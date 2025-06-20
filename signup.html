@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synergy Login</title>
-  
+    <title>Synergy Cadastro</title>
+
     <link rel="stylesheet" href="assets/css/loginSignup.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,33 +12,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
 </head>
 <body>
 
     <div id="app-container">
-        <div class="login-section-wrapper">
+        <div class="login-section-wrapper"> 
             <div class="login-content">
                 <header id="header-component">
                     <h1 class="synergy-logo">synergy</h1>
                 </header>
 
-                <main id="card-component">
-                    <div class="form-group">
-                        <input type="text" name="email" id="email" class="form-input" placeholder="Telefone, nome de utilizador ou email">
-                    </div>
-                    <div class="form-group password-input-container"> 
-                        <input type="password" name="password" id="password" class="form-input" placeholder="Senha">
-                        <button type="button" id="togglePassword" class="password-toggle-btn-inside">
-                            <i class="fas fa-eye-slash"></i>
+                <main id="card-component" class="signup-form"> 
+                    <div class="form-group social-buttons-group">
+                        <button class="btn btn-secondary">
+                            <img class="icon-google" src="../assets/images/iconGoogle.svg" alt="Ícone do Google">
+                            Continuar com Google
                         </button>
                     </div>
-                    <div>
-                        <a href="#" class="forgot-password-link">Esqueceu a senha?</a>
+                    <div class="form-group social-buttons-group">
+                        <button class="btn btn-secondary">
+                           <img class="icon-apple" src="../assets/images/iconApple.svg" alt="Ícone da Apple">
+                            Continuar com Apple
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <button type="submit" id="loginButton" class="btn btn-primary">Entrar</button>
-                    </div>
+
                     <div class="divider-container">
                         <hr class="divider-line">
                         <span class="divider-text">OU</span>
@@ -46,23 +43,36 @@
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-secondary">
-                            <img class="icon-google" src="assets/images/iconGoogle.svg" alt="Ícone do Google" onerror="this.onerror=null;this.src='https://placehold.co/20x20/4285F4/FFFFFF?text=G';">
-                            Continuar com Google
+                        <input type="text" name="identifier" id="identifier" class="form-input" placeholder="Número do celular ou email">
+                    </div>
+
+                    <div class="form-group password-input-container"> 
+                        <input type="password" name="password" id="password" class="form-input" placeholder="Senha">
+                        <button type="button" id="togglePassword" class="password-toggle-btn-inside">
+                            <i class="fas fa-eye-slash"></i>
                         </button>
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-secondary">
-                           <img class="icon-apple" src="assets/images/iconApple.svg" alt="Ícone da Apple" onerror="this.onerror=null;this.src='https://placehold.co/20x20/000000/FFFFFF?text=A';">
-                           Continuar com Apple
-                        </button>
+                        <input type="text" name="fullName" id="fullName" class="form-input" placeholder="Nome completo">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="username" id="username" class="form-input" placeholder="Nome de usuário">
+                    </div>
+
+                    <div class="form-group terms-text">
+                        <p>Ao se cadastrar, você concorda com nossos Termos, Política de Privacidade e Política de Cookies.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" id="signupButton" class="btn btn-primary">Cadastre-se</button>
                     </div>
                 </main>
 
                 <footer id="footer-component">
                     <p>
-                        Não tem uma conta? <a href="signup.html">Cadastre-se</a>
+                        Tem uma conta? <a href="../index.html">Conecte-se</a>
                     </p>
                 </footer>
             </div>
@@ -71,7 +81,7 @@
         <div class="showcase-section-wrapper"></div>
 
     </div>
-
+    
     <script src="assets/js/loginSignup.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

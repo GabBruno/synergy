@@ -1,4 +1,90 @@
-/* styles/main.css */
+/*Variáveis*/
+:root {
+    --synergy-orange: #FF6B00;
+    --synergy-orange-dark: #E65F00;
+    --synergy-orange-gradient: linear-gradient(to right, #FF5900, #F68548);
+    --synergy-gray-100: #F7FAFC;
+    --synergy-gray-200: #EDF2F7;
+    --synergy-gray-300: #E2E8F0;
+    --synergy-gray-500: #A0AEC0;
+    --synergy-gray-600: #718096;
+    --synergy-gray-700: #4A5568;
+    --synergy-gray-800: #2D3748;
+    --synergy-white: #FFFFFF;
+    --synergy-black: #000000;
+
+    --google-blue: #4285F4;
+    --apple-black: #000000;
+
+    --font-sans: 'Inter', sans-serif;
+    --font-raleway: 'Raleway', sans-serif;
+
+    --text-sm: 0.875rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem; 
+}
+
+/*CSS Base*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-sans);
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--synergy-gray-800);
+    background-color: var(--synergy-gray-100);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+a {
+    color: var(--synergy-orange);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+}
+
+/*CSS Main*/
 #app-container {
     display: flex;
     flex-direction: column; /* Mobile first */
@@ -35,11 +121,10 @@
 
 .showcase-section-wrapper {
     width: 100%;
-    /* Removido o gradiente e adicionada a imagem de fundo */
     background-image: url('../images/fundoCapa.jpg');
-    background-size: cover; /* Faz a imagem cobrir toda a área */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
 
     display: flex;
     flex-direction: column;
@@ -50,11 +135,7 @@
     overflow: hidden;
 }
 
-/* Removidas todas as regras para .phone-mockups-container, .phone-mockup, etc., pois não são mais necessárias */
-
 .showcase-text-content {
-    /* Esta regra pode ser removida ou adaptada se não houver mais texto na seção de showcase */
-    /* Mantendo por enquanto, caso queira adicionar texto sobre a imagem no futuro */
     text-align: center;
     color: var(--synergy-white);
     max-width: 28rem;
@@ -62,7 +143,202 @@
     padding-right: 1rem;
 }
 
-/* Estilos para desktop */
+#card-component {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.password-input-container {
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem; 
+    border-radius: 0.5rem; 
+    border: 1px solid var(--synergy-gray-300);
+    font-size: 1rem;
+    background-color: var(--synergy-white); 
+    color: var(--synergy-gray-800); 
+}
+
+.password-input-container .form-input {
+    padding-right: 2.8rem; 
+}
+
+
+.form-input::placeholder {
+    color: var(--synergy-gray-500);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--synergy-orange);
+    box-shadow: 0 0 0 2px var(--synergy-orange-dark);
+}
+
+.password-toggle-btn-inside {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem; 
+    transform: translateY(-50%); 
+    background-color: transparent;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    color: var(--synergy-gray-600);
+    font-size: 1.1rem; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    z-index: 2; 
+}
+
+.password-toggle-btn-inside:hover {
+    color: var(--synergy-orange);
+}
+
+.password-toggle-btn-inside:focus {
+    outline: none;
+}
+
+.forgot-password-link {
+    display: block;
+    text-align: right;
+    font-size: var(--text-sm);
+    color: var(--synergy-orange);
+    margin-top: -0.5rem; 
+    margin-bottom: 0.5rem; 
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    padding: 0.85rem 1rem; 
+    border-radius: 0.5rem; 
+    font-weight: 600; 
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--synergy-orange);
+    color: var(--synergy-white);
+    border: 1px solid var(--synergy-orange);
+}
+
+.btn-primary:hover {
+    background-color: var(--synergy-orange-dark);
+    border-color: var(--synergy-orange-dark);
+}
+
+.btn-secondary {
+    background-color: var(--synergy-white);
+    color: var(--synergy-gray-700);
+    border: 1px solid var(--synergy-gray-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem; 
+}
+
+.btn-secondary:hover {
+    background-color: var(--synergy-gray-100);
+    border-color: var(--synergy-gray-400);
+}
+
+.btn-secondary img {
+    width: 1.25rem; 
+    height: 1.25rem; 
+}
+
+.divider-container {
+    display: flex;
+    align-items: center;
+}
+
+.divider-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--synergy-gray-300);
+}
+
+.divider-text {
+    padding-left: 0.75rem; 
+    padding-right: 0.75rem;
+    font-size: var(--text-sm);
+    color: var(--synergy-gray-500);
+    text-transform: uppercase;
+}
+
+.terms-text {
+    font-size: 0.75rem;
+    color: var(--synergy-gray-600);
+    text-align: center;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+}
+
+.terms-text a {
+    color: var(--synergy-gray-700);
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.terms-text a:hover {
+    color: var(--synergy-orange);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.btn-secondary .icon-google {
+    width: 25px;
+    height: 25px;
+}
+
+.btn-secondary .icon-apple {
+    width: 20px; 
+    height: 20px; 
+}
+
+#footer-component {
+    margin-top: 2rem; 
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--synergy-gray-600);
+}
+
+#footer-component a {
+    font-weight: 600; 
+    color: var(--synergy-orange);
+}
+
+#footer-component a:hover {
+    text-decoration: underline;
+}
+
+/*Mobile*/
 @media (min-width: 768px) {
     #app-container {
         flex-direction: row;

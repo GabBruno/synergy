@@ -9,12 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { email: 'admin', password: 'admin' }
     ];
 
-    // --- Verificação de Login Existente ---
-    // Deteta se está na pasta 'pages' para ajustar o caminho do redirecionamento
-    const isInsidePages = window.location.pathname.includes('/pages/');
-    const homePath = isInsidePages ? 'home.html' : 'pages/home.html';
-
-
     // --- Seleção dos Elementos ---
     // Elementos comuns
     const passwordInput = document.getElementById('password');
@@ -37,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`SUCESSO: Utilizador "${userIdentifier}" autenticado.`);
         localStorage.setItem('logado', 'true');
         localStorage.setItem('currentUser', userIdentifier);
-        window.location.href = homePath;
+        window.location.href = "home.html?page=feed";
     }
 
     // --- LÓGICA DA PÁGINA DE LOGIN (só executa se o botão de login existir) ---
@@ -55,26 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Login ou Senha inválidos!');
             }
         });
-
-         // --- Login com Google (Simulação Direta) ---
-        if (googleLoginBtn) {
-            googleLoginBtn.addEventListener('click', (event) => {
-                event.preventDefault();
-                console.log('Botão Google clicado. A simular login...');
-                // alert('A simular login com o Google...'); // Removido
-                performLogin('Utilizador Google');
-            });
-        }
-
-        // --- Login com Apple (Simulação Direta) ---
-        if (appleLoginButton) {
-            appleLoginButton.addEventListener('click', (event) => {
-                event.preventDefault();
-                console.log('Botão Apple clicado. A simular login...');
-                // alert('A simular login com a Apple...'); // Removido
-                performLogin('Utilizador Apple');
-            });
-        }
     }
 
 
@@ -119,21 +93,23 @@ document.addEventListener('DOMContentLoaded', () => {
             performLogin(fullName);
         });
 
-        // Os botões de login social na página de cadastro também redirecionam direto
-        const socialButtonsSignup = document.querySelectorAll('.btn-secondary');
-        socialButtonsSignup.forEach(button => {
-             button.addEventListener('click', (event) => {
-                event.preventDefault();
-                const provider = button.textContent.includes('Google') ? 'Google' : 'Apple';
-                console.log(`Botão ${provider} na página de cadastro clicado. A simular login...`);
-                // alert(`A simular login com ${provider}...`); // Removido
-                performLogin(`Utilizador ${provider}`);
-            });
-        })
+        
 
     }
 
-    // --- Funcionalidade Comum: Mostrar/Ocultar Senha ---
+    // --- Funcionalidade Comum: ---
+
+    // Os botões de login social na página de cadastro também redirecionam direto
+    const socialButtonsSignup = document.querySelectorAll('.btn-secondary');
+    socialButtonsSignup.forEach(button => {
+         button.addEventListener('click', (event) => {
+            event.preventDefault();
+            const provider = button.textContent.includes('Google') ? 'Google' : 'Apple';
+            console.log(`Botão ${provider} na página de cadastro clicado. A simular login...`);
+            performLogin(`Utilizador ${provider}`);
+        });
+    })
+
     if (togglePasswordButton && passwordInput) {
         togglePasswordButton.addEventListener('click', () => {
             const isPassword = passwordInput.getAttribute('type') === 'password';

@@ -1,209 +1,367 @@
-<<<<<<< Updated upstream
-
-<DOCTYPE html>
-=======
 <!DOCTYPE html>
->>>>>>> Stashed changes
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< Updated upstream
-    <title>Synergy - Comunidade</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <div class="container">
-        <!-- Botão de menu mobile -->
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Overlay para mobile -->
-        <div class="overlay" id="overlay"></div>
-
-        <!-- Sidebar -->
-        <aside class="sidebar" id="sidebar">
-            <div class="sidebar-content">
-                <!-- Perfil -->
-                <div class="profile">
-                    <div class="profile-image-container">
-                        <img src="https://via.placeholder.com/60" alt="Daniel Trindade" class="profile-image">
-                        <span class="status-indicator online"></span>
-                    </div>
-                    <span class="profile-name">Daniel Trindade</span>
-                </div>
-
-                <!-- Navegação -->
-                <nav class="navigation">
-                    <ul>
-                        <li><a href="#" class="nav-link"><i class="fas fa-home"></i> Página Inicial</a></li>
-                        <li><a href="#" class="nav-link active"><i class="fas fa-users"></i> Comunidade</a></li>
-                        <li><a href="#" class="nav-link"><i class="fas fa-comments"></i> Conversas</a></li>
-                        <li><a href="#" class="nav-link"><i class="fas fa-plus"></i> Criar Publicação</a></li>
-                        <li><a href="#" class="nav-link"><i class="fas fa-cog"></i> Configurações</a></li>
-                    </ul>
-                </nav>
-
-                <!-- Lista de amigos próximos -->
-                <div class="close-friends">
-                    <h3>Amigos</h3>
-                    <ul id="closeFriendsList">
-                        <!-- Será preenchido via JavaScript -->
-                    </ul>
-                    <a href="#" class="see-more">
-                        Ver mais <i class="fas fa-chevron-right"></i>
-                    </a>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Conteúdo principal -->
-        <main class="main-content">
-            <div class="content-wrapper">
-                <!-- Cabeçalho -->
-                <header class="page-header">
-                    <div class="header-top">
-                        <h1 class="page-title">
-                            AMIGOS <span class="subtitle">GRUPOS</span>
-                        </h1>
-
-                        <!-- Barra de pesquisa -->
-                        <div class="search-container">
-                            <input 
-                                type="text" 
-                                placeholder="Pesquisar amigos..." 
-                                class="search-input"
-                                id="searchInput"
-                            >
-                            <i class="fas fa-search search-icon"></i>
-                        </div>
-                    </div>
-
-                    <!-- Carrossel de amigos -->
-                    <div class="friends-carousel">
-                        <div class="carousel-container" id="friendsCarousel">
-                            <!-- Será preenchido via JavaScript -->
-                        </div>
-                    </div>
-                </header>
-
-                <!-- Lista de solicitações de amizade -->
-                <section class="friends-section">
-                    <h2 class="section-title">Solicitações de amizade</h2>
-                    <div class="friends-grid" id="friendsGrid">
-                        <!-- Será preenchido via JavaScript -->
-                    </div>
-                    <div class="no-results" id="noResults" style="display: none;">
-                        <i class="fas fa-user-friends"></i>
-                        <p>Nenhuma solicitação de amizade encontrada</p>
-                    </div>
-                </section>
-            </div>
-        </main>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
-<ahref=script.js></ahref>
-<ahref=style.css></ahref>
-=======
     <title>Synergy - Rede Social</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/friends.css">
 </head>
 <body>
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="logo">synergy</div>
+        </div>
+        <div class="header-icons">
+            <div class="notification-icon">
+                🔔
+                <span class="notification-badge">3</span>
+            </div>
+            <div class="profile-icon">👤</div>
+        </div>
+    </header>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
     <div class="container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="logo">
-                <h1>synergy</h1>
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="sidebar-close" id="sidebarClose">✕</button>
             </div>
             
             <div class="user-profile">
-                <img src="/placeholder.svg?height=50&width=50" alt="Daniel Trindade" class="profile-pic">
-                <span class="username">Daniel Trindade</span>
+                <img src="/placeholder.svg?height=40&width=40" alt="Daniel Trindade" class="profile-img">
+                <div class="user-info">
+                    <span class="username">Daniel Trindade</span>
+                    <span class="user-status">Online</span>
+                </div>
             </div>
-            
+
             <nav class="nav-menu">
-                <ul>
-                    <li><i class="fas fa-home"></i> Página Inicial</li>
-                    <li class="active"><i class="fas fa-users"></i> Comunidade</li>
-                    <li><i class="fas fa-comments"></i> Conversas</li>
-                    <li><i class="fas fa-plus-circle"></i> Criar Publicação</li>
-                    <li><i class="fas fa-cog"></i> Configurações</li>
-                </ul>
+                <div class="nav-item" data-page="home">
+                    <span class="nav-icon">🏠</span>
+                    <span>Página Inicial</span>
+                </div>
+                <div class="nav-item active" data-page="community">
+                    <span class="nav-icon">👥</span>
+                    <span>Comunidade</span>
+                </div>
+                <div class="nav-item" data-page="conversations">
+                    <span class="nav-icon">💬</span>
+                    <span>Conversas</span>
+                    <span class="nav-badge">2</span>
+                </div>
+                <div class="nav-item" data-page="create">
+                    <span class="nav-icon">➕</span>
+                    <span>Criar Publicação</span>
+                </div>
+                <div class="nav-item" data-page="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Configurações</span>
+                </div>
             </nav>
-            
+
             <div class="friends-section">
-                <h3>Amigos</h3>
-                <div class="friends-list">
+                <h3>Amigos <span class="friends-count">(5)</span></h3>
+                <div class="friend-list">
                     <div class="friend-item">
-                        <img src="/placeholder.svg?height=40&width=40" alt="Andrew Parker">
-                        <span>Andrew Parker</span>
+                        <img src="/placeholder.svg?height=32&width=32" alt="Andrew Parker">
+                        <div class="friend-info">
+                            <span class="friend-name">Andrew Parker</span>
+                            <span class="friend-status online">Online</span>
+                        </div>
                     </div>
                     <div class="friend-item">
-                        <img src="/placeholder.svg?height=40&width=40" alt="Bruna Gomes">
-                        <span>Bruna Gomes</span>
+                        <img src="/placeholder.svg?height=32&width=32" alt="Bruno Gomes">
+                        <div class="friend-info">
+                            <span class="friend-name">Bruno Gomes</span>
+                            <span class="friend-status offline">Offline</span>
+                        </div>
                     </div>
                     <div class="friend-item">
-                        <img src="/placeholder.svg?height=40&width=40" alt="Mariana Ferreira">
-                        <span>Mariana Ferreira</span>
+                        <img src="/placeholder.svg?height=32&width=32" alt="Mariana Ferreira">
+                        <div class="friend-info">
+                            <span class="friend-name">Mariana Ferreira</span>
+                            <span class="friend-status online">Online</span>
+                        </div>
                     </div>
                     <div class="friend-item">
-                        <img src="/placeholder.svg?height=40&width=40" alt="Fernando Costa">
-                        <span>Fernando Costa</span>
+                        <img src="/placeholder.svg?height=32&width=32" alt="Fernando Costa">
+                        <div class="friend-info">
+                            <span class="friend-name">Fernando Costa</span>
+                            <span class="friend-status away">Ausente</span>
+                        </div>
                     </div>
                     <div class="friend-item">
-                        <img src="/placeholder.svg?height=40&width=40" alt="João Neves">
-                        <span>João Neves</span>
+                        <img src="/placeholder.svg?height=32&width=32" alt="João Neves">
+                        <div class="friend-info">
+                            <span class="friend-name">João Neves</span>
+                            <span class="friend-status online">Online</span>
+                        </div>
                     </div>
                 </div>
-                <a href="#" class="ver-mais">Ver mais</a>
+                <div class="see-more">Ver mais</div>
             </div>
         </aside>
-        
-        <!-- Main Content -->
+
         <main class="main-content">
-            <div class="header-tabs">
-                <button class="tab active" data-tab="amigos">AMIGOS</button>
-                <button class="tab" data-tab="grupos">GRUPOS</button>
+            <div class="content-header">
+                <div class="tabs">
+                    <button class="tab active" data-tab="friends">
+                        <span class="tab-icon">👥</span>
+                        <span class="tab-text">AMIGOS</span>
+                        <span class="tab-count">10</span>
+                    </button>
+                    <button class="tab" data-tab="groups">
+                        <span class="tab-icon">🏢</span>
+                        <span class="tab-text">GRUPOS</span>
+                        <span class="tab-count">10</span>
+                    </button>
+                </div>
+                
+                <div class="content-actions">
+                    <button class="action-btn search-btn" title="Buscar">
+                        🔍
+                    </button>
+                    <button class="action-btn filter-btn" title="Filtrar">
+                        🔽
+                    </button>
+                </div>
             </div>
-            
+
             <div class="friends-avatars">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 1" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 2" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 3" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 4" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 5" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 6" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 7" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 8" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 9" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 10" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 11" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 12" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 13" class="avatar">
-                <img src="/placeholder.svg?height=60&width=60" alt="Amigo 14" class="avatar">
+                <div class="avatars-scroll">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                    <img src="/placeholder.svg?height=60&width=60" alt="Friend" class="avatar">
+                </div>
             </div>
-            
-            <div class="friend-requests-grid" id="friendRequestsGrid">
-                <!-- Friend request cards will be generated by JavaScript -->
+
+            <div class="friend-requests" id="friendRequests">
+                <div class="friend-card" data-name="Isabell Mafra">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Isabell Mafra" class="friend-photo">
+                    <h3 class="friend-name">Isabell Mafra</h3>
+                    <p class="friend-mutual">5 amigos em comum</p>
+                    <div class="card-actions">
+                        <button class="btn-accept">Aceitar</button>
+                        <button class="btn-reject">Rejeitar</button>
+                    </div>
+                </div>
+
+                <div class="friend-card" data-name="Jorge Cardoso">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Jorge Cardoso" class="friend-photo">
+                    <h3 class="friend-name">Jorge Cardoso</h3>
+                    <p class="friend-mutual">2 amigos em comum</p>
+                    <div class="card-actions">
+                        <button class="btn-accept">Aceitar</button>
+                        <button class="btn-reject">Rejeitar</button>
+                    </div>
+                </div>
+
+                <div class="friend-card" data-name="Rachel Podrez">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Rachel Podrez" class="friend-photo">
+                    <h3 class="friend-name">Rachel Podrez</h3>
+                    <p class="friend-mutual">8 amigos em comum</p>
+                    <div class="card-actions">
+                        <button class="btn-accept">Aceitar</button>
+                        <button class="btn-reject">Rejeitar</button>
+                    </div>
+                </div>
+
+                <div class="friend-card" data-name="Enzo Martins">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Enzo Martins" class="friend-photo">
+                    <h3 class="friend-name">Enzo Martins</h3>
+                    <p class="friend-mutual">1 amigo em comum</p>
+                    <div class="card-actions">
+                        <button class="btn-accept">Aceitar</button>
+                        <button class="btn-reject">Rejeitar</button>
+                    </div>
+                </div>
+
+                <div class="friend-card" data-name="Matheus Reus">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Matheus Reus" class="friend-photo">
+                    <h3 class="friend-name">Matheus Reus</h3>
+                    <p class="friend-mutual">3 amigos em comum</p>
+                    <div class="card-actions">
+                        <button class="btn-accept">Aceitar</button>
+                        <button class="btn-reject">Rejeitar</button>
+                    </div>
+                </div>
+
+                <div class="friend-card" data-name="Michael Nunes">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Michael Nunes" class="friend-photo">
+                    <h3 class="friend-name">Michael Nunes</h3>
+                    <p class="friend-mutual">6 amigos em comum</p>
+                    <div class="card-actions">
+                        <button class="btn-accept">Aceitar</button>
+                        <button class="btn-reject">Rejeitar</button>
+                    </div>
+                </div>
+
+                <div class="friend-card" data-name="Maria Avelar">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Maria Avelar" class="friend-photo">
+                    <h3 class="friend-name">Maria Avelar</h3>
+                    <p class="friend-mutual">4 amigos em comum</p>
+                    <div class="card-actions">
+                        <button class="btn-accept">Aceitar</button>
+                        <button class="btn-reject">Rejeitar</button>
+                    </div>
+                </div>
+
+                <div class="friend-card" data-name="João Farias">
+                    <img src="/placeholder.svg?height=120&width=120" alt="João Farias" class="friend-photo">
+                    <h3 class="friend-name">João Farias</h3>
+                    <p class="friend-mutual">7 amigos em comum</p>
+                    <div class="card-actions">
+                        <button class="btn-accept">Aceitar</button>
+                        <button class="btn-reject">Rejeitar</button>
+                    </div>
+                </div>
+
+                <div class="friend-card" data-name="Igor Paulo">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Igor Paulo" class="friend-photo">
+                    <h3 class="friend-name">Igor Paulo</h3>
+                    <p class="friend-mutual">2 amigos em comum</p>
+                    <div class="card-actions">
+                        <button class="btn-accept">Aceitar</button>
+                        <button class="btn-reject">Rejeitar</button>
+                    </div>
+                </div>
+
+                <div class="friend-card" data-name="Safira Silva">
+                    <img src="/placeholder.svg?height=120&width=120" alt="Safira Silva" class="friend-photo">
+                    <h3 class="friend-name">Safira Silva</h3>
+                    <p class="friend-mutual">9 amigos em comum</p>
+                    <div class="card-actions">
+                        <button class="btn-accept">Aceitar</button>
+                        <button class="btn-reject">Rejeitar</button>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Notification Toast -->
-            <div id="notification" class="notification">
-                <span id="notificationText"></span>
+
+            <div class="groups-content" id="groupsContent" style="display: none;">
+                <div class="groups-grid">
+                    <div class="group-card" data-group="flamengo">
+                        <div class="group-icon flamengo-icon">⚽</div>
+                        <div class="group-info">
+                            <h3 class="group-name">FLAMENGO</h3>
+                            <p class="group-posts">55+ NOVAS PUBLICAÇÕES</p>
+                            <p class="group-members">1.2k membros</p>
+                        </div>
+                        <button class="btn-join">Entrar</button>
+                    </div>
+
+                    <div class="group-card" data-group="podpah">
+                        <div class="group-icon podpah-icon">🎙️</div>
+                        <div class="group-info">
+                            <h3 class="group-name">PODPAH</h3>
+                            <p class="group-posts">25+ NOVAS PUBLICAÇÕES</p>
+                            <p class="group-members">856 membros</p>
+                        </div>
+                        <button class="btn-join">Entrar</button>
+                    </div>
+
+                    <div class="group-card" data-group="sinais24h">
+                        <div class="group-icon sinais-icon">📈</div>
+                        <div class="group-info">
+                            <h3 class="group-name">SINAIS 24H</h3>
+                            <p class="group-posts">543+ NOVAS PUBLICAÇÕES</p>
+                            <p class="group-members">2.1k membros</p>
+                        </div>
+                        <button class="btn-join">Entrar</button>
+                    </div>
+
+                    <div class="group-card" data-group="missa">
+                        <div class="group-icon missa-icon">⛪</div>
+                        <div class="group-info">
+                            <h3 class="group-name">MISSA DE DOMINGO</h3>
+                            <p class="group-posts">25+ NOVAS PUBLICAÇÕES</p>
+                            <p class="group-members">432 membros</p>
+                        </div>
+                        <button class="btn-join">Entrar</button>
+                    </div>
+
+                    <div class="group-card" data-group="engenharia">
+                        <div class="group-icon eng-icon">💻</div>
+                        <div class="group-info">
+                            <h3 class="group-name">ENG. DE SOFTWARE</h3>
+                            <p class="group-posts">1+ NOVAS PUBLICAÇÕES</p>
+                            <p class="group-members">678 membros</p>
+                        </div>
+                        <button class="btn-join">Entrar</button>
+                    </div>
+
+                    <div class="group-card" data-group="loud">
+                        <div class="group-icon loud-icon">🎮</div>
+                        <div class="group-info">
+                            <h3 class="group-name">LOUD</h3>
+                            <p class="group-posts">3025+ NOVAS PUBLICAÇÕES</p>
+                            <p class="group-members">5.2k membros</p>
+                        </div>
+                        <button class="btn-join">Entrar</button>
+                    </div>
+
+                    <div class="group-card" data-group="valorant">
+                        <div class="group-icon valorant-icon">🔫</div>
+                        <div class="group-info">
+                            <h3 class="group-name">VALORANT</h3>
+                            <p class="group-posts">415+ NOVAS PUBLICAÇÕES</p>
+                            <p class="group-members">3.8k membros</p>
+                        </div>
+                        <button class="btn-join">Entrar</button>
+                    </div>
+
+                    <div class="group-card" data-group="pdz">
+                        <div class="group-icon pdz-icon">🎵</div>
+                        <div class="group-info">
+                            <h3 class="group-name">FÃ CLUBE DO PDZ</h3>
+                            <p class="group-posts">Sem novas publicações</p>
+                            <p class="group-members">234 membros</p>
+                        </div>
+                        <button class="btn-join">Entrar</button>
+                    </div>
+
+                    <div class="group-card" data-group="futebol">
+                        <div class="group-icon futebol-icon">⚽</div>
+                        <div class="group-info">
+                            <h3 class="group-name">FUTEBOL DE SÁBADO</h3>
+                            <p class="group-posts">10+ NOVAS PUBLICAÇÕES</p>
+                            <p class="group-members">567 membros</p>
+                        </div>
+                        <button class="btn-join">Entrar</button>
+                    </div>
+
+                    <div class="group-card" data-group="fortnite">
+                        <div class="group-icon fortnite-icon">🏗️</div>
+                        <div class="group-info">
+                            <h3 class="group-name">FORTNITE</h3>
+                            <p class="group-posts">102+ NOVAS PUBLICAÇÕES</p>
+                            <p class="group-members">1.9k membros</p>
+                        </div>
+                        <button class="btn-join">Entrar</button>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
-    
+
+    <div class="toast" id="toast"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
->>>>>>> Stashed changes

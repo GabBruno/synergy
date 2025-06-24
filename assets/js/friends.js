@@ -281,13 +281,6 @@ class SynergyApp {
         const button = event.currentTarget;
         const isSearch = button.classList.contains('search-btn');
         const isFilter = button.classList.contains('filter-btn');
-
-        if (isSearch) {
-            this.showToast('🔍 Função de busca em desenvolvimento...');
-        } else if (isFilter) {
-            this.showToast('🔽 Função de filtro em desenvolvimento...');
-        }
-
         button.style.transform = 'scale(0.95)';
         setTimeout(() => {
             button.style.transform = '';

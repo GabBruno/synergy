@@ -77,11 +77,6 @@
        text-align: center;
        font-weight: 600;
        color: var(--cor-texto-principal);
-       cursor: pointer;
-       border-radius: 10px;
-       transition: background-color 0.2s;
-       font-size: 15px;
-       gap: 10px;
    }
 
    .buttons {
@@ -113,7 +108,6 @@
    .action-button.ativo {
        background-color: var(--cor-icones);
        color: #F1F4F5;
-
    }
 
    .action-button .icon {

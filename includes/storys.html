@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Viewer</title>
+    <link rel="stylesheet" href="/assets/css/storys.css">
+</head>
+<body>
+    <div class="story-container">
+        <img src="/assets/images/woman.png" alt="Story" class="story-image">
+        
+        <div class="story-overlay"></div>
+        
+        <div class="story-header">
+            <div class="user-info">
+                <img src="/assets/images/woman.png" alt="User Avatar" class="user-avatar">
+                <span class="username">Vish_Patil</span>
+            </div>
+            <button class="close-btn" onclick="closeStory()">
+                <svg class="close-icon" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6"/>
+                </svg>
+            </button>
+        </div>
+        
+        
+<button class="prev-btn" onclick="prevStory()">
+    <svg class="prev-icon" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/>
+    </svg>
+  </button>
+  
+  
+  <button class="next-btn" onclick="nextStory()">
+    ...
+  </button>
+  
+
+        <button class="next-btn" onclick="nextStory()">
+            <svg class="next-icon" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/>
+            </svg>
+        </button>
+        
+       
+<div class="message-section">
+    <div class="message-input-container">
+      <input type="text" class="message-input" placeholder="Enviar mensagem" id="messageInput">">
+    </div>
+
+    <button class="like-btn" onclick="curtir()" aria-label="Curtir">
+    ⚡️
+    </button>
+  </div>
+    <script src="/assets/js/story.js"></script>
+
+</body>
+</html>

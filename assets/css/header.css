@@ -11,6 +11,9 @@
   color: #f05a28;
   font-size: 25px;
   font-weight: bold;
+  /* display: flex; */
+  align-items: center;
+  align-content: center;
 }
 
 .icons{
@@ -30,4 +33,5 @@
   border-radius: 100%;
   display: flex;
   font-size: 20px;
+  color: var(--cor-texto-principal);
 }

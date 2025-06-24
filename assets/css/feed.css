@@ -3,8 +3,9 @@
        --cor-fundo: #f0f2f5;
        --cor-principal: #ffffff;
        --cor-borda: #ced0d4;
-       --cor-texto-principal: #050505;
-       --cor-texto-secundario: #65676b;
+       --cor-texto-principal: #535767;
+       --cor-icones: #F68548;
+       --cor-texto-secundario: #99A1BE;
        --cor-azul: #1877f2;
        --cor-verde: #42b72a;
        --cor-vermelho-stories: #f52d4c;
@@ -29,10 +30,10 @@
    }
 
    img.profile-pic {
-       width: 40px;
-       height: 40px;
+       width: 50px;
+       height: 50PX;
        border-radius: 50%;
-       object-fit: cover;
+       object-fit: fill;
    }
 
    /* --- Criar Postagem --- */
@@ -66,21 +67,53 @@
        padding-top: 10px;
    }
 
-   .action-button {
-       flex-grow: 1;
-       max-width: 150px;
+   .create-action-button {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       width: 150px;
+       height: 34px;
        background-color: #F1F4F5;
-       padding: 8px;
        text-align: center;
        font-weight: 600;
-       color: var(--cor-texto-secundario);
+       color: var(--cor-texto-principal);
        cursor: pointer;
-       border-radius: 12px;
+       border-radius: 10px;
        transition: background-color 0.2s;
+       font-size: 15px;
+       gap: 10px;
+   }
+
+   .buttons {
+       display: flex;
+       justify-content: space-around;
+       gap: 15px;
+   }
+
+   .action-button {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       width: 40px;
+       height: 40px;
+       background-color: #F1F4F5;
+       text-align: center;
+       font-weight: 600;
+       color: var(--cor-icones);
+       cursor: pointer;
+       border-radius: 100%;
+       transition: background-color 0.2s;
+       font-size: 16px;
    }
 
    .action-button:hover {
-       background-color: #f2f2f2;
+       background-color: #C8CCCD;
+   }
+
+   .action-button.ativo {
+       background-color: var(--cor-icones);
+       color: #F1F4F5;
+
    }
 
    .action-button .icon {
@@ -97,83 +130,105 @@
    }
 
    /* --- Seção de Stories --- */
-   .stories {
-       display: flex;
-       /* background-color: transparent; */
-       gap: 8px;
-       overflow-x: scroll;
-       padding-bottom: 10px;
-       /* para a sombra do scrollbar não cortar */
-       scrollbar-width: none;
-       /* Firefox */
-   }
-
-   .stories::-webkit-scrollbar {
-       display: none;
-       /* Chrome, Safari, Opera */
-   }
-
-   .story-card {
-       flex: 0 0 110px;
-       /* Não encolher, não crescer, base de 110px */
-       height: 190px;
-       border-radius: 8px;
-       overflow: hidden;
-       position: relative;
-       cursor: pointer;
-       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-       transition: transform 0.2s ease;
-   }
-
-   .story-card:hover {
-       transform: scale(1.03);
-   }
-
-   .story-card img.story-bg {
-       width: 100%;
-       height: 100%;
-       object-fit: cover;
-       filter: brightness(0.95);
-   }
-
-   .story-card .profile-pic {
+   .adicionar-story-icon {
        position: absolute;
-       top: 8px;
-       left: 8px;
-       width: 38px;
-       height: 38px;
-       border: 3px solid var(--cor-azul);
+       height: 20px;
+       width: 20px;
+       padding: 14px;
+       bottom: 0%;
+       left: 7.26%;
+       max-width: 100%;
+       overflow: hidden;
+       max-height: 100%;
+       object-fit: fill;
+       border-radius: 100%;
+       background-color: var(--cor-icones);
+       border: 2px solid var(--cor-icones);
+       cursor: pointer;
    }
 
-   .story-card-add .add-icon {
-       width: 40px;
-       height: 40px;
-       background-color: var(--cor-azul);
-       color: white;
-       border-radius: 50%;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       font-size: 24px;
-       border: 4px solid white;
+   .person-child {
+       position: absolute;
+       top: 0px;
+       left: 0px;
+       border-radius: 15px;
+       width: 141.5px;
+       height: 205.3px;
+       object-fit: cover;
+       cursor: pointer;
    }
 
-   .story-card-add {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       justify-content: flex-end;
-       background-color: #e4e6eb;
+   .profile-photo-icon {
+       position: absolute;
+       height: 50px;
+       width: 50px;
+       bottom: 0%;
+       left: 32.26%;
+       max-width: 100%;
+       overflow: hidden;
+       max-height: 100%;
+       object-fit: fill;
+       border-radius: 100%;
+       border: 2px solid var(--cor-icones);
+       cursor: pointer;
    }
 
-   .story-card-add p {
-       background-color: white;
+   .person {
+       position: absolute;
+       top: 0px;
+       left: 0px;
+       width: 141.5px;
+       height: 230px;
+   }
+
+   .story-1 {
+       position: absolute;
+       top: 0px;
+       left: 149.35px;
+       width: 141.5px;
+       height: 230px;
+       cursor: pointer;
+   }
+
+   .story-2 {
+       position: absolute;
+       top: 0px;
+       left: 298.7px;
+       width: 141.5px;
+       height: 230px;
+       cursor: pointer;
+   }
+
+   .person-inner {
+       position: absolute;
+       top: 0px;
+       left: 0px;
+       border-radius: 15px;
+       width: 141.9px;
+       height: 205.3px;
+       object-fit: cover;
+   }
+
+   .person2 {
+       position: absolute;
+       top: 0px;
+       left: 0px;
+       width: 141.9px;
+       height: 230px;
+   }
+
+   .story-3 {
+       position: absolute;
+       top: 0px;
+       left: 449.44px;
+       width: 141.9px;
+       height: 230px;
+   }
+
+   .stories {
        width: 100%;
-       text-align: center;
-       margin: 0;
-       padding: 20px 0 10px 0;
-       font-weight: 600;
-       font-size: 13px;
+       position: relative;
+       height: 230px;
    }
 
    /* --- Postagem Individual --- */
@@ -194,7 +249,7 @@
 
    .post-info .user-name {
        font-weight: 600;
-       color: var(--cor-texto-principal);
+       color: var(--cor-icones);
        text-decoration: none;
    }
 
@@ -204,10 +259,7 @@
    }
 
    .more-options {
-       color: var(--cor-texto-secundario);
-       font-weight: bold;
        cursor: pointer;
-       padding: 5px;
    }
 
    .post-content {
@@ -217,12 +269,17 @@
        color: var(--cor-texto-principal);
    }
 
+   .image-post {
+       display: flex;
+       margin: 12px;
+   }
+
    .post-image {
        width: calc(100% + 24px);
-       /* (padding * 2) */
        margin: 0 -12px;
        max-height: 600px;
        object-fit: cover;
+       border-radius: 14px;
    }
 
    .post-footer {
@@ -236,10 +293,9 @@
        display: flex;
        justify-content: space-between;
        align-items: center;
-       font-size: 14px;
+       font-size: 12px;
        color: var(--cor-texto-secundario);
        padding-bottom: 10px;
-       border-bottom: 1px solid #e4e6eb;
    }
 
    .reactions {
@@ -249,16 +305,15 @@
    }
 
    .reaction-icon {
-       width: 18px;
-       height: 18px;
-       border-radius: 50%;
-       border: 2px solid white;
-       margin-left: -4px;
+       width: 54px;
+       height: 22px;
+       margin-left: 5px;
    }
 
    .post-actions {
        display: flex;
-       justify-content: space-around;
+       justify-content: space-between;
+       font-size: 12px;
    }
 
    /* --- Seção de Comentários --- */
@@ -284,7 +339,9 @@
 
    .comment-content .user-name {
        font-weight: 600;
-       color: var(--cor-texto-principal);
+       color: var(--cor-icones);
+       text-decoration: none;
+
    }
 
    .comment-actions {
@@ -304,4 +361,12 @@
 
    .comment-actions a:hover {
        text-decoration: underline;
+   }
+
+   .fa-video{
+    color: #63C48C;
+   }
+
+   .fa-camera{
+    color: #F31954;
    }

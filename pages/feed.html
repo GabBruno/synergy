@@ -2,40 +2,38 @@
 <div class="feed-container">
     <div class="card create-post">
         <div class="create-post-input-area">
-            <img src="https://i.pravatar.cc/150?u=daniel" alt="Foto do perfil de Daniel" class="profile-pic">
+            <img src="/assets/images/perfil.png" alt="" class="profile-pic">
             <input type="text" placeholder="O que você está pensando, Daniel?">
         </div>
         <div class="create-post-actions">
-            <div class="action-button"><i class="fa-solid fa-camera"></i> Foto/Vídeo</div>
-            <div class="action-button"><i class="fa-solid fa-video"></i> Stories</div>
+            <div class="create-action-button"><i class="fa-solid fa-camera"></i> Foto/Vídeo</div>
+            <div class="create-action-button"><i class="fa-solid fa-video"></i> Stories</div>
         </div>
     </div>
 
-    <div class="card stories">
-        <div class="story-card story-card-add">
-            <p style="padding-top:120px; background:none;"></p>
-            <div class="add-icon">+</div>
-            <p>Criar story</p>
+    <div class="stories">
+
+        <div class="adicionar-story">
+            <img class="person-child" alt="" src="/assets/images/perfil.png" id="adicionarStoryImage">
+            <img class="adicionar-story-icon" alt="" src="/assets/images/Vector.svg">
         </div>
-        <div class="story-card">
-            <img src="https://images.unsplash.com/photo-1596715425434-a0d1b328761a?w=500&h=800&fit=crop"
-                alt="Story background" class="story-bg">
-            <img src="https://i.pravatar.cc/150?u=story1" alt="Foto do perfil" class="profile-pic">
+        <div class="story-1" id="story1Container">
+            <div class="person">
+                <img class="person-child" alt="" src="/assets/images/story1.png">
+                <img class="profile-photo-icon" alt="" src="/assets/images/perfil1.png">
+            </div>
         </div>
-        <div class="story-card">
-            <img src="https://images.unsplash.com/photo-1608889476518-738c92f1454c?w=500&h=800&fit=crop"
-                alt="Story background" class="story-bg">
-            <img src="https://i.pravatar.cc/150?u=story2" alt="Foto do perfil" class="profile-pic">
+        <div class="story-2" id="story2Container">
+            <div class="person">
+                <img class="person-child" alt="" src="/assets/images/story2.png">
+                <img class="profile-photo-icon" alt="" src="/assets/images/perfil2.png">
+            </div>
         </div>
-        <div class="story-card">
-            <img src="https://images.unsplash.com/photo-1516044734265-5147a11f7a8b?w=500&h=800&fit=crop"
-                alt="Story background" class="story-bg">
-            <img src="https://i.pravatar.cc/150?u=story3" alt="Foto do perfil" class="profile-pic">
-        </div>
-        <div class="story-card">
-            <img src="https://lumiere-a.akamaihd.net/v1/images/grogu_d23d8207.jpeg?region=0%2C0%2C1536%2C864&width=768"
-                alt="Story background" class="story-bg">
-            <img src="https://i.pravatar.cc/150?u=story4" alt="Foto do perfil" class="profile-pic">
+        <div class="story-3">
+            <div class="person2">
+                <img class="person-child" alt="" src="/assets/images/story3.png">
+                <img class="profile-photo-icon" alt="" src="/assets/images/perfil3.png">
+            </div>
         </div>
     </div>
 
@@ -46,28 +44,31 @@
                 <a href="#" class="user-name">Ana Maria</a>
                 <div class="post-time">2 Horas atrás</div>
             </div>
-            <div class="more-options">...</div>
+            <img src="/assets/images/more.svg" alt="" class="more-options">
         </div>
         <div class="post-content">
             <p>Nada melhor do que passar a tarde com amigos que fazem toda a diferença. A Synergy me ajudou a encontrar
                 esses amigos que compartilham das mesmas paixões e valores! 😎🎉</p>
         </div>
-        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1000&q=80"
-            alt="Imagem de uma reunião de negócios" class="post-image">
+        <div class="image-post">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1000&q=80"
+                alt="Imagem de uma reunião de negócios" class="post-image">
+        </div>
+
         <div class="post-footer">
             <div class="post-stats">
-                <div class="reactions">
-                    <img src="https://i.imgur.com/2yQfCg2.png" alt="Like" class="reaction-icon" style="z-index:3;">
-                    <img src="https://i.imgur.com/sSM5GqG.png" alt="Heart" class="reaction-icon" style="z-index:2;">
-                    <img src="https://i.imgur.com/eW2wV3z.png" alt="Wow" class="reaction-icon" style="z-index:1;">
-                    <span>Mark e outros 361K</span>
-                </div>
                 <span>3.4k Comentários · 46 Compartilhamentos</span>
             </div>
             <div class="post-actions">
-                <div class="action-button"><i class="fa-solid fa-bolt"></i></div>
-                <div class="action-button"><i class="fa-solid fa-comment"></i></div>
-                <div class="action-button"><i class="fa-solid fa-share"></i></div>
+                <div class="buttons">
+                    <div class="action-button" id="button-toggle"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="action-button"><i class="fa-solid fa-comment"></i></div>
+                    <div class="action-button"><i class="fa-solid fa-share"></i></div>
+                </div>
+                <div class="reactions">
+                    <span>Mark e outros 361K</span>
+                    <img src="/assets/images/reactions.png" alt="Like" class="reaction-icon" style="z-index:3;">
+                </div>
             </div>
         </div>
         <div class="comments-section">
@@ -94,7 +95,7 @@
                 <a href="#" class="user-name">Millie Brown</a>
                 <div class="post-time">2 Horas atrás</div>
             </div>
-            <div class="more-options">...</div>
+            <img src="/assets/images/more.svg" alt="" class="more-options">
         </div>
         <div class="post-content">
             <p>Hoje, mais do que nunca, percebi como é importante estar cercado de pessoas que realmente nos entendem.
@@ -103,17 +104,33 @@
         </div>
         <div class="post-footer">
             <div class="post-stats">
-                <div class="reactions">
-                    <img src="https://i.imgur.com/2yQfCg2.png" alt="Like" class="reaction-icon" style="z-index:2;">
-                    <img src="https://i.imgur.com/sSM5GqG.png" alt="Heart" class="reaction-icon" style="z-index:1;">
-                    <span>Will Byers e outros 216</span>
-                </div>
-                <span>19 Comentários</span>
+                <span>3.4k Comentários · 46 Compartilhamentos</span>
             </div>
             <div class="post-actions">
-                <div class="action-button"><i class="fa-solid fa-bolt"></i></div>
-                <div class="action-button"><i class="fa-solid fa-comment"></i></div>
-                <div class="action-button"><i class="fa-solid fa-share"></i></div>
+                <div class="buttons">
+                    <div class="action-button" id="button-toggle"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="action-button"><i class="fa-solid fa-comment"></i></div>
+                    <div class="action-button"><i class="fa-solid fa-share"></i></div>
+                </div>
+                <div class="reactions">
+                    <span>Mark e outros 361K</span>
+                    <img src="/assets/images/reactions.png" alt="Like" class="reaction-icon" style="z-index:3;">
+                </div>
+            </div>
+        </div>
+        <div class="comments-section">
+            <div class="comment">
+                <img src="https://i.pravatar.cc/150?u=marcos_ramos" alt="Foto do perfil de Marcos Ramos"
+                    class="profile-pic">
+                <div class="comment-content">
+                    <a href="#" class="user-name">Marcos Ramos</a>
+                    <div>Bom trabalho! Muito bem garota. 👏</div>
+                </div>
+            </div>
+            <div class="comment-actions">
+                <a href="#">Curtir</a>
+                <a href="#">Responder</a>
+                <span>2m</span>
             </div>
         </div>
     </div>
@@ -125,28 +142,30 @@
                 <a href="#" class="user-name">Ana Maria</a>
                 <div class="post-time">2 Horas atrás</div>
             </div>
-            <div class="more-options">...</div>
+            <img src="/assets/images/more.svg" alt="" class="more-options">
         </div>
         <div class="post-content">
             <p>Nada melhor do que passar a tarde com amigos que fazem toda a diferença. A Synergy me ajudou a encontrar
                 esses amigos que compartilham das mesmas paixões e valores! 😎🎉</p>
         </div>
-        <img src="https://images.unsplash.com/photo-1502602898455-34b37f818585?w=1000&q=80"
-            alt="Imagem de Paris com a Torre Eiffel" class="post-image">
+        <div class="image-post">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1000&q=80"
+                alt="Imagem de uma reunião de negócios" class="post-image">
+        </div>
         <div class="post-footer">
             <div class="post-stats">
-                <div class="reactions">
-                    <img src="https://i.imgur.com/2yQfCg2.png" alt="Like" class="reaction-icon" style="z-index:3;">
-                    <img src="https://i.imgur.com/sSM5GqG.png" alt="Heart" class="reaction-icon" style="z-index:2;">
-                    <img src="https://i.imgur.com/eW2wV3z.png" alt="Wow" class="reaction-icon" style="z-index:1;">
-                    <span>Mark e outros 361K</span>
-                </div>
                 <span>3.4k Comentários · 46 Compartilhamentos</span>
             </div>
             <div class="post-actions">
-                <div class="action-button"><i class="fa-solid fa-bolt"></i></div>
-                <div class="action-button"><i class="fa-solid fa-comment"></i></div>
-                <div class="action-button"><i class="fa-solid fa-share"></i></div>
+                <div class="buttons">
+                    <div class="action-button" id="button-toggle"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="action-button"><i class="fa-solid fa-comment"></i></div>
+                    <div class="action-button"><i class="fa-solid fa-share"></i></div>
+                </div>
+                <div class="reactions">
+                    <span>Mark e outros 361K</span>
+                    <img src="/assets/images/reactions.png" alt="Like" class="reaction-icon" style="z-index:3;">
+                </div>
             </div>
         </div>
         <div class="comments-section">
@@ -173,7 +192,7 @@
                 <a href="#" class="user-name">Millie Brown</a>
                 <div class="post-time">2 Horas atrás</div>
             </div>
-            <div class="more-options">...</div>
+            <img src="/assets/images/more.svg" alt="" class="more-options">
         </div>
         <div class="post-content">
             <p>A Synergy me ajudou a fazer conexões profissionais incríveis! Fiz parcerias que começaram com uma simples
@@ -182,17 +201,33 @@
         </div>
         <div class="post-footer">
             <div class="post-stats">
-                <div class="reactions">
-                    <img src="https://i.imgur.com/2yQfCg2.png" alt="Like" class="reaction-icon" style="z-index:2;">
-                    <img src="https://i.imgur.com/sSM5GqG.png" alt="Heart" class="reaction-icon" style="z-index:1;">
-                    <span>Will Byers e outros 216</span>
-                </div>
-                <span>19 Comentários</span>
+                <span>3.4k Comentários · 46 Compartilhamentos</span>
             </div>
             <div class="post-actions">
-                <div class="action-button"><i class="fa-solid fa-bolt"></i></div>
-                <div class="action-button"><i class="fa-solid fa-comment"></i></div>
-                <div class="action-button"><i class="fa-solid fa-share"></i></div>
+                <div class="buttons">
+                    <div class="action-button" id="button-toggle"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="action-button"><i class="fa-solid fa-comment"></i></div>
+                    <div class="action-button"><i class="fa-solid fa-share"></i></div>
+                </div>
+                <div class="reactions">
+                    <span>Mark e outros 361K</span>
+                    <img src="/assets/images/reactions.png" alt="Like" class="reaction-icon" style="z-index:3;">
+                </div>
+            </div>
+        </div>
+        <div class="comments-section">
+            <div class="comment">
+                <img src="https://i.pravatar.cc/150?u=marcos_ramos" alt="Foto do perfil de Marcos Ramos"
+                    class="profile-pic">
+                <div class="comment-content">
+                    <a href="#" class="user-name">Marcos Ramos</a>
+                    <div>Bom trabalho! Muito bem garota. 👏</div>
+                </div>
+            </div>
+            <div class="comment-actions">
+                <a href="#">Curtir</a>
+                <a href="#">Responder</a>
+                <span>2m</span>
             </div>
         </div>
     </div>

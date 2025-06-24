@@ -1,49 +1,88 @@
 .menu {
   width: 220px;
-  padding: 20px;
+  padding: 40px 20px 20px 30px;
   background-color: #fff5f0;
   height: 100vh;
   border-right: 1px solid #ddd;
 }
 
+/* Seção do perfil do usuário */
 .profile {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px; /* Mais espaço abaixo do perfil */
+    text-decoration: none;
 }
 
 .profile .avatar {
-  width: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px; /* Mais espaço ao lado do avatar */
+    object-fit: cover;
 }
 
+.profile span {
+    font-weight: 700; /* Peso da fonte para o nome */
+    font-size: 16px;
+    color: #3f4257;
+}
+
+/* Lista de opções do menu */
 .menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espaçamento moderno entre os itens */
 }
 
 .menu li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
 }
 
+/* Estilo para os ícones */
+.menu li i,
+.menu li span.material-symbols-outlined {
+    font-size: 26px;
+    color: #3f4257; /* Cor escura para os ícones */
+    width: 35px; /* Largura fixa para alinhar o texto perfeitamente */
+    flex-shrink: 0; /* Impede que o ícone seja esmagado */
+    transition: color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para os links de texto */
 .menu a.menu-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  padding: 8px 0;
-  transition: color 0.2s;
+    text-decoration: none;
+    color: var(--cor-texto-principal); /* Mesma cor escura dos ícones */
+    font-weight: 700; /* Peso de fonte ideal para 'Poppins' */
+    font-size: 16px;
+    transition: color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
 }
 
-.menu a.menu-link:hover {
-  color: #F68548;
+/* EFEITO HOVER: Muda a cor do ícone e do texto ao passar o mouse */
+.menu li:hover i,
+.menu li:hover span.material-symbols-outlined,
+.menu li:hover a.menu-link {
+    color: #F68548; /* Sua cor laranja principal */
 }
 
-.menu a.menu-link.active {
-  color: #F68548;
+/* ESTADO ATIVO: Mantém o ícone e o texto com a cor de destaque */
+.menu li a.menu-link.active {
+    color: #F68548;
+    font-weight: 700; /* Deixa o item ativo um pouco mais forte */
+}
+
+/* Regra para o ícone do item ativo também ficar laranja */
+.menu li:has(a.menu-link.active) i,
+.menu li:has(a.menu-link.active) span.material-symbols-outlined {
+    color: #F68548;
 }

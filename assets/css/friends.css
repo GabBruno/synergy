@@ -2,43 +2,53 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 45px 30px 20px 0px;
 }
 
 .friends-icon{
   display: flex;
   width: 100%;
   align-items: center;
+  padding-bottom: 16px;
 }
 
-.friends-icon h3, .fa-user-group {
-  /*color: #535767;*/
-  padding-right: 10px;
+.friends-icon .fa-user-group {
+  color: #3f4257;
+  font-size: 26px;
+  padding-right: 13px;
+}
+
+.friends-icon span {
+  color: #3f4257;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .friends ul {
   list-style: none;
-  padding: 0;
+  padding: 0px 0 0 10px;
   margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .friends li {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  color: #333;
+  margin-bottom: 15px;
+  color: var(--cor-texto-principal);
   font-size: 14px;
 }
 
 .friends li img {
-  width: 30px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-right: 10px;
 }
 
 .friends a {
-  color: #f05a28;
+  color: var(--cor-icones);
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
 }

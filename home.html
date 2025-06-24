@@ -68,10 +68,13 @@
         const resposta = await fetch(url);
         if (!resposta.ok) throw new Error();
         document.getElementById('conteudo').innerHTML = await resposta.text();
+
+        configurarBotoesToggle(); // ativa os botões dentro do conteúdo carregado
       } catch {
         document.getElementById('conteudo').innerHTML = '<h2>Página não encontrada</h2>';
       }
     }
+
 
     // Função que evita que a página recarregue
     function configurarLinksInternos() {
@@ -90,24 +93,22 @@
     window.addEventListener('load', async () => {
       carregarParcial('header', 'includes/header.html');
 
-      // CHAME A FUNÇÃO openPostCreationModal APÓS O MENU SER CARREGADO
       await carregarParcial('menu', 'includes/menu.html', () => {
-        // Esta função é executada APÓS o conteúdo de includes/menu.html ser inserido
         const createPostDiv = document.getElementById('openPostModal');
-        if (createPostDiv) { // Sempre bom verificar se o elemento existe
+        if (createPostDiv) {
           createPostDiv.addEventListener('click', openPostCreationModal);
-        } else {
-          console.error("Elemento com ID 'openPostModal' não encontrado após o carregamento do menu.");
         }
       });
 
-      marcarLinkAtivo(); // Só chama depois que os links existem
-
+      marcarLinkAtivo();
       carregarParcial('friends', 'includes/friends.html');
       carregarParcial('footer', 'includes/footer.html');
       carregarConteudoPrincipal();
       configurarLinksInternos();
+
+      configurarBotoesToggle(); // ✅ ativa os botões fixos (fora do conteudo dinâmico)
     });
+
     // Se o usuário clicar em voltar ou avançar no navegador, recarrega o conteúdo certo
     window.addEventListener('popstate', carregarConteudoPrincipal);
 
@@ -138,14 +139,17 @@
       marcarLinkAtivo();
     });
 
-  </script>
+    function configurarBotoesToggle() {
+      const botoes = document.querySelectorAll('.action-button');
 
-  <script>
-    // Adiciona um listener à div para chamar a função openPostCreationModal
-    // Note que o ID mudou para 'openPostModalDiv'
-    document.getElementById('openPostModal').addEventListener('click', openPostCreationModal);
-  </script>
+      botoes.forEach(botao => {
+        botao.addEventListener('click', () => {
+          botao.classList.toggle('ativo');
+        });
+      });
+    }
 
+  </script>
 </body>
 
 </html>

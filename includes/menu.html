@@ -1,13 +1,15 @@
 <nav class="menu">
   <div class="profile">
-    <img src="assets/images/perfil.jpg" alt="Perfil" class="avatar">
-    <link rel="stylesheet" href="/assets/css/menu.css">
-    <span>Daniel Trindade</span>
+    <a href="?page=perfil" class="menu-link">
+      <img src="assets/images/perfil.png" alt="Perfil" class="avatar">
+      <link rel="stylesheet" href="/assets/css/menu.css">
+      <span>Daniel Trindade</span>
+    </a>
   </div>
-  <ul>
+  <ul class="options">
     <li><i class="fa-solid fa-house"></i><a href="?page=feed" class="menu-link active">Página Inicial</a></li>
     <li><i class="fa-solid fa-user-group"></i><a href="?page=community" class="menu-link">Comunidade</a></li>
-    <li><span class="material-symbols-outlined">chat</span><a href="?page=conversas" class="menu-link">Conversas</a></li>
+    <li><span class="material-symbols-outlined" style="font-size: 34px;">chat</span><a href="?page=conversas" class="menu-link">Conversas</a></li>
     <li id="openPostModal"><i class="fa-solid fa-circle-plus"></i><a href="?page=criar" class="menu-link">Criar Publicação</a></li>
     <li><i class="fa-solid fa-gear"></i><a href="?page=config" class="menu-link">Configurações</a></li>
   </ul>

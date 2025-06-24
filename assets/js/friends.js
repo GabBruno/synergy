@@ -223,12 +223,12 @@ class SynergyApp {
 
         if (isAccept) {
             button.textContent = 'Aceitar';
-            this.showToast(`✅ Você agora é amigo(a) de ${friendName}!`);
+            this.showToast(` Você agora é amigo(a) de ${friendName}!`);
             this.addFriendToSidebar(friendName);
             this.updateFriendsCount(1);
         } else {
             button.textContent = 'Rejeitar';
-            this.showToast(`❌ Solicitação de ${friendName} rejeitada.`);
+            this.showToast(` Solicitação de ${friendName} rejeitada.`);
         }
 
         this.removeCard(card);
@@ -243,7 +243,7 @@ class SynergyApp {
         const groupId = card.dataset.group;
 
         if (this.joinedGroups.has(groupId)) {
-            this.showToast(`ℹ️ Você já faz parte do grupo ${groupName}`);
+            this.showToast(` Você já faz parte do grupo ${groupName}`);
             return;
         }
 

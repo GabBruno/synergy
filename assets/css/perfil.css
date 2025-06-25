@@ -29,14 +29,17 @@ h2 {
   color: #222;
 }
 
-.profile-img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+.profile-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-image img {
+  width: 100%;
+  max-width: 250px;
   border-radius: 10px;
-  display: block;
-  margin: 0 auto 1.5rem auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  object-fit: cover;
 }
 
 .campo {

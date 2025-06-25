@@ -1,57 +1,57 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 40px;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
 }
 
 .config-container {
-  width: 350px;
-  background: #fff4ef;
+  width: 100%;
+  max-width: 400px;
+  background: #fff5ee;
   border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .config-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #b44e00;
   margin-bottom: 20px;
 }
 
 .config-header h2 {
-  color: #ec6c32;
   font-size: 20px;
 }
 
 .close-btn {
-  background: none;
-  border: none;
-  font-size: 20px;
-  color: #ec6c32;
+  font-size: 24px;
   cursor: pointer;
 }
 
 .config-section {
-  background-color: #fff;
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 16px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
 }
 
-.config-section h3 {
+.config-section h4 {
   font-size: 14px;
   color: #333;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .config-section ul {
@@ -61,23 +61,33 @@ body {
 .config-section li {
   display: flex;
   align-items: center;
+  gap: 10px;
   padding: 8px 0;
   font-size: 15px;
   color: #000;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
-.config-section li:hover {
-  background-color: #ffece4;
-  border-radius: 8px;
+.config-section li img {
+  width: 20px;
+  height: 20px;
 }
 
-.icon {
-  margin-right: 10px;
-  font-size: 18px;
-  color: #ec6c32;
-  width: 24px;
-  display: inline-block;
-  text-align: center;
+/* Responsivo */
+@media (max-width: 480px) {
+  .config-container {
+    padding: 15px;
+  }
+
+  .config-section li {
+    font-size: 14px;
+  }
+
+  .config-header h2 {
+    font-size: 18px;
+  }
+
+  .close-btn {
+    font-size: 22px;
+  }
 }

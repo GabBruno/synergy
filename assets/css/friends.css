@@ -102,8 +102,9 @@
 
 .container {
     display: flex;
-    margin-top: var(--header-height);
+    /* margin-top: var(--header-height); */
     min-height: calc(100vh - var(--header-height));
+    width: 100%;
 }
 
 .sidebar {
@@ -286,9 +287,9 @@
 
 .main-content {
     flex: 1;
-    margin-left: var(--sidebar-width);
+    /* margin-left: var(--sidebar-width); */
     padding: 24px;
-    max-width: calc(100vw - var(--sidebar-width));
+    /* max-width: calc(100vw - var(--sidebar-width)); */
 }
 
 .content-header {
@@ -381,9 +382,9 @@
 
 .avatars-scroll {
     display: flex;
+    padding: 12px;
     gap: 12px;
     overflow-x: auto;
-    padding-bottom: 8px;
     scrollbar-width: thin;
     scrollbar-color: var(--border-color) transparent;
 }

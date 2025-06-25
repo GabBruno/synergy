@@ -66,13 +66,25 @@
       try {
         const resposta = await fetch(url);
         if (!resposta.ok) throw new Error();
-        document.getElementById('conteudo').innerHTML = await resposta.text();
 
-        configurarBotoesToggle(); // ativa os botões dentro do conteúdo carregado
+        const html = await resposta.text();
+        document.getElementById('conteudo').innerHTML = html;
+
+        configurarBotoesToggle(); // Reaplica eventos padrão após carregar conteúdo
+
+        // Se a página for friends, carrega o JS dela manualmente
+        if (pagina === 'friends') {
+          const script = document.createElement('script');
+          script.src = 'assets/js/friends.js';
+          script.onload = () => console.log('friends.js carregado');
+          document.body.appendChild(script);
+        }
+
       } catch {
         document.getElementById('conteudo').innerHTML = '<h2>Página não encontrada</h2>';
       }
     }
+
 
 
     // Função que evita que a página recarregue

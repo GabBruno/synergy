@@ -1,3 +1,4 @@
+console.log('✅ friends.js executado');
 class SynergyApp {
     constructor() {
         this.joinedGroups = new Set();
@@ -80,7 +81,7 @@ class SynergyApp {
         window.addEventListener('resize', () => {
             const wasMobile = this.isMobile;
             this.isMobile = window.innerWidth <= 768;
-            
+
             if (wasMobile !== this.isMobile) {
                 if (!this.isMobile) {
                     this.closeMobileMenu();
@@ -156,7 +157,7 @@ class SynergyApp {
     handleResponsiveChanges() {
         const friendRequests = document.getElementById('friendRequests');
         const groupsContent = document.getElementById('groupsContent');
-        
+
         if (this.isMobile) {
             this.optimizeForMobile();
         } else {
@@ -224,11 +225,12 @@ class SynergyApp {
         if (isAccept) {
             button.textContent = 'Aceitar';
             this.showToast(` Você agora é amigo(a) de ${friendName}!`);
-            this.addFriendToSidebar(friendName);
+            try {
+                this.addFriendToSidebar(friendName);
+            } catch (error) {
+                console.error("Erro ao adicionar amigo à sidebar:", error);
+            }
             this.updateFriendsCount(1);
-        } else {
-            button.textContent = 'Rejeitar';
-            this.showToast(` Solicitação de ${friendName} rejeitada.`);
         }
 
         this.removeCard(card);
@@ -254,10 +256,10 @@ class SynergyApp {
 
         button.classList.remove('loading');
         button.textContent = 'ENTROU';
-        
+
         card.classList.add('joined');
         this.joinedGroups.add(groupId);
-        
+
         this.showToast(`🎉 Você entrou no grupo ${groupName}!`);
         this.updateGroupPosts(card);
         this.updateGroupMembers(card);
@@ -265,12 +267,12 @@ class SynergyApp {
 
     handleGroupClick(event) {
         if (event.target.classList.contains('btn-join')) return;
-        
+
         const card = event.currentTarget;
         const groupName = card.querySelector('.group-name').textContent;
-        
+
         this.showToast(`📱 Abrindo grupo ${groupName}...`);
-        
+
         card.style.transform = 'scale(0.98)';
         setTimeout(() => {
             card.style.transform = '';
@@ -290,7 +292,7 @@ class SynergyApp {
     updateGroupPosts(card) {
         const postsElement = card.querySelector('.group-posts');
         const currentText = postsElement.textContent;
-        
+
         if (currentText.includes('Sem novas')) {
             postsElement.textContent = '1+ NOVAS PUBLICAÇÕES';
         } else {
@@ -307,7 +309,7 @@ class SynergyApp {
         const membersElement = card.querySelector('.group-members');
         const currentText = membersElement.textContent;
         const match = currentText.match(/(\d+(?:\.\d+)?k?)/);
-        
+
         if (match) {
             let currentCount = match[1];
             if (currentCount.includes('k')) {
@@ -323,9 +325,11 @@ class SynergyApp {
 
     updateFriendsCount(change) {
         const friendsCountElement = document.querySelector('.friends-count');
+        if (!friendsCountElement) return; // ← impede erro
+
         const currentText = friendsCountElement.textContent;
-        const match = currentText.match(/$$(\d+)$$/);
-        
+        const match = currentText.match(/\((\d+)\)/);
+
         if (match) {
             const currentCount = parseInt(match[1]);
             const newCount = Math.max(0, currentCount + change);
@@ -333,10 +337,11 @@ class SynergyApp {
         }
     }
 
+
     updateTabCount(tabName, change) {
         const tab = document.querySelector(`[data-tab="${tabName}"]`);
         const countElement = tab.querySelector('.tab-count');
-        
+
         if (countElement) {
             const currentCount = parseInt(countElement.textContent);
             const newCount = Math.max(0, currentCount + change);
@@ -378,9 +383,9 @@ class SynergyApp {
                 <span class="friend-status online">Online</span>
             </div>
         `;
-        
+
         friendsList.appendChild(newFriend);
-        
+
         setTimeout(() => {
             newFriend.style.transition = 'opacity 0.3s ease';
             newFriend.style.opacity = '1';
@@ -402,15 +407,15 @@ class SynergyApp {
     handleNavigation(event) {
         const clickedItem = event.currentTarget;
         const page = clickedItem.dataset.page;
-        
+
         document.querySelectorAll('.nav-item').forEach(item => {
             item.classList.remove('active');
         });
-        
+
         clickedItem.classList.add('active');
-        
+
         this.createRipple(clickedItem, event);
-        
+
         const navText = clickedItem.querySelector('span:last-child').textContent;
         if (navText !== 'Comunidade') {
             this.showToast(`🚀 Navegando para ${navText}...`);
@@ -427,7 +432,7 @@ class SynergyApp {
         const size = Math.max(rect.width, rect.height);
         const x = event.clientX - rect.left - size / 2;
         const y = event.clientY - rect.top - size / 2;
-        
+
         ripple.style.cssText = `
             position: absolute;
             width: ${size}px;
@@ -440,17 +445,17 @@ class SynergyApp {
             animation: ripple 0.6s ease-out;
             pointer-events: none;
         `;
-        
+
         element.style.position = 'relative';
         element.style.overflow = 'hidden';
         element.appendChild(ripple);
-        
+
         setTimeout(() => ripple.remove(), 600);
     }
 
     avatarHover(event, isEntering) {
         if (this.isMobile) return;
-        
+
         const avatar = event.target;
         if (isEntering) {
             avatar.style.transform = 'scale(1.1)';
@@ -465,7 +470,7 @@ class SynergyApp {
         const friendItem = event.currentTarget;
         const friendName = friendItem.querySelector('.friend-name').textContent;
         this.showToast(`👤 Abrindo perfil de ${friendName}...`);
-        
+
         friendItem.style.transform = 'scale(0.95)';
         setTimeout(() => {
             friendItem.style.transform = 'scale(1)';
@@ -475,16 +480,16 @@ class SynergyApp {
     loadMoreFriends() {
         const friendsList = document.querySelector('.friend-list');
         const seeMore = document.querySelector('.see-more');
-        
+
         seeMore.textContent = 'Carregando...';
-        
+
         setTimeout(() => {
             const moreFriends = [
                 { name: 'Ana Silva', status: 'online' },
                 { name: 'Carlos Santos', status: 'away' },
                 { name: 'Maria Oliveira', status: 'online' }
             ];
-            
+
             moreFriends.forEach((friend, index) => {
                 setTimeout(() => {
                     const friendItem = document.createElement('div');
@@ -497,17 +502,17 @@ class SynergyApp {
                             <span class="friend-status ${friend.status}">${friend.status === 'online' ? 'Online' : friend.status === 'away' ? 'Ausente' : 'Offline'}</span>
                         </div>
                     `;
-                    
+
                     friendsList.appendChild(friendItem);
                     friendItem.addEventListener('click', (e) => this.openFriendProfile(e));
-                    
+
                     setTimeout(() => {
                         friendItem.style.transition = 'opacity 0.3s ease';
                         friendItem.style.opacity = '1';
                     }, 100);
                 }, index * 200);
             });
-            
+
             this.updateFriendsCount(3);
             seeMore.textContent = 'Ver mais';
         }, 1000);
@@ -516,7 +521,7 @@ class SynergyApp {
     addFadeInAnimation(element) {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
-        
+
         setTimeout(() => {
             element.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
             element.style.opacity = '1';
@@ -529,7 +534,7 @@ class SynergyApp {
         cards.forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
-            
+
             setTimeout(() => {
                 card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 card.style.opacity = '1';
@@ -541,7 +546,7 @@ class SynergyApp {
         avatars.forEach((avatar, index) => {
             avatar.style.opacity = '0';
             avatar.style.transform = 'scale(0.8)';
-            
+
             setTimeout(() => {
                 avatar.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
                 avatar.style.opacity = '1';
@@ -553,7 +558,7 @@ class SynergyApp {
         groupCards.forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
-            
+
             setTimeout(() => {
                 card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 card.style.opacity = '1';
@@ -578,10 +583,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-let app;
-document.addEventListener('DOMContentLoaded', () => {
-    app = new SynergyApp();
-});
+let app = new SynergyApp();
 
 document.addEventListener('keydown', (e) => {
     if (e.key.toLowerCase() === 'f' && !e.ctrlKey && !e.altKey) {
@@ -599,7 +601,7 @@ setInterval(() => {
             const randomCard = groupCards[Math.floor(Math.random() * groupCards.length)];
             const postsElement = randomCard.querySelector('.group-posts');
             const currentText = postsElement.textContent;
-            
+
             if (!currentText.includes('Sem novas')) {
                 const match = currentText.match(/(\d+)\+/);
                 if (match) {

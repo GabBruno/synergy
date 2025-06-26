@@ -13,7 +13,8 @@ const chatData = {
         avatar: "/assets/images/andrew.png",
       },
       { type: "sent", text: "Oi, Andrew!", time: "23:46" },
-      { type: "sent", text: "Vamo ver o jogo juntos?", time: "23:46" },
+      { type: "sent", text: "Vamo ver o jogo juntos?", time: "23:46", },
+
       {
         type: "received",
         text: "Claro, estou indo agora pra sua casa!",
@@ -61,7 +62,7 @@ const chatData = {
         time: "23:46",
         avatar: "/assets/images/Mensagem Mariana.png",
       },
-      { type: "sent", text: "Estou bem e você?", time: "23:46" },
+      { type: "sent", text: "Estou bem e você?", time: "23:46", },
       {
         type: "received",
         text: "Que bom!",
@@ -78,7 +79,7 @@ const chatData = {
   },
   fernando: {
     name: "Fernando Costa",
-    avatar: "/assets/images/fernando costa",
+    avatar: "/assets/images/fernando costa.png",
     friendshipDate: "Diga oi para seu novo amigo Synergy, Fernando Costa",
     messages: [
       { type: "sent", text: "Vai pra aula hoje?", time: "23:46" },
@@ -229,7 +230,7 @@ function openChat(userId) {
         `
 
     if (message.type === "sent") {
-      messageHTML += `<img src="/images/person1.png" alt="">`
+      messageHTML += `<img src="/assets/images/daniel.png" alt="">`
     }
 
     messageDiv.innerHTML = messageHTML

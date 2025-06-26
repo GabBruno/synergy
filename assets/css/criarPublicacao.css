@@ -1,126 +1,362 @@
-/* Estilos básicos para simular o layout dentro da SweetAlert */
-.swal2-html-container {
-    text-align: left;
-    padding: 0 1.5em; /* Ajusta o padding do conteúdo HTML */
+.container {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin: 2rem auto;
+  max-width: 500px;
 }
 
-.post-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+.container h1 {
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
-.post-header img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.post-header .user-info {
-    display: flex;
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.btn-story {
+  background: #e91e63;
+  color: white;
+}
+
+.btn-story:hover {
+  background: #c2185b;
+  transform: translateY(-2px);
+}
+
+.btn-post {
+  background: #2196f3;
+  color: white;
+}
+
+.btn-post:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+}
+
+/* Estilos personalizados para SweetAlert */
+.story-options {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.story-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 80px;
+}
+
+.story-option:hover {
+  background-color: #f5f5f5;
+}
+
+.story-option-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.story-option-text {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.gallery-item {
+  aspect-ratio: 3 / 4;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover {
+  opacity: 0.8;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #2196f3, #21cbf3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+.user-info h4 {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.post-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.post-textarea:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+}
+
+.media-upload {
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.media-upload:hover {
+  border-color: #2196f3;
+}
+
+.media-upload.has-files {
+  border-color: #2196f3;
+  background-color: #f8f9ff;
+}
+
+.media-upload-icon {
+  font-size: 32px;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.toolbar-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.toolbar-icon {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  font-size: 18px;
+}
+
+.toolbar-icon:hover {
+  background-color: #f5f5f5;
+}
+
+.publish-btn {
+  background: #2196f3;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.publish-btn:hover {
+  background: #1976d2;
+}
+
+/* Estilos para preview de arquivos */
+.file-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.file-preview-item {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #ddd;
+}
+
+.file-preview-item img,
+.file-preview-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.file-preview-remove {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-preview-remove:hover {
+  background: #cc0000;
+}
+
+.file-info {
+  font-size: 11px;
+  color: #666;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.upload-progress {
+  width: 100%;
+  height: 4px;
+  background: #f0f0f0;
+  border-radius: 2px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.upload-progress-bar {
+  height: 100%;
+  background: #2196f3;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+.file-type-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .buttons {
     flex-direction: column;
-}
-
-.post-header .user-info strong {
-    font-size: 1.1em;
-}
-
-.post-header .options {
-    display: flex;
-    gap: 5px;
-    margin-top: 5px;
-}
-
-.post-header .option-button {
-    background-color: #e0e0e0;
-    border: none;
-    padding: 3px 8px;
-    border-radius: 5px;
-    font-size: 0.8em;
-    cursor: pointer;
-}
-
-.post-content textarea {
-    width: calc(100% - 20px); /* Ajusta a largura para considerar o padding */
-    min-height: 100px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    resize: vertical;
-    font-family: inherit;
-    font-size: 1em;
-    margin-bottom: 15px;
-}
-
-.post-actions {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #eee; /* Linha divisória antes dos ícones */
-}
+  }
 
-.post-actions .add-to-post {
-    font-weight: bold;
-    color: #666;
+  .story-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .story-option {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .story-option-icon {
     margin-right: 15px;
-}
+    margin-bottom: 0;
+  }
 
-.post-actions .icon-group {
-    display: flex;
-    gap: 20px;
-    font-size: 1.5em;
-    color: #666;
-}
-
-.post-actions .icon-group i {
-    cursor: pointer;
-}
-
-/* Estilo para o botão "Publicar" dentro da SweetAlert */
-.swal2-confirm {
-    background-color: #f77f00 !important; /* Cor do botão da imagem */
-    color: white !important;
-    font-size: 1.1em !important;
-    padding: 10px 20px !important;
-    border-radius: 25px !important;
-    border: none !important;
-}
-
-/* Ajustes no modal para parecer mais com a imagem */
-.swal2-popup {
-    border-radius: 15px !important;
-    padding: 0 !important; /* Remover padding padrão para controlar o layout interno */
-    width: 450px !important; /* Ajuste a largura conforme necessário */
-    max-width: 90vw !important; /* Garante que seja responsivo em telas menores */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
-}
-
-.swal2-title {
-    background-color: #f77f00; /* Cor do título da imagem */
-    color: white !important;
-    padding: 1.2em 0 !important;
-    margin: 0 !important;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    font-size: 1.5em !important;
-    position: relative;
-}
-
-.swal2-close-button {
-    color: white !important;
-    font-size: 2em !important;
-    top: 0.5em !important;
-    right: 0.5em !important;
-}
-
-.swal2-actions {
-    margin-top: 0 !important; /* Remover margem superior para o botão */
-    padding: 1.5em !important;
-    width: 100%;
-    display: flex;
+  .file-preview {
     justify-content: center;
-    border-top: 1px solid #eee; /* Linha divisória antes do botão */
+  }
+
+  .toolbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .toolbar-icons {
+    justify-content: center;
+  }
 }

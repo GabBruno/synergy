@@ -18,7 +18,7 @@
 
   <script src="assets/js/criarPublicacao.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-  <link rel="stylesheet" href="criarPublicacao.css">
+  <link rel="stylesheet" href="assets/css/criarPublicacao.css">
   </link>
 </head>
 
@@ -39,7 +39,7 @@
 
   <script src="assets/js/header.js" defer></script>
   <script>
-  
+
 
     // Se não estiver logado, volta pro login
     if (localStorage.getItem('logado') !== 'true') {
@@ -79,7 +79,8 @@
         if (pagina === 'friends') {
           const script = document.createElement('script');
           script.src = 'assets/js/friends.js';
-          script.onload = () => console.log('friends.js carregado');
+          script.onload = () => console.log('✅ friends.js carregado');
+          script.onerror = () => console.error('❌ Erro ao carregar friends.js');
           document.body.appendChild(script);
         }
 
@@ -87,8 +88,6 @@
         document.getElementById('conteudo').innerHTML = '<h2>Página não encontrada</h2>';
       }
     }
-
-
 
     // Função que evita que a página recarregue
     function configurarLinksInternos() {
@@ -107,21 +106,32 @@
     window.addEventListener('load', async () => {
       carregarParcial('header', 'includes/header.html');
 
-      await carregarParcial('menu', 'includes/menu.html', () => {
-        const createPostDiv = document.getElementById('openPostModal');
-        if (createPostDiv) {
-          createPostDiv.addEventListener('click', openPostCreationModal);
-        }
-      });
-
+      await carregarParcial('menu', 'includes/menu.html');
       marcarLinkAtivo();
+
       carregarParcial('friends-menu', 'includes/friends-menu.html');
       carregarParcial('footer', 'includes/footer.html');
       carregarConteudoPrincipal();
       configurarLinksInternos();
+      configurarBotoesToggle();
 
-      configurarBotoesToggle(); // ✅ ativa os botões fixos (fora do conteudo dinâmico)
+      // ✅ Event listeners para os botões (sua lógica atual)
+      document.body.addEventListener('click', function (e) {
+        const target = e.target.closest('#btnPost');
+        if (target) {
+          openPostCreationModal(); // ✅ Função já está disponível globalmente
+        }
+      });
+
+      document.body.addEventListener('click', function (e) {
+        const target = e.target.closest('#btnStory');
+        if (target) {
+          openStoryCreationModal(); // ✅ Função já está disponível globalmente
+        }
+      });
+
     });
+
 
     // Se o usuário clicar em voltar ou avançar no navegador, recarrega o conteúdo certo
     window.addEventListener('popstate', carregarConteudoPrincipal);

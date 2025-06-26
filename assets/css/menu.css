@@ -42,6 +42,7 @@
     display: flex;
     align-items: center;
     gap: 13px;
+    cursor: pointer;
 }
 
 /* Estilo para os ícones */
@@ -55,10 +56,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 /* Estilo para os links de texto */
-.menu a.menu-link {
+.menu a.menu-link, a.publicacao {
     text-decoration: none;
     color: var(--cor-texto-principal); /* Mesma cor escura dos ícones */
     font-weight: 700; /* Peso de fonte ideal para 'Poppins' */
@@ -66,12 +68,14 @@
     transition: color 0.2s ease-in-out;
     display: flex;
     align-items: center;
+    cursor:pointer;
 }
 
 /* EFEITO HOVER: Muda a cor do ícone e do texto ao passar o mouse */
 .menu li:hover i,
 .menu li:hover span.material-symbols-outlined,
-.menu li:hover a.menu-link {
+.menu li:hover a.menu-link,
+.menu li:hover a.publicacao {
     color: #F68548; /* Sua cor laranja principal */
 }
 

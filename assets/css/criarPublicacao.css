@@ -1,4 +1,4 @@
-.container {
+.synergy-container {
   text-align: center;
   background: white;
   padding: 2rem;
@@ -8,7 +8,7 @@
   max-width: 500px;
 }
 
-.container h1 {
+.synergy-container h1 {
   color: #333;
   margin-bottom: 2rem;
   font-size: 2rem;
@@ -238,7 +238,6 @@
   background: #1976d2;
 }
 
-/* Estilos para preview de arquivos */
 .file-preview {
   display: flex;
   flex-wrap: wrap;
@@ -319,9 +318,8 @@
   margin-top: 5px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
-  .container {
+  .synergy-container {
     margin: 1rem;
     padding: 1.5rem;
   }

@@ -79,7 +79,7 @@ const chatData = {
   },
   fernando: {
     name: "Fernando Costa",
-    avatar: "/assets/images/fernando costa",
+    avatar: "/assets/images/fernando costa.png",
     friendshipDate: "Diga oi para seu novo amigo Synergy, Fernando Costa",
     messages: [
       { type: "sent", text: "Vai pra aula hoje?", time: "23:46" },

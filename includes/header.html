@@ -1,8 +1,69 @@
+<link rel="stylesheet" href="assets/css/header.css" />
 <header class="header">
   <div class="logo">synergy</div>
   <div class="icons">
-    <div class="notifications"><i class="fa-solid fa-bell"></i></div>
+    <div class="notifications" id="notificationToggle">
+      <i class="fa-solid fa-bell"></i>
+      <div class="notification-dot"></div>
+    </div>
     <div class="config"><i class="fa-solid fa-gear"></i></div>
   </div>
 </header>
-<link rel="stylesheet" href="assets/css/header.css">
+
+<!-- Dropdown Notificações -->
+<div id="notificationDropdown" class="notification-dropdown">
+  <div class="notification-top">
+    <h2>Notificações</h2>
+    <div class="close-btn" id="closeDropdownBtn">
+      <span class="close-icon">x</span>
+    </div>
+  </div>
+
+  <div class="notification-section">
+    <p class="section-title">Novo</p>
+
+    <div class="notification-card">
+      <img src="assets/images/andrew.png" alt="">
+      <div class="notification-info">
+        <p><strong>Landon Bloom</strong> e <strong>Emilia Harcourt</strong> comentaram na publicação de <strong>Anna Delvey’s</strong></p>
+        <span class="time">1 Hora atrás</span>
+      </div>
+      <span class="dot orange"></span>
+    </div>
+
+    <div class="notification-card">
+      <img src="assets/images/bruna.png" alt="">
+      <div class="notification-info">
+        <p><strong>Jim Hopper, Robin Buckley</strong> e <strong>Rachel Podrez</strong> curtiram seu story</p>
+        <span class="time">6 Horas atrás</span>
+      </div>
+      <span class="dot orange"></span>
+    </div>
+  </div>
+
+  <div class="notification-section">
+    <p class="section-title">Anterior</p>
+
+    <div class="notification-card">
+      <img src="assets/images/fernando costa.png" alt="">
+      <div class="notification-info">
+        <p><strong>Robin Buckley</strong> comentou o seu story "😂✨"</p>
+        <span class="time">1 Dia atrás</span>
+      </div>
+    </div>
+
+    <div class="notification-card">
+      <img src="assets/images/murylo.png" alt="">
+      <div class="notification-info">
+        <p><strong>Rachel Podrez</strong> mandou uma solicitação de amizade</p>
+        <div class="actions">
+          <button class="accept">Aceitar</button>
+          <button class="reject">Rejeitar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="assets/js/header.js" defer></script>

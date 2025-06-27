@@ -359,6 +359,14 @@ li:has(a.menu-link.active) span.material-symbols-outlined {
 
 @media (max-width: 800px) {
 
+  #conteudo{
+    padding: 30px 5px 0px 5px;
+  }
+
+  .main{
+    padding-bottom: 10px;
+  }
+
   .options-top {
     display: none
   }
@@ -371,6 +379,7 @@ li:has(a.menu-link.active) span.material-symbols-outlined {
     margin: 0;
     display: flex;
     gap: 25px;
+    border-top: 1px solid var(--cor-fundo);
   }
 
 }

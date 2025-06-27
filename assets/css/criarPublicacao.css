@@ -323,7 +323,7 @@
     margin: 1rem;
     padding: 1.5rem;
   }
-
+/*
   .buttons {
     flex-direction: column;
     align-items: center;
@@ -344,7 +344,7 @@
     margin-right: 15px;
     margin-bottom: 0;
   }
-
+  */
   .file-preview {
     justify-content: center;
   }

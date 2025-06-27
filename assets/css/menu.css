@@ -3,7 +3,6 @@
   padding: 40px 20px 20px 30px;
   background-color: #fff5f0;
   height: 100vh;
-  border-right: 1px solid #ddd;
 }
 
 /* Seção do perfil do usuário */
@@ -31,7 +30,7 @@
 /* Lista de opções do menu */
 .menu ul {
     list-style: none;
-    padding: 0;
+    padding-left: 7px;
     margin: 0;
     display: flex;
     flex-direction: column;

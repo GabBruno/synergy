@@ -1,99 +1,110 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  background: #f0f0f0;
+.page {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  min-height: 100vh;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.container {
-  background: #fff;
-  padding: 2rem 2.5rem;
+.perfil {
+  flex: 3;
+  background: white;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 500px;
-}
-
-h2 {
+  padding: 2rem;
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: #222;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.profile-image {
+.perfil-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.social-icons i {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.botoes button, .botoes a {
+  background: #e06f04;
+  font-size: 12px;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.estatisticas {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  justify-content: space-around;
+  margin: 1rem 0;
+  font-weight: bold;
 }
 
-.profile-image img {
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.galeria img {
   width: 100%;
-  max-width: 250px;
   border-radius: 10px;
   object-fit: cover;
 }
 
-.campo {
+.amigos {
+  flex: 1;
+  background: white;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: block;
+}
+
+.amigos h3 {
   margin-bottom: 1rem;
 }
 
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-  font-size: 0.95rem;
+.amigos ul {
+  list-style: none;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="date"] {
-  width: 100%;
-  padding: 0.6rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+.amigos li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  gap: 0.5rem;
 }
 
-button {
+.amigos li img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.amigos a {
   display: block;
-  width: 100%;
-  background: #e06f04;
-  color: white;
-  border: none;
-  padding: 0.9rem;
-  font-size: 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.3s;
   margin-top: 1rem;
+  text-align: right;
+  color: purple;
+  text-decoration: none;
 }
 
-button:hover {
-  background: #cc5c02;
-}
-
-/* Responsividade para telas pequenas */
-@media (max-width: 480px) {
-  .container {
-    padding: 1.5rem;
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
   }
 
-  .profile-img {
-    width: 120px;
-    height: 120px;
-  }
-
-  input, button {
-    font-size: 0.95rem;
+  .amigos {
+    display: none;
   }
 }

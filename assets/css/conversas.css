@@ -651,6 +651,10 @@
   transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
+body{
+  overflow: hidden;
+}
+
 .friends{
   display: none !important;
 }

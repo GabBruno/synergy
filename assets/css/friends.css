@@ -324,7 +324,7 @@
 
 .tab.active {
     color: var(--primary-color);
-    background: #fff2ee;
+    background: #85524224;
 }
 
 .tab:hover:not(.active) {
@@ -503,7 +503,7 @@
 }
 
 .btn-accept, .btn-join {
-    background: var(--primary-color);
+    background: var(--cor-icones);
     color: white;
 }
 

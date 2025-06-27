@@ -19,17 +19,29 @@ async function carregarParcial(id, arquivo, callback = null) {
 
 // ✅ NOVA FUNÇÃO para carregar scripts das páginas dinâmicas
 function carregarScriptPaginaUnica(pagina) {
-  // Remove script anterior (se houver)
-  const scriptAntigo = document.querySelector(`script[src*="${pagina}.js"]`);
-  if (scriptAntigo) scriptAntigo.remove();
+  // Remove todos os scripts relacionados à página (independente da versão)
+  document.querySelectorAll(`script[src*="${pagina}.js"]`).forEach(script => script.remove());
 
-  // Cria novo script com parâmetro para evitar cache
+  // Adiciona novo script com versão única para evitar cache
   const script = document.createElement('script');
   script.src = `assets/js/${pagina}.js?v=${Date.now()}`;
-  script.onload = () => console.log(`✅ ${pagina}.js carregado`);
+  script.onload = () => {
+    console.log(`✅ ${pagina}.js carregado`);
+
+    const initFunctionName = `init${pagina.charAt(0).toUpperCase() + pagina.slice(1)}Page`;
+    if (typeof window[initFunctionName] === 'function') {
+      window[initFunctionName]();
+    }
+  };
   script.onerror = () => console.error(`❌ Erro ao carregar ${pagina}.js`);
   document.body.appendChild(script);
 }
+
+// Função auxiliar para capitalizar nomes de páginas
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 
 // Carrega a página principal dinamicamente
 async function carregarConteudoPrincipal() {
@@ -47,21 +59,24 @@ async function carregarConteudoPrincipal() {
 
     configurarBotoesToggle();
 
-    if (pagina === 'conversas') {
-      layout.classList.add('conversas-layout');
-    } else {
-      layout.classList.remove('conversas-layout');
-    }
-
     const paginasComJS = ['friends', 'conversas'];
     if (paginasComJS.includes(pagina)) {
-      carregarScriptPaginaUnica(pagina);
+      carregarScriptPaginaUnica(pagina, () => {
+        const initFunc = window[`init${capitalize(pagina)}Page`];
+        if (typeof initFunc === 'function') {
+          initFunc();
+        } else {
+          console.warn(`⚠️ Função init${capitalize(pagina)}Page não encontrada`);
+        }
+      });
     }
 
   } catch {
     document.getElementById('conteudo').innerHTML = '<h2>Página não encontrada</h2>';
   }
 }
+
+
 
 function configurarLinksInternos() {
   document.body.addEventListener('click', function (e) {

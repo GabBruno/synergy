@@ -1,5 +1,5 @@
-console.log('✅ friends.js executado');
-class SynergyApp {
+window.initFriendsPage = function () {
+  class SynergyApp {
     constructor() {
         this.joinedGroups = new Set();
         this.isMobile = window.innerWidth <= 768;
@@ -627,3 +627,5 @@ pulseStyle.textContent = `
     }
 `;
 document.head.appendChild(pulseStyle);
+};
+

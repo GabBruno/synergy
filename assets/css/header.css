@@ -22,6 +22,7 @@
 
 .notifications, .config {
   background-color: #f1f4f5;
+  color: #3f4257;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -36,6 +37,7 @@
 
 .notifications:hover, .config:hover {
   background-color: #e0e0e0;
+  color: var(--cor-icones);
 }
 
 .notification-dot {

@@ -33,7 +33,7 @@ body {
 }
 
 #menu {
-  width: 220px;
+  width: 280px;
   flex-shrink: 0;
 }
 
@@ -42,12 +42,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
   background-color: #fff5f0;
 }
 
 #friends {
-  width: 220px;
+  width: 280px;
   flex-shrink: 0;
 }
 

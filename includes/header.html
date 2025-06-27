@@ -6,11 +6,12 @@
       <i class="fa-solid fa-bell"></i>
       <div class="notification-dot"></div>
     </div>
-    <div class="config"><i class="fa-solid fa-gear"></i></div>
+    <div class="config" id="configToggle">
+      <i class="fa-solid fa-gear"></i>
+    </div>
   </div>
 </header>
 
-<!-- Dropdown Notificações -->
 <div id="notificationDropdown" class="notification-dropdown">
   <div class="notification-top">
     <h2>Notificações</h2>
@@ -65,5 +66,65 @@
   </div>
 </div>
 
+<div id="configDropdown" class="config-dropdown notification-dropdown">
+  <div class="notification-top">
+    <h2>Configurações</h2>
+    <div class="close-btn" id="closeConfigDropdownBtn">
+      <span class="close-icon">x</span>
+    </div>
+  </div>
+
+  <div class="config-section-group">
+    <p class="section-title">Conta</p>
+    <div class="config-item">
+      <i class="fa-solid fa-user"></i>
+      <p>Meu Perfil</p>
+    </div>
+    <div class="config-item">
+      <i class="fa-solid fa-shield-halved"></i>
+      <p>Segurança</p>
+    </div>
+    <div class="config-item">
+      <i class="fa-solid fa-bell"></i>
+      <p>Notificações</p>
+    </div>
+    <div class="config-item">
+      <i class="fa-solid fa-lock"></i>
+      <p>Privacidade</p>
+    </div>
+  </div>
+
+  <div class="config-section-group">
+    <p class="section-title">Suporte e Sobre</p>
+    <div class="config-item">
+      <i class="fa-solid fa-credit-card"></i>
+      <p>Minha Assinatura</p>
+    </div>
+    <div class="config-item">
+      <i class="fa-solid fa-circle-question"></i>
+      <p>Ajuda & Suporte</p>
+    </div>
+    <div class="config-item">
+      <i class="fa-solid fa-circle-info"></i>
+      <p>Termos e Políticas</p>
+    </div>
+  </div>
+
+  <div class="config-section-group">
+    <p class="section-title">Ações</p>
+    <div class="config-item">
+      <i class="fa-solid fa-flag"></i>
+      <p>Reportar um problema</p>
+    </div>
+    <div class="config-item">
+      <i class="fa-solid fa-users"></i>
+      <p>Adicionar uma conta</p>
+    </div>
+    <div class="config-item">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      <p>Sair</p>
+    </div>
+  </div>
+</div>
 
 <script src="assets/js/header.js" defer></script>

@@ -45,13 +45,13 @@
     cursor: pointer;
 }
 
-/* Estilo para os ícones */
+/* Estilo para os ícones - Cor padrão é cinza */
 .menu li i,
 .menu li span.material-symbols-outlined {
     font-size: 26px;
-    color: #3f4257; /* Cor escura para os ícones */
-    width: 35px; /* Largura fixa para alinhar o texto perfeitamente */
-    flex-shrink: 0; /* Impede que o ícone seja esmagado */
+    color: #3f4257; /* Cor padrão escura para os ícones */
+    width: 35px;
+    flex-shrink: 0;
     transition: color 0.2s ease-in-out;
     display: flex;
     align-items: center;
@@ -59,11 +59,11 @@
     cursor: pointer;
 }
 
-/* Estilo para os links de texto */
+/* Estilo para os links de texto - Cor padrão é cinza */
 .menu a.menu-link, a.publicacao {
     text-decoration: none;
-    color: var(--cor-texto-principal); /* Mesma cor escura dos ícones */
-    font-weight: 700; /* Peso de fonte ideal para 'Poppins' */
+    color: #3f4257; /* Cor padrão escura para os links */
+    font-weight: 700;
     font-size: 16px;
     transition: color 0.2s ease-in-out;
     display: flex;
@@ -71,7 +71,7 @@
     cursor:pointer;
 }
 
-/* EFEITO HOVER: Muda a cor do ícone e do texto ao passar o mouse */
+/* EFEITO HOVER GERAL: Muda a cor do ícone e do texto ao passar o mouse */
 .menu li:hover i,
 .menu li:hover span.material-symbols-outlined,
 .menu li:hover a.menu-link,
@@ -79,14 +79,26 @@
     color: #F68548; /* Sua cor laranja principal */
 }
 
-/* ESTADO ATIVO: Mantém o ícone e o texto com a cor de destaque */
+/* ESTADO ATIVO PADRÃO: Mantém o ícone e o texto com a cor de destaque para itens como "Página Inicial" */
 .menu li a.menu-link.active {
     color: #F68548;
-    font-weight: 700; /* Deixa o item ativo um pouco mais forte */
+    font-weight: 700;
 }
 
-/* Regra para o ícone do item ativo também ficar laranja */
+/* Regra para o ícone do item ativo padrão também ficar laranja */
 .menu li:has(a.menu-link.active) i,
 .menu li:has(a.menu-link.active) span.material-symbols-outlined {
     color: #F68548;
+}
+
+/* NOVO: Garante que o item de configurações inicie na cor padrão com mais especificidade */
+#menuConfigToggle i,
+#menuConfigToggle a.menu-link {
+    color: #3f4257; /* Garante que o ícone e o link comecem na cor padrão*/
+}
+
+/* NOVO: Aumenta a especificidade do HOVER para o item de Configurações*/
+#menuConfigToggle:hover i,
+#menuConfigToggle:hover a.menu-link {
+    color: #F68548; /* Laranja ao passar o mouse no item de configurações*/
 }

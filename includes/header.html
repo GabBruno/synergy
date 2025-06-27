@@ -1,15 +1,33 @@
 <link rel="stylesheet" href="assets/css/header.css" />
 <header class="header">
-  <div class="logo">synergy</div>
-  <div class="icons">
-    <div class="notifications" id="notificationToggle">
-      <i class="fa-solid fa-bell"></i>
-      <div class="notification-dot"></div>
-    </div>
-    <div class="config" id="configToggle">
-      <i class="fa-solid fa-gear"></i>
+  <div class="main">
+    <a href="?page=feed" style="text-decoration: none;"><div class="logo">synergy</div></a>
+
+    <ul class="options-top">
+      <li><a href="?page=feed" class="menu-link active"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="?page=friends" class="menu-link"><i class="fa-solid fa-user-group"></i></a></li>
+      <li><a href="?page=conversas" class="menu-link"><span class="material-symbols-outlined" style="font-size: 34px;">chat</span></a></li>
+      <li id="btnPost"><a class="publicacao"><i class="fa-solid fa-circle-plus"></i></a></li>
+    </ul>
+
+    <div class="icons">
+      <div class="notifications" id="notificationToggle">
+        <i class="fa-solid fa-bell"></i>
+        <div class="notification-dot"></div>
+      </div>
+      <div class="config" id="configToggle">
+        <i class="fa-solid fa-gear"></i>
+      </div>
     </div>
   </div>
+
+  <ul class="options-bottom">
+    <li><a href="?page=feed" class="menu-link active"><i class="fa-solid fa-house"></i></a></li>
+    <li><a href="?page=friends" class="menu-link"><i class="fa-solid fa-user-group"></i></a></li>
+    <li><a href="?page=conversas" class="menu-link"><span class="material-symbols-outlined" style="font-size: 34px;">chat</span></a></li>
+    <li id="btnPost"><a class="publicacao"><i class="fa-solid fa-circle-plus"></i></a></li>
+  </ul>
+
 </header>
 
 <div id="notificationDropdown" class="notification-dropdown">
@@ -26,7 +44,8 @@
     <div class="notification-card">
       <img src="assets/images/andrew.png" alt="">
       <div class="notification-info">
-        <p><strong>Landon Bloom</strong> e <strong>Emilia Harcourt</strong> comentaram na publicação de <strong>Anna Delvey’s</strong></p>
+        <p><strong>Landon Bloom</strong> e <strong>Emilia Harcourt</strong> comentaram na publicação de <strong>Anna
+            Delvey’s</strong></p>
         <span class="time">1 Hora atrás</span>
       </div>
       <span class="dot orange"></span>
@@ -120,7 +139,7 @@
       <i class="fa-solid fa-users"></i>
       <p>Adicionar uma conta</p>
     </div>
-    <div class="config-item">
+    <div class="config-item" onclick="sair()">
       <i class="fa-solid fa-arrow-right-from-bracket"></i>
       <p>Sair</p>
     </div>
@@ -128,3 +147,5 @@
 </div>
 
 <script src="assets/js/header.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>

@@ -9,6 +9,7 @@
        --cor-verde: #42b72a;
        --cor-vermelho-stories: #f52d4c;
        --sombra-padrao: 0 1px 2px rgba(0, 0, 0, 0.1);
+       --synergy-orange-gradient: linear-gradient(to right, #FF5900, #F68548);
    }
 
 body {

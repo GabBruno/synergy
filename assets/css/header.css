@@ -1,17 +1,20 @@
 /* HEADER */
 .header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  /*align-items: center;*/
   background-color: #fff;
   padding: 10px 20px;
   box-shadow: 0px 0px 10px #00000020;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 27px;
   font-weight: bold;
-  color: #f05a28;
+  background-image: var(--synergy-orange-gradient);
+  background-clip: text;
+  color: transparent;
 }
 
 .icons {
@@ -20,7 +23,8 @@
   align-items: center;
 }
 
-.notifications, .config {
+.notifications,
+.config {
   background-color: #f1f4f5;
   color: #3f4257;
   width: 36px;
@@ -35,7 +39,8 @@
   transition: background-color 0.3s ease;
 }
 
-.notifications:hover, .config:hover {
+.notifications:hover,
+.config:hover {
   background-color: #e0e0e0;
   color: var(--cor-icones);
 }
@@ -51,7 +56,8 @@
 }
 
 /* NOTIFICATION DROPDOWN & CONFIG DROPDOWN (Estilos compartilhados) */
-.notification-dropdown, .config-dropdown {
+.notification-dropdown,
+.config-dropdown {
   position: absolute;
   top: 60px;
   right: 20px;
@@ -68,7 +74,8 @@
   overflow: hidden;
 }
 
-.notification-dropdown.open, .config-dropdown.open {
+.notification-dropdown.open,
+.config-dropdown.open {
   display: flex;
 }
 
@@ -138,7 +145,7 @@
   position: relative;
   align-items: center;
   transition: background 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 
@@ -227,7 +234,8 @@
 }
 
 .config-section-group:first-of-type {
-  margin-top: 0%; /* Aumentei o espaçamento superior*/
+  margin-top: 0%;
+  /* Aumentei o espaçamento superior*/
 }
 
 .config-section-group:last-of-type {
@@ -267,6 +275,104 @@
   color: #333;
   font-weight: 500;
   flex: 1;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.options-top,
+.options-bottom {
+  display: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Estilo para os ícones - Cor padrão é cinza */
+li i,
+li span.material-symbols-outlined {
+  font-size: 26px;
+  color: #3f4257;
+  width: 35px;
+  flex-shrink: 0;
+  transition: color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Estilo para os links de texto - Cor padrão é cinza */
+a.menu-link,
+a.publicacao {
+  text-decoration: none;
+  color: #3f4257;
+  /* Cor padrão escura para os links */
+  font-weight: 700;
+  font-size: 16px;
+  transition: color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* EFEITO HOVER GERAL: Muda a cor do ícone e do texto ao passar o mouse */
+li:hover i,
+li:hover span.material-symbols-outlined,
+li:hover a.menu-link,
+li:hover a.publicacao {
+  color: #F68548;
+  /* Sua cor laranja principal */
+}
+
+/* ESTADO ATIVO PADRÃO: Mantém o ícone e o texto com a cor de destaque para itens como "Página Inicial" */
+li a.menu-link.active {
+  color: #F68548;
+  font-weight: 700;
+}
+
+/* Regra para o ícone do item ativo padrão também ficar laranja */
+li:has(a.menu-link.active) i,
+li:has(a.menu-link.active) span.material-symbols-outlined {
+  color: #F68548;
+}
+
+
+@media (max-width: 1300px) {
+
+  .options-top {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 50px;
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .options-top {
+    display: none
+  }
+
+  .options-bottom {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 10px 0px 0px 0px;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+  }
+
 }
 
 /* Animation */

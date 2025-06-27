@@ -76,8 +76,6 @@ async function carregarConteudoPrincipal() {
   }
 }
 
-
-
 function configurarLinksInternos() {
   document.body.addEventListener('click', function (e) {
     if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('?page=')) {

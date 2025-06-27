@@ -696,7 +696,7 @@
     }
     
     .content-header {
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: stretch;
     }
     
@@ -715,7 +715,7 @@
     }
     
     .mobile-overlay {
-        display: block;
+        /* display: block; */
     }
     
     .sidebar {

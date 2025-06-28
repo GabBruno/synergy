@@ -3,14 +3,14 @@ window.initConversasPage = function () {
   const chatData = {
     andrew: {
       name: "Andrew Parker",
-      avatar: "/assets/images/andrew.png",
+      avatar: "assets/images/andrew.png",
       friendshipDate: "Diga oi para seu novo amigo Synergy, Andrew Parker",
       messages: [
         {
           type: "received",
           text: "Eai, Daniel!",
           time: "23:46",
-          avatar: "/assets/images/andrew.png",
+          avatar: "assets/images/andrew.png",
         },
         { type: "sent", text: "Oi, Andrew!", time: "23:46" },
         { type: "sent", text: "Vamo ver o jogo juntos?", time: "23:46", },
@@ -19,27 +19,27 @@ window.initConversasPage = function () {
           type: "received",
           text: "Claro, estou indo agora pra sua casa!",
           time: "23:47",
-          avatar: "/assets/images/andrew.png",
+          avatar: "assets/images/andrew.png",
         },
       ],
     },
     bruna: {
       name: "Bruna Gomes",
-      avatar: "/assets/images/bruna.png",
+      avatar: "assets/images/bruna.png",
       friendshipDate: "Diga oi para seu novo amigo Synergy, Bruna Gomes",
       messages: [
         {
           type: "received",
           text: "Oi amor, tudo certo pra hoje?",
           time: "23:46",
-          avatar: "/assets/images/bruna.png",
+          avatar: "assets/images/bruna.png",
         },
         { type: "sent", text: "Oi amor", time: "23:46" },
         {
           type: "received",
           text: "Ok!",
           time: "23:47",
-          avatar: "/assets/images/bruna.png",
+          avatar: "assets/images/bruna.png",
         },
         { type: "sent", text: "Sim!", time: "23:47" },
         { type: "sent", text: "Vamos no Paris 6!", time: "23:47" },
@@ -47,39 +47,39 @@ window.initConversasPage = function () {
     },
     mariana: {
       name: "Mariana Ferreira",
-      avatar: "/assets/images/Mensagem Mariana.png",
+      avatar: "assets/images/Mensagem Mariana.png",
       friendshipDate: "Diga oi para seu novo amigo Synergy, Mariana Ferreira",
       messages: [
         {
           type: "received",
           text: "Oi amigo!",
           time: "23:46",
-          avatar: "/assets/images/Mensagem Mariana.png",
+          avatar: "assets/images/Mensagem Mariana.png",
         },
         {
           type: "received",
           text: "Como você está?",
           time: "23:46",
-          avatar: "/assets/images/Mensagem Mariana.png",
+          avatar: "assets/images/Mensagem Mariana.png",
         },
         { type: "sent", text: "Estou bem e você?", time: "23:46", },
         {
           type: "received",
           text: "Que bom!",
           time: "23:47",
-          avatar: "/assets/images/Mensagem Mariana.png",
+          avatar: "assets/images/Mensagem Mariana.png",
         },
         {
           type: "received",
           text: "Também estou bem",
           time: "23:47",
-          avatar: "/assets/images/Mensagem Mariana.png",
+          avatar: "assets/images/Mensagem Mariana.png",
         },
       ],
     },
     fernando: {
       name: "Fernando Costa",
-      avatar: "/assets/images/fernando costa.png",
+      avatar: "assets/images/fernando costa.png",
       friendshipDate: "Diga oi para seu novo amigo Synergy, Fernando Costa",
       messages: [
         { type: "sent", text: "Vai pra aula hoje?", time: "23:46" },
@@ -87,39 +87,39 @@ window.initConversasPage = function () {
           type: "received",
           text: "Vou sim!",
           time: "23:46",
-          avatar: "/assets/images/fernando costa.png",
+          avatar: "assets/images/fernando costa.png",
         },
         {
           type: "received",
           text: "Amanhã vai ter prova!",
           time: "23:47",
-          avatar: "/assets/images/fernando costa.png",
+          avatar: "assets/images/fernando costa.png",
         },
       ],
     },
     joao: {
       name: "João Neves",
-      avatar: "/assets/images/joao.png",
+      avatar: "assets/images/joao.png",
       friendshipDate: "Diga oi para seu novo amigo Synergy, João Neves",
       messages: [
         {
           type: "received",
           text: "Boa noite!",
           time: "23:46",
-          avatar: "/assets/images/joao.png",
+          avatar: "assets/images/joao.png",
         },
         {
           type: "received",
           text: "Sua consulta foi agendada, para o dia 22/04",
           time: "23:46",
-          avatar: "/assets/images/joao.png",
+          avatar: "assets/images/joao.png",
         },
         { type: "sent", text: "Ok! Obrigado", time: "23:47" },
       ],
     },
     felipe: {
       name: "Felipe Voss",
-      avatar: "/assets/images/felipe.png",
+      avatar: "assets/images/felipe.png",
       friendshipDate: "Diga oi para seu novo amigo Synergy, Felipe Voss",
       messages: [
         { type: "sent", text: "Oi Felipe!", time: "23:46" },
@@ -127,21 +127,21 @@ window.initConversasPage = function () {
           type: "received",
           text: "Eai, dani, o que foi?",
           time: "23:46",
-          avatar: "/assets/images/felipe.png",
+          avatar: "assets/images/felipe.png",
         },
         { type: "sent", text: "Poderia me passar a matéria de ontem?", time: "23:47" },
         {
           type: "received",
           text: "Claro, agora estou ocupado, mas depois eu mando",
           time: "23:47",
-          avatar: "/assets/images/felipe.png",
+          avatar: "assets/images/felipe.png",
         },
         { type: "sent", text: "Obrigado!", time: "23:47" },
       ],
     },
     murylo: {
       name: "Murylo Matos",
-      avatar: "/assets/images/murylo.png",
+      avatar: "assets/images/murylo.png",
       friendshipDate: "Diga oi para seu novo amigo Synergy, Murylo Matos",
       messages: [
         { type: "sent", text: "👋", time: "21:32", isEmoji: true },
@@ -149,32 +149,32 @@ window.initConversasPage = function () {
           type: "received",
           text: "Olá, Daniel",
           time: "16:44",
-          avatar: "/assets/images/murylo.png",
+          avatar: "assets/images/murylo.png",
         },
         {
           type: "received",
           text: "Como vai você?",
           time: "16:44",
-          avatar: "/assets/images/murylo.png",
+          avatar: "assets/images/murylo.png",
         },
       ],
     },
     fernanda: {
       name: "Fernanda Bosco Maier",
-      avatar: "/assets/images/fernanda.png",
+      avatar: "assets/images/fernanda.png",
       friendshipDate: "Diga oi para seu novo amigo Synergy, Fernanda Bosco Maier",
       messages: [
         {
           type: "received",
           text: "Oi gatinho!",
           time: "23:46",
-          avatar: "/assets/images/fernanda.png",
+          avatar: "assets/images/fernanda.png",
         },
         {
           type: "received",
           text: "😍",
           time: "23:46",
-          avatar: "/assets/images/fernanda.png",
+          avatar: "assets/images/fernanda.png",
           isEmoji: true,
         },
       ],
@@ -230,7 +230,7 @@ window.initConversasPage = function () {
         `
 
       if (message.type === "sent") {
-        messageHTML += `<img src="/assets/images/daniel.png" alt="">`
+        messageHTML += `<img src="assets/images/daniel.png" alt="">`
       }
 
       messageDiv.innerHTML = messageHTML

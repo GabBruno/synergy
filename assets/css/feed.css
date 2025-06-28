@@ -15,6 +15,7 @@
    /* --- Container Principal --- */
    .feed-container {
        max-width: 590px;
+       align-items: center;
        margin: auto;
        display: flex;
        flex-direction: column;
@@ -39,6 +40,7 @@
    /* --- Criar Postagem --- */
    .create-post {
        display: flex;
+       width: 100%;
        flex-direction: column;
        gap: 10px;
    }
@@ -82,6 +84,10 @@
        transition: background-color 0.2s;
        font-size: 15px;
        gap: 10px;
+   }
+
+   .create-action-button:hover{
+      background-color: var(--cor-borda);
    }
 
    .buttons {
@@ -129,111 +135,82 @@
        color: var(--cor-verde);
    }
 
-   /* --- Seção de Stories --- */
-   .adicionar-story-icon {
-       position: absolute;
-       height: 20px;
-       width: 20px;
-       padding: 14px;
-       bottom: 0%;
-       left: 7.26%;
-       max-width: 100%;
-       overflow: hidden;
-       max-height: 100%;
-       object-fit: fill;
-       border-radius: 100%;
-       background-color: var(--cor-icones);
-       border: 2px solid var(--cor-icones);
-       cursor: pointer;
-   }
+   /* --- Seção de Stories Responsiva --- */
+.stories-card {
+  padding: 12px 8px;
+}
 
-   .person-child {
-       position: absolute;
-       top: 0px;
-       left: 0px;
-       border-radius: 15px;
-       width: 141.5px;
-       height: 205.3px;
-       object-fit: cover;
-       cursor: pointer;
-   }
+.stories {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 
-   .profile-photo-icon {
-       position: absolute;
-       height: 50px;
-       width: 50px;
-       bottom: 0%;
-       left: 32.26%;
-       max-width: 100%;
-       overflow: hidden;
-       max-height: 100%;
-       object-fit: fill;
-       border-radius: 100%;
-       border: 2px solid var(--cor-icones);
-       cursor: pointer;
-   }
+.stories::-webkit-scrollbar {
+  display: none;
+}
 
-   .person {
-       position: absolute;
-       top: 0px;
-       left: 0px;
-       width: 141.5px;
-       height: 230px;
-   }
+.story-item {
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
 
-   .story-1 {
-       position: absolute;
-       top: 0px;
-       left: 149.35px;
-       width: 141.5px;
-       height: 230px;
-       cursor: pointer;
-   }
+.story-item:hover {
+  transform: scale(1.02);
+}
 
-   .story-2 {
-       position: absolute;
-       top: 0px;
-       left: 298.7px;
-       width: 141.5px;
-       height: 230px;
-       cursor: pointer;
-   }
+.story-content {
+  position: relative;
+  width: 120px;
+  height: 180px;
+  border-radius: 15px;
+  overflow: hidden;
+}
 
-   .person-inner {
-       position: absolute;
-       top: 0px;
-       left: 0px;
-       border-radius: 15px;
-       width: 141.9px;
-       height: 205.3px;
-       object-fit: cover;
-   }
+.story-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
 
-   .person2 {
-       position: absolute;
-       top: 0px;
-       left: 0px;
-       width: 141.9px;
-       height: 230px;
-   }
+.story-profile {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--cor-icones);
+  object-fit: fill;
+}
 
-   .story-3 {
-       position: absolute;
-       top: 0px;
-       left: 449.44px;
-       width: 141.9px;
-       height: 230px;
-   }
-
-   .stories {
-       width: 100%;
-       position: relative;
-       height: 230px;
-   }
+.story-add-icon {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--cor-icones);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  /* border: 2px solid white; */
+}
 
    /* --- Postagem Individual --- */
    .post {
        display: flex;
+       width: 100%;
        flex-direction: column;
    }
 
@@ -370,3 +347,183 @@
    .fa-camera{
     color: #F31954;
    }
+
+   /* --- Media Queries para Responsividade --- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  #conteudo {
+    padding: 10px;
+  }
+
+  .feed-container {
+    gap: 15px;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  .story-content {
+    width: 100px;
+    height: 150px;
+  }
+
+  .story-profile,
+  .story-add-icon {
+    width: 28px;
+    height: 28px;
+    bottom: 6px;
+  }
+
+  .post-image {
+    max-height: 300px;
+  }
+
+  .create-action-button {
+    font-size: 14px;
+    gap: 8px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  #conteudo {
+    padding: 8px;
+  }
+
+  .feed-container {
+    gap: 12px;
+  }
+
+  .card {
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .create-post-input-area input {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .create-post-actions {
+    gap: 8px;
+  }
+
+  .create-action-button {
+    font-size: 13px;
+    height: 32px;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .button-text {
+    display: none;
+  }
+
+  .button-text-mobile {
+    display: inline;
+  }
+
+  .stories {
+    gap: 8px;
+  }
+
+  .story-content {
+    width: 80px;
+    height: 120px;
+  }
+
+  .story-profile,
+  .story-add-icon {
+    width: 24px;
+    height: 24px;
+    bottom: 4px;
+  }
+
+  .story-add-icon i {
+    font-size: 12px;
+  }
+
+  img.profile-pic {
+    width: 40px;
+    height: 40px;
+  }
+
+  .post-info .user-name {
+    font-size: 14px;
+  }
+
+  .post-info .post-time {
+    font-size: 12px;
+  }
+
+  .post-content {
+    font-size: 14px;
+    margin: 8px 0;
+  }
+
+  .post-image {
+    max-height: 250px;
+  }
+
+  .action-button {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  .reactions {
+    font-size: 11px;
+  }
+
+  .reaction-icons {
+    font-size: 14px;
+  }
+
+  .comment .profile-pic {
+    width: 28px;
+    height: 28px;
+  }
+
+  .comment-content {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .comment-actions {
+    padding-left: 36px;
+    font-size: 11px;
+  }
+
+  .post-stats {
+    font-size: 11px;
+  }
+}
+
+/* Mobile muito pequeno */
+@media (max-width: 360px) {
+  .story-content {
+    width: 70px;
+    height: 105px;
+  }
+
+  .create-action-button {
+    font-size: 12px;
+    padding: 0 8px;
+  }
+
+  .action-button {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+}

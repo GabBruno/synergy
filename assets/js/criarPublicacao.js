@@ -14,12 +14,12 @@ const uploadConfig = {
 
 // ✅ Dados simulados para a galeria
 const galleryImages = [
-  "https://picsum.photos/200/300?random=1",
-  "https://picsum.photos/200/300?random=2",
-  "https://picsum.photos/200/300?random=3",
-  "https://picsum.photos/200/300?random=4",
-  "https://picsum.photos/200/300?random=5",
-  "https://picsum.photos/200/300?random=6",
+  "assets/images/img1.png",
+  "assets/images/img2.jpeg",
+  "assets/images/img3.jpeg",
+  "assets/images/img4.jpeg",
+  "assets/images/img5.jpeg",
+  "assets/images/img6.jpeg",
 ]
 
 // ✅ Função para validar arquivo
@@ -244,9 +244,9 @@ window.openPostCreationModal = () => {
   const postContent = `
         <div class="post-modal-content">
             <div class="user-profile">
-                <div class="user-avatar">DT</div>
+                <img src="assets/images/perfil.png" alt="" class="user-avatar">
                 <div class="user-info">
-                    <h4>Diogo Teixeira</h4>
+                    <h4>Daniel Trindade</h4>
                     <p>4 horas</p>
                 </div>
             </div>
@@ -375,8 +375,8 @@ window.selectImage = (imageUrl) => {
     title: "Imagem Selecionada!",
     text: "Story criado com a imagem selecionada.",
     imageUrl: imageUrl,
-    imageWidth: 200,
-    imageHeight: 150,
+    imageWidth: 150,
+    imageHeight: 200,
     imageAlt: "Imagem selecionada",
     icon: "success",
     timer: 2000,

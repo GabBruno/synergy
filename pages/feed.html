@@ -3,7 +3,7 @@
     <div class="card create-post">
         <div class="create-post-input-area">
             <img src="assets/images/perfil.png" alt="" class="profile-pic">
-            <input type="text" placeholder="O que você está pensando, Daniel?">
+            <input id="btnPost" type="text" placeholder="O que você está pensando, Daniel?">
         </div>
         <div class="create-post-actions">
             <div class="create-action-button" id="btnPost"><i class="fa-solid fa-camera"></i> Foto/Vídeo</div>
@@ -11,32 +11,45 @@
         </div>
     </div>
 
-    <div class="stories">
+    <!-- Seção de Stories -->
+    <div class="stories-card">
+        <div class="stories">
+            <div class="story-item adicionar-story" id="btnStory">
+                <div class="story-content">
+                    <img class="story-image" alt="Adicionar story" src="assets/images/perfil.png">
+                    <div class="story-add-icon">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
 
-        <div class="adicionar-story" id="btnStory">
-            <img class="person-child" alt="" src="assets/images/perfil.png" id="adicionarStoryImage">
-            <img class="adicionar-story-icon" alt="" src="assets/images/Vector.svg">
-        </div>
-        <a href="/includes/storys.html">
-                <div class="story-1" id="story1Container">
-            <div class="person">
-                <img class="person-child" alt="" src="assets/images/story1.png">
-                <img class="profile-photo-icon" alt="" src="assets/images/perfil1.png">
-            </div>
-        </div>
-        </a>
-    
-        <div class="story-2" id="story2Container">
-            <div class="person">
-                <img class="person-child" alt="" src="assets/images/story2.png">
-                <img class="profile-photo-icon" alt="" src="assets/images/perfil2.png">
-            </div>
-        </div>
-        <div class="story-3">
-            <div class="person2">
-                <img class="person-child" alt="" src="assets/images/story3.png">
-                <img class="profile-photo-icon" alt="" src="assets/images/perfil3.png">
-            </div>
+            <a href="/includes/storys.html">
+                <div class="story-item story-1" id="story1Container">
+                    <div class="story-content">
+                        <img class="story-image" alt="Story 1" src="assets/images/story1.png">
+                        <img class="story-profile" alt="Perfil 1" src="assets/images/perfil1.png">
+                    </div>
+                </div>
+            </a>
+
+            <a href="/includes/storys.html">
+                <div class="story-item story-2" id="story2Container">
+                    <div class="story-content">
+                        <img class="story-image" alt="Story 2" src="assets/images/story2.png">
+                        <img class="story-profile" alt="Perfil 2" src="assets/images/perfil2.png">
+                    </div>
+                </div>
+            </a>
+
+            <a href="/includes/storys.html">
+                <div class="story-item story-3">
+                    <div class="story-content">
+                        <img class="story-image" alt="Story 3" src="assets/images/story3.png">
+                        <img class="story-profile" alt="Perfil 3" src="assets/images/perfil3.png">
+                    </div>
+                </div>
+            </a>
+
         </div>
     </div>
 

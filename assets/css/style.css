@@ -52,9 +52,7 @@ body {
 }
 
 #footer {
-  padding: 10px;
-  background: #eee;
-  text-align: center;
+  background: #ffffff;
 }
 
 @media (max-width: 1300px) {

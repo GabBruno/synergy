@@ -18,7 +18,7 @@
     height: 50px;
     border-radius: 50%;
     margin-right: 15px; /* Mais espaço ao lado do avatar */
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .profile span {

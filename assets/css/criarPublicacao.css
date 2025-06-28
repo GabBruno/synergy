@@ -1,3 +1,6 @@
+.swal2-title{
+  color: var(--cor-icones) !important;
+}
 .synergy-container {
   text-align: center;
   background: white;
@@ -152,6 +155,7 @@
 .post-textarea {
   width: 100%;
   min-height: 80px;
+  max-width: 365px;
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 8px;

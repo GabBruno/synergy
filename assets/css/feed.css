@@ -232,7 +232,10 @@
 
    .post-info .post-time {
        font-size: 13px;
+       gap: 5px;
        color: var(--cor-texto-secundario);
+       display: flex;
+       align-items: center;
    }
 
    .more-options {
@@ -291,6 +294,7 @@
        display: flex;
        justify-content: space-between;
        font-size: 12px;
+       color: var(--cor-texto-principal);
    }
 
    /* --- Seção de Comentários --- */

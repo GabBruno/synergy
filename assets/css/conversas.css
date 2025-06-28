@@ -662,3 +662,9 @@ body{
 #conteudo{
   padding: 0px 0px 0px 10px !important;
 }
+
+@media (max-width: 1300px){
+  #conteudo{
+  padding: 0px !important;
+  }
+}

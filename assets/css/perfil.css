@@ -14,37 +14,148 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.header-background { /* Classe que contém a imagem de capa */
+  width: 100%;
+  height: 160px; /* Altura da área da imagem de capa */
+  /* Removemos o border-top-left-radius e border-top-right-radius daqui,
+     pois o border-radius do .perfil já fará o trabalho de arredondar a parte superior da capa */
+  position: relative;
+}
+
+.header-bg-img {
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+  max-width: 100%;
+  overflow: hidden;
+  height: 220px;
+  object-fit: cover;
+}
+
+.profile-content { /* Classe que contém a foto do usuário e outros detalhes */
+  margin-top: -80px; /* Puxa o conteúdo para cima, sobrepondo a imagem de capa */
+  padding: 20px;
+  position: relative;
+  z-index: 1; /* Garante que o conteúdo apareça acima da imagem de capa */
+}
+
 .perfil-img {
   width: 160px;
   height: 160px;
-  border-radius: 100%;
-  object-fit: none;
-  margin-bottom: 1rem;
+  border-radius: 20px; /* Cantos arredondados para a foto do usuário */
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: -0.9rem;
 }
 
-.social-icons i {
+
+h2 {
+  margin-top: 16px;
+  margin-bottom: 7px;
+  color: #333;
+}
+
+p {
+  color: #777;
+  font-size: 1.1em;
+  font-weight: semi-bold; 
+  margin-top: -5px; 
+  margin-bottom: 10px; 
+}
+
+.social-icons-wrapper { /* Novo wrapper para centralizar e espaçar os ícones */
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Removido este seletor, pois o tamanho será controlado por .social-icon-item para consistência */
+/* .social-icons i {
   font-size: 1.5rem;
   margin: 0 0.5rem;
   cursor: pointer;
+} */
+
+.social-icon-item { /* Estilo para cada item de ícone social */
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  font-size: 2.2em; /* Aumentado o tamanho do ícone aqui */
+  /* Se você quiser adicionar uma cor, um fundo ou uma borda, faria aqui: */
+  /* background-color: #f0f2f5; */
+  /* border-radius: 50%; */
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  /* color: #666; */
 }
 
-.botoes button, .botoes a {
-  background: #e06f04;
-  font-size: 12px;
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* Espaço entre os botões */
+  margin-bottom: 20px;
+}
+
+.botoes button,
+.botoes .button-add-friends {
+  background: #f78b31; /* Cor laranja mais vibrante para o botão "Editar Perfil" */
+  font-size: 0.9em; /* Tamanho da fonte dos botões */
   color: white;
   border: none;
-  padding: 0.6rem 1.2rem;
-  margin: 0.5rem;
-  border-radius: 8px;
+  padding: 10px 25px; /* Ajusta o preenchimento para o tamanho do botão */
+  border-radius: 10px; /* Cantos mais arredondados para os botões */
   cursor: pointer;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold; /* Deixa o texto dos botões em negrito */
+  transition: background-color 0.3s ease; /* Transição suave no hover */
+  
+  /* --- Alterações para deixar os botões do mesmo tamanho --- */
+  flex-grow: 1; /* Faz com que os botões cresçam para ocupar o espaço disponível igualmente */
+  max-width: 150px; /* Define uma largura máxima para evitar que fiquem excessivamente grandes em telas muito largas. Ajuste este valor se necessário. */
+  min-width: 120px; /* Define uma largura mínima para garantir que não fiquem muito pequenos. Ajuste se necessário. */
+  /* --- Fim das alterações --- */
+}
+
+/* Mantendo os estilos específicos para o botão de adicionar amigo */
+.botoes .button-add-friends {
+  background-color: #f78b31; /* Mantendo a mesma cor para ambos os botões, como na imagem fornecida anteriormente */
+  color: white; /* Cor do texto branco para o botão de adicionar amigo, como na imagem fornecida anteriormente */
+}
+
+.botoes button:hover,
+.botoes .button-add-friends:hover {
+  background-color: #e67d26; /* Laranja um pouco mais escuro no hover */
 }
 
 .estatisticas {
   display: flex;
   justify-content: space-around;
   margin: 1rem 0;
-  font-weight: bold;
+  margin-bottom: 20px; /* Espaçamento após as estatísticas */
+  font-weight: normal; /* Remove negrito padrão, aplicar apenas em strong */
+  padding: 0 10px; /* Pequeno preenchimento lateral */
+}
+
+.estatisticas span {
+  display: flex; /* Permite empilhar o número e o texto */
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1em; /* Tamanho da fonte para o texto "Seguidores", "Seguindo", "Curtidas" */
+  color: #555; /* Cor do texto das estatísticas */
+}
+
+.estatisticas strong {
+  font-size: 1.5em; /* Tamanho da fonte para os números */
+  color: #333; /* Cor dos números das estatísticas */
+  margin-bottom: 3px; /* Pequeno espaço entre o número e o texto */
 }
 
 .galeria {
@@ -107,4 +218,112 @@
   .amigos {
     display: none;
   }
+}
+
+/* Estilos para o popup do SweetAlert2 da modal de edição de perfil */
+.swal2-popup-edit-profile {
+    background: #fff !important; /* Cor de fundo branca */
+    padding: 2rem 2.5rem !important; /* Padding interno */
+    border-radius: 15px !important; /* Cantos arredondados */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1) !important; /* Sombra */
+    width: 100% !important;
+    max-width: 500px !important; /* Largura máxima do modal */
+    margin: auto !important; /* Centraliza */
+}
+
+/* Estilos para o contêiner HTML injetado dentro da modal */
+.swal2-html-container-edit-profile {
+    padding: 0 !important; /* Remove padding padrão do SweetAlert2 */
+    margin: 0 !important; /* Remove margem padrão do SweetAlert2 */
+    overflow: visible !important; /* Garante que elementos como imagem de perfil possam "sair" */
+}
+
+/* Estilos para o botão de confirmação (Salvar Alterações) */
+.swal2-confirm-button-edit-profile {
+    background: #e06f04 !important; /* Cor laranja */
+    color: white !important;
+    border: none !important;
+    padding: 0.9rem !important;
+    font-size: 1rem !important;
+    font-weight: bold !important; /* Deixa o texto em negrito */
+    border-radius: 10px !important;
+    cursor: pointer !important;
+    transition: background 0.3s !important;
+    margin-top: -0.1rem !important;
+    width: 100% !important; /* Deixa o botão ocupar a largura total dentro da área de botões do SA */
+}
+
+.swal2-confirm-button-edit-profile:hover {
+    background: #cc5c02 !important;
+}
+
+/* ----- Adaptações dos estilos de editar-perfil.css para serem específicos da modal ----- */
+/* Note: Use a classe .edit-profile-modal-content para prefixar todos os seletores */
+
+.edit-profile-modal-content .form-box {
+    /* Se houver algum estilo em .form-box no seu editar-perfil.css, copie aqui */
+    width: 100%; /* Garante que o formulário ocupe o espaço disponível */
+}
+
+.edit-profile-modal-content h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    color: #F68548;
+}
+
+.edit-profile-modal-content .profile-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.edit-profile-modal-content .profile-image img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.edit-profile-modal-content .campo {
+    margin-bottom: 1rem;
+}
+
+.edit-profile-modal-content label {
+    text-align: left !important;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.edit-profile-modal-content input[type="text"],
+.edit-profile-modal-content input[type="email"],
+.edit-profile-modal-content input[type="password"],
+.edit-profile-modal-content input[type="date"] {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box !important;
+}
+
+/* O botão submit já foi tratado pelas classes do SweetAlert2 */
+
+/* Responsividade para telas pequenas (adaptado para SweetAlert2) */
+@media (max-width: 480px) {
+    .swal2-popup-edit-profile {
+        padding: 1.5rem !important;
+    }
+
+    .edit-profile-modal-content .profile-image img { /* Ajustado para o seletor correto */
+        width: 120px;
+        height: 120px;
+    }
+
+    .edit-profile-modal-content input,
+    .swal2-confirm-button-edit-profile,
+    .swal2-cancel-button-edit-profile {
+        font-size: 0.95rem !important;
+    }
 }

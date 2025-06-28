@@ -17,8 +17,8 @@
 .perfil-img {
   width: 160px;
   height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
+  border-radius: 100%;
+  object-fit: none;
   margin-bottom: 1rem;
 }
 

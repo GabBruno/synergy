@@ -79,7 +79,7 @@
 }
 
 /* ESTADO ATIVO PADRÃO: Mantém o ícone e o texto com a cor de destaque para itens como "Página Inicial" */
-.menu li a.menu-link.active {
+.menu li a.menu-link.active, .menu a.menu-link.active span{
     color: #F68548;
     font-weight: 700;
 }

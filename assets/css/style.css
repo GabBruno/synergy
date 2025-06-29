@@ -1,16 +1,16 @@
-   :root {
-       --cor-fundo: #f0f2f5;
-       --cor-principal: #ffffff;
-       --cor-borda: #ced0d4;
-       --cor-texto-principal: #535767;
-       --cor-icones: #F68548;
-       --cor-texto-secundario: #99A1BE;
-       --cor-azul: #1877f2;
-       --cor-verde: #42b72a;
-       --cor-vermelho-stories: #f52d4c;
-       --sombra-padrao: 0 1px 2px rgba(0, 0, 0, 0.1);
-       --synergy-orange-gradient: linear-gradient(to right, #FF5900, #F68548);
-   }
+:root {
+  --cor-fundo: #f0f2f5;
+  --cor-principal: #ffffff;
+  --cor-borda: #ced0d4;
+  --cor-texto-principal: #535767;
+  --cor-icones: #F68548;
+  --cor-texto-secundario: #99A1BE;
+  --cor-azul: #1877f2;
+  --cor-verde: #42b72a;
+  --cor-vermelho-stories: #f52d4c;
+  --sombra-padrao: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --synergy-orange-gradient: linear-gradient(to right, #FF5900, #F68548);
+}
 
 body {
   margin: 0;
@@ -29,7 +29,8 @@ body {
 .layout {
   display: flex;
   flex-direction: row;
-  min-height: calc(100vh - 60px); /* altura total menos o header */
+  min-height: calc(100vh - 60px);
+  /* altura total menos o header */
 }
 
 #menu {
@@ -56,12 +57,13 @@ body {
 }
 
 @media (max-width: 1300px) {
-  
-  #menu, #friends-menu{
+
+  #menu,
+  #friends-menu {
     display: none;
   }
 
-  .container{
+  .container {
     display: flex;
   }
 
@@ -69,6 +71,6 @@ body {
 
 @media (max-width: 500px) {
   body.no-scroll {
-      overflow: hidden;
-    }
+    overflow: hidden;
+  }
 }

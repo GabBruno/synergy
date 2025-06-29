@@ -64,4 +64,11 @@ body {
   .container{
     display: flex;
   }
+
+}
+
+@media (max-width: 500px) {
+  body.no-scroll {
+      overflow: hidden;
+    }
 }

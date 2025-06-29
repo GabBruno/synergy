@@ -14,7 +14,9 @@
     --header-height: 60px;
     --border-radius: 8px;
     --border-radius-large: 16px;
+    --cor-icones: #f78b31;
 }
+
 
 .header-left {
     display: flex;
@@ -102,9 +104,10 @@
 
 .container {
     display: flex;
-    /* margin-top: var(--header-height); */
     min-height: calc(100vh - var(--header-height));
-    width: 100%;
+    width: 100%; /* Ocupa 100% da largura do pai */
+    max-width: 1200px; /* Limite em telas grandes */
+    /* Padding será controlado principalmente pelo main-content-friends ou media queries */
 }
 
 .sidebar {
@@ -287,9 +290,7 @@
 
 .main-content-friends {
     flex: 1;
-    /* margin-left: var(--sidebar-width); */
-    /* padding: 24px; */
-    /* max-width: calc(100vw - var(--sidebar-width)); */
+    padding: 24px; /* Padding padrão para telas maiores */
 }
 
 .content-header {
@@ -378,6 +379,8 @@
 .friends-avatars {
     margin-bottom: 32px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .avatars-scroll {
@@ -541,33 +544,21 @@
     gap: 16px;
 }
 
-.group-icon {
+.group-img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
+    object-fit: cover;
     transition: transform 0.2s ease;
+    border: 3px solid var(--border-color);
 }
 
-.group-card:hover .group-icon {
+.group-card:hover .group-img {
     transform: scale(1.1);
+    border-color: var(--primary-color);
 }
 
-.flamengo-icon { background: linear-gradient(135deg, #dc143c, #8b0000); }
-.podpah-icon { background: linear-gradient(135deg, #ffa500, #ff6347); }
-.sinais-icon { background: linear-gradient(135deg, #32cd32, #228b22); }
-.missa-icon { background: linear-gradient(135deg, #4169e1, #191970); }
-.eng-icon { background: linear-gradient(135deg, #20b2aa, #008b8b); }
-.loud-icon { background: linear-gradient(135deg, #00ff00, #32cd32); }
-.valorant-icon { background: linear-gradient(135deg, #ff4655, #bd3944); }
-.pdz-icon { background: linear-gradient(135deg, #1e1e1e, #333333); }
-.futebol-icon { background: linear-gradient(135deg, #228b22, #006400); }
-.fortnite-icon { background: linear-gradient(135deg, #00bfff, #1e90ff); }
-
-.group-info {
+.group-details {
     text-align: center;
     flex: 1;
 }
@@ -674,6 +665,7 @@
     content: ' ✓';
 }
 
+/* Media Queries para Responsividade */
 @media (max-width: 1200px) {
     :root {
         --sidebar-width: 240px;
@@ -686,11 +678,6 @@
 }
 
 @media (max-width: 992px) {
-
-    #conteudo{
-        padding: 30px 5px 0px 5px;
-    }
-
     .main-content-friends {
         padding: 20px;
     }
@@ -715,32 +702,28 @@
 }
 
 @media (max-width: 840px){
-    
     .main-content-friends{
-        padding: 20px 0px 20px 0px
+        padding: 20px 15px; /* Ajuste para ter padding lateral */
     }
 }
 
 @media (max-width: 800px){
-    .friends-avatars{
-        display: flex;
-        justify-content: center;
-    }
-
    .avatars-scroll{
-    padding: 0;
+    padding: 0 5px; /* Padding lateral menor para o scroll */
    }
-
-
 }
 
 @media (max-width: 768px) {
-    .mobile-menu-btn {
-        display: flex;
+    .container {
+        /* Remove max-width para que ocupe 100% em mobile */
+        max-width: 100%;
+        /* Ajusta o padding lateral para telas menores. O ideal é que o padding do container */
+        /* seja suficiente e os elementos internos se adaptem. */
+        padding: 0 10px;
     }
 
-    .mobile-overlay {
-        /* display: block; */
+    .mobile-menu-btn {
+        display: flex;
     }
     
     .sidebar {
@@ -757,11 +740,13 @@
     }
     
     .main-content-friends {
-        margin-left: 0;
-        max-width: 100vw;
+        padding: 15px; /* Padding padrão para mobile */
+        margin-left: 0; /* Garante que não há margem se a sidebar estiver escondida */
+        width: 100%; /* Garante que ocupa 100% da largura disponível */
+        /* min-width: 0; Adicionado para flexbox caso esteja contendo algo que force largura */
     }
     
-    .header {
+    .header { /* Se houver um .header fora do .container, ajuste aqui */
         padding: 12px 16px;
     }
     
@@ -772,7 +757,6 @@
     .avatars-scroll{
         gap: 3px;
         padding: 5px;
-        max-width: 570px;
     }
     
     .avatar {
@@ -781,7 +765,9 @@
     }
     
     .friend-requests, .groups-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        /* Força a preencher 100% da largura do pai com um padding interno. */
+        /* Se 280px for muito grande para 2 colunas, minmax(0, 1fr) seria outra opção */
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
         gap: 16px;
     }
     
@@ -807,22 +793,16 @@
     }
 }
 
-
-@media (max-width: 595px){
-    .avatars-scroll{
-        max-width: 510px;
-    }
-}
-
-@media (max-width: 535px){
-    .avatars-scroll{
-        max-width: 450px;
-    }
-}
-
 @media (max-width: 480px) {
+    .container {
+        padding: 0 5px; /* Reduz ainda mais o padding lateral em telas muito pequenas */
+    }
+    .main-content-friends {
+        padding: 10px; /* Padding menor para telas muito pequenas */
+    }
+
     .friend-requests, .groups-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Força uma coluna em telas muito pequenas */
         gap: 16px;
     }
     
@@ -863,7 +843,7 @@
 
 @media (max-width: 360px) {
     .main-content-friends {
-        padding: 12px;
+        padding: 8px; /* Padding mínimo */
     }
     
     .friend-card, .group-card {
@@ -875,9 +855,8 @@
         height: 80px;
     }
     
-    .group-icon {
+    .group-img {
         width: 60px;
         height: 60px;
-        font-size: 24px;
     }
 }

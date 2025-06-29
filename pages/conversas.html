@@ -1,307 +1,234 @@
-
 <link rel="stylesheet" href="assets/css/conversas.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
-<body>
-    <div class="app-container">
-
-        <div class="main-content">
-            <!-- Middle Column - Conversas com imagens reais -->
-            <div class="conversations-panel">
-                <div class="conversations-header">
-                    <h2>Conversas</h2>
-                    <div class="search-bar">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Procurar">
-                    </div>
-                </div>
-
-                <!-- Avatares circulares no topo com imagens reais -->
-                <div class="recent-contacts">
-                    <div class="contact-avatars">
-                        <img src="assets/images/andrew.png" alt="Andrew" data-user="andrew">
-                        <img src="assets/images/bruna.png" alt="Bruna" data-user="bruna">
-                        <img src="assets/images/Mensagem Mariana.png" alt="Mariana" data-user="mariana">
-                        <img src="assets/images/fernando costa.png" alt="Fernando" data-user="fernando">
-                        <img src="assets/images/joao.png" alt="João" data-user="joao">
-                    </div>
-                </div>
-
-                <!-- Lista de conversas com imagens reais -->
-                <div class="conversations-list">
-                    <h3>Mais</h3>
-                    <div class="conversation-item" data-user="andrew">
-                        <img src="assets/images/andrew.png" alt="Andrew Parker">
-                        <div class="conversation-info">
-                            <div class="name">Andrew Parker</div>
-                            <div class="last-message">Você estou indo agora · Qui</div>
-                        </div>
-                        <div class="conversation-actions">
-                            <button class="conversation-btn call-btn" title="Ligar">
-                                <i class="fas fa-phone"></i>
-                            </button>
-                            <button class="conversation-btn video-btn" title="Videochamada">
-                                <i class="fas fa-video"></i>
-                            </button>
-                            <button class="conversation-btn" title="Mais opções">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="conversation-item" data-user="bruna">
-                        <img src="assets/images/bruna.png" alt="Bruna Gomes">
-                        <div class="conversation-info">
-                            <div class="name">Bruna Gomes</div>
-                            <div class="last-message">Você · Vamos no Paris 6! · Sex</div>
-                        </div>
-                        <div class="conversation-actions">
-                            <button class="conversation-btn call-btn" title="Ligar">
-                                <i class="fas fa-phone"></i>
-                            </button>
-                            <button class="conversation-btn video-btn" title="Videochamada">
-                                <i class="fas fa-video"></i>
-                            </button>
-                            <button class="conversation-btn" title="Mais opções">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="conversation-item" data-user="mariana">
-                        <img src="assets/images/Mensagem Mariana.png" alt="Mariana Ferreira">
-                        <div class="conversation-info">
-                            <div class="name">Mariana Ferreira</div>
-                            <div class="last-message">Também estou bem · Sex</div>
-                        </div>
-                        <div class="conversation-actions">
-                            <button class="conversation-btn call-btn" title="Ligar">
-                                <i class="fas fa-phone"></i>
-                            </button>
-                            <button class="conversation-btn video-btn" title="Videochamada">
-                                <i class="fas fa-video"></i>
-                            </button>
-                            <button class="conversation-btn" title="Mais opções">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="conversation-item" data-user="fernando">
-                        <img src="assets/images/fernando costa.png" alt="Fernando Costa">
-                        <div class="conversation-info">
-                            <div class="name">Fernando Costa</div>
-                            <div class="last-message">Amanhã vai ter prova! · Ter</div>
-                        </div>
-                        <div class="conversation-actions">
-                            <button class="conversation-btn call-btn" title="Ligar">
-                                <i class="fas fa-phone"></i>
-                            </button>
-                            <button class="conversation-btn video-btn" title="Videochamada">
-                                <i class="fas fa-video"></i>
-                            </button>
-                            <button class="conversation-btn" title="Mais opções">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="conversation-item" data-user="joao">
-                        <img src="assets/images/joao.png" alt="João Neves">
-                        <div class="conversation-info">
-                            <div class="name">João Neves</div>
-                            <div class="last-message">Sua consulta foi agendada... · Seg</div>
-                        </div>
-                        <div class="conversation-actions">
-                            <button class="conversation-btn call-btn" title="Ligar">
-                                <i class="fas fa-phone"></i>
-                            </button>
-                            <button class="conversation-btn video-btn" title="Videochamada">
-                                <i class="fas fa-video"></i>
-                            </button>
-                            <button class="conversation-btn" title="Mais opções">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="conversation-item" data-user="felipe">
-                        <img src="assets/images/felipe.png" alt="Felipe Voss">
-                        <div class="conversation-info">
-                            <div class="name">Felipe Voss</div>
-                            <div class="last-message">Você chegou · Sáb</div>
-                        </div>
-                        <div class="conversation-actions">
-                            <button class="conversation-btn call-btn" title="Ligar">
-                                <i class="fas fa-phone"></i>
-                            </button>
-                            <button class="conversation-btn video-btn" title="Videochamada">
-                                <i class="fas fa-video"></i>
-                            </button>
-                            <button class="conversation-btn" title="Mais opções">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="conversation-item" data-user="murylo">
-                        <img src="assets/images/murylo.png" alt="Murylo Matos">
-                        <div class="conversation-info">
-                            <div class="name">Murylo Matos</div>
-                            <div class="last-message">Como vai você? · Qui</div>
-                        </div>
-                        <div class="conversation-actions">
-                            <button class="conversation-btn call-btn" title="Ligar">
-                                <i class="fas fa-phone"></i>
-                            </button>
-                            <button class="conversation-btn video-btn" title="Videochamada">
-                                <i class="fas fa-video"></i>
-                            </button>
-                            <button class="conversation-btn" title="Mais opções">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="conversation-item" data-user="fernanda">
-                        <img src="assets/images/fernanda.png" alt="Fernanda Bosco Maier">
-                        <div class="conversation-info">
-                            <div class="name">Fernanda Bosco Maier</div>
-                            <div class="last-message">Oi gatinho! · Qui</div>
-                        </div>
-                        <div class="conversation-actions">
-                            <button class="conversation-btn call-btn" title="Ligar">
-                                <i class="fas fa-phone"></i>
-                            </button>
-                            <button class="conversation-btn video-btn" title="Videochamada">
-                                <i class="fas fa-video"></i>
-                            </button>
-                            <button class="conversation-btn" title="Mais opções">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                        </div>
-                    </div>
+<div class="app-container">
+    <div class="main-content">
+        <div class="conversations-panel" id="conversationsPanel">
+            <div class="conversations-header">
+                <h2>Conversas</h2>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Procurar">
                 </div>
             </div>
-
-            <!-- Right Panel - Chat com imagens reais -->
-            <div class="chat-panel">
-                <!-- Tela de boas-vindas -->
-                <div class="chat-welcome" id="chatWelcome">
-                    <div class="synergy-logo">synergy</div>
-                    <h2>Suas Mensagens</h2>
-                    <p>Envie fotos e mensagens privadas para um amigo ou grupo</p>
-                    
-                    <!-- Exemplo visual dos botões das screenshots -->
-                    <div class="">
-                        <div class="example-title"></div>
-                        <div class="example-conversation">
-                            <span class="example-name"><img src="" alt=""></span>
-                            
-                        </div>
+            <div class="recent-contacts">
+                <div class="contact-avatars">
+                    <img src="assets/images/andrew.png" alt="Andrew" data-user="andrew">
+                    <img src="assets/images/bruna.png" alt="Bruna" data-user="bruna">
+                    <img src="assets/images/Mensagem Mariana.png" alt="Mariana" data-user="mariana">
+                    <img src="assets/images/fernando costa.png" alt="Fernando" data-user="fernando">
+                    <img src="assets/images/joao.png" alt="João" data-user="joao">
+                </div>
+            </div>
+            <div class="conversations-list">
+                <h3>Mais</h3>
+                <div class="conversation-item" data-user="andrew">
+                    <img src="assets/images/andrew.png" alt="Andrew Parker">
+                    <div class="conversation-info">
+                        <div class="name">Andrew Parker</div>
+                        <div class="last-message">Você estou indo agora · Qui</div>
+                    </div>
+                    <div class="conversation-actions">
+                        <button class="conversation-btn call-btn" title="Ligar">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="conversation-btn video-btn" title="Videochamada">
+                            <i class="fas fa-video"></i>
+                        </button>
+                        <button class="conversation-btn" title="Mais opções">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
                     </div>
                 </div>
-
-                <!-- Chat Window com imagens reais -->
-                <div class="chat-window" id="chatWindow" style="display: none;">
-                    <!-- Header do chat -->
-                    <div class="chat-header">
-                        <div class="chat-user-info">
-                            <img id="chatAvatar" src="assets/images/andrew.png" alt="Andrew Parker">
-                            <div class="chat-details">
-                                <div id="chatName">Andrew Parker</div>
-                                <div class="friendship-status">vocês são amigos no synergy</div>
-                                <div class="mutual-friends">
-                                    
-                                </div>
-                                <div class="friendship-date" id="friendshipDate">Diga oi para seu novo amigo Synergy, Andrew Parker</div>
-                            </div>
-                        </div>
+                <div class="conversation-item" data-user="bruna">
+                    <img src="assets/images/bruna.png" alt="Bruna Gomes">
+                    <div class="conversation-info">
+                        <div class="name">Bruna Gomes</div>
+                        <div class="last-message">Você · Vamos no Paris 6! · Sex</div>
                     </div>
-
-                    <!-- Mensagens com imagens reais -->
-                    <div class="chat-messages" id="chatMessages">
-                        <div class="message received">
-                            <img src="assets/images/daniel.png" alt="daniel.png">
-                            <div class="message-content">
-                                <div class="message-bubble">Eai, Daniel!</div>
-                                <div class="message-time">23:46</div>
-                            </div>
-                        </div>
-                        <div class="message sent">
-                            <div class="message-content">
-                                <div class="message-bubble">Oi, Andrew!</div>
-                                <div class="message-time">23:46</div>
-                            </div>
-                            
-                        </div>
-                        <div class="message sent">
-                            <div class="message-content">
-                                <div class="message-bubble">Vamo ver o jogo juntos?</div>
-                                <div class="message-time">23:46</div>
-                            </div>
-                            
-                        </div>
-                        <div class="message received">
-                            <div class="message-content">
-                                <div class="message-bubble">Claro, estou indo agora pra sua casa!</div>
-                                <div class="message-time">23:47</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Input de mensagem -->
-                    <div class="chat-input">
-                        <div class="input-container">
-                            <i class="fas fa-smile"></i>
-                            <input type="text" placeholder="Enviar mensagens..." id="messageInput">
-                            <i class="fas fa-microphone"></i>
-                            <i class="fas fa-image"></i>
+                    <div class="conversation-actions">
+                        <button class="conversation-btn call-btn" title="Ligar">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="conversation-btn video-btn" title="Videochamada">
+                            <i class="fas fa-video"></i>
+                        </button>
+                        <button class="conversation-btn" title="Mais opções">
                             <i class="fas fa-ellipsis-h"></i>
-                        </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="conversation-item" data-user="mariana">
+                    <img src="assets/images/Mensagem Mariana.png" alt="Mariana Ferreira">
+                    <div class="conversation-info">
+                        <div class="name">Mariana Ferreira</div>
+                        <div class="last-message">Também estou bem · Sex</div>
+                    </div>
+                    <div class="conversation-actions">
+                        <button class="conversation-btn call-btn" title="Ligar">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="conversation-btn video-btn" title="Videochamada">
+                            <i class="fas fa-video"></i>
+                        </button>
+                        <button class="conversation-btn" title="Mais opções">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="conversation-item" data-user="fernando">
+                    <img src="assets/images/fernando costa.png" alt="Fernando Costa">
+                    <div class="conversation-info">
+                        <div class="name">Fernando Costa</div>
+                        <div class="last-message">Amanhã vai ter prova! · Ter</div>
+                    </div>
+                    <div class="conversation-actions">
+                        <button class="conversation-btn call-btn" title="Ligar">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="conversation-btn video-btn" title="Videochamada">
+                            <i class="fas fa-video"></i>
+                        </button>
+                        <button class="conversation-btn" title="Mais opções">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="conversation-item" data-user="joao">
+                    <img src="assets/images/joao.png" alt="João Neves">
+                    <div class="conversation-info">
+                        <div class="name">João Neves</div>
+                        <div class="last-message">Sua consulta foi agendada... · Seg</div>
+                    </div>
+                    <div class="conversation-actions">
+                        <button class="conversation-btn call-btn" title="Ligar">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="conversation-btn video-btn" title="Videochamada">
+                            <i class="fas fa-video"></i>
+                        </button>
+                        <button class="conversation-btn" title="Mais opções">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="conversation-item" data-user="felipe">
+                    <img src="assets/images/felipe.png" alt="Felipe Voss">
+                    <div class="conversation-info">
+                        <div class="name">Felipe Voss</div>
+                        <div class="last-message">Você chegou · Sáb</div>
+                    </div>
+                    <div class="conversation-actions">
+                        <button class="conversation-btn call-btn" title="Ligar">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="conversation-btn video-btn" title="Videochamada">
+                            <i class="fas fa-video"></i>
+                        </button>
+                        <button class="conversation-btn" title="Mais opções">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="conversation-item" data-user="murylo">
+                    <img src="assets/images/murylo.png" alt="Murylo Matos">
+                    <div class="conversation-info">
+                        <div class="name">Murylo Matos</div>
+                        <div class="last-message">Como vai você? · Qui</div>
+                    </div>
+                    <div class="conversation-actions">
+                        <button class="conversation-btn call-btn" title="Ligar">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="conversation-btn video-btn" title="Videochamada">
+                            <i class="fas fa-video"></i>
+                        </button>
+                        <button class="conversation-btn" title="Mais opções">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="conversation-item" data-user="fernanda">
+                    <img src="assets/images/fernanda.png" alt="Fernanda Bosco Maier">
+                    <div class="conversation-info">
+                        <div class="name">Fernanda Bosco Maier</div>
+                        <div class="last-message">Oi gatinho! · Qui</div>
+                    </div>
+                    <div class="conversation-actions">
+                        <button class="conversation-btn call-btn" title="Ligar">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="conversation-btn video-btn" title="Videochamada">
+                            <i class="fas fa-video"></i>
+                        </button>
+                        <button class="conversation-btn" title="Mais opções">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Notification Panel com imagens reais -->
-        <div class="notification-panel" id="notificationPanel" style="display: none;">
-            <div class="notification-header">
-                <h3>Notificações</h3>
-                <button class="mark-all-read">Marcar todas como lidas</button>
+        <div class="chat-panel" id="chatPanel">
+            <div class="chat-welcome" id="chatWelcome">
+                <div class="synergy-logo">synergy</div>
+                <h2>Suas Mensagens</h2>
+                <p>Envie fotos e mensagens privadas para um amigo ou grupo</p>
             </div>
-            <div class="notification-list">
-                <div class="notification-item unread">
-                    <img src="assets/images/andrew.png" alt="">
-                    <div class="notification-content">
-                        <div class="notification-text"><strong>Andrew Parker</strong> enviou uma mensagem</div>
-                        <div class="notification-time">2 min atrás</div>
+            <div class="chat-window" id="chatWindow">
+                <div class="chat-header">
+                    <button class="back-to-conversations" id="backToConversations">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="chat-user-info">
+                        <img id="chatAvatar" src="assets/images/andrew.png" alt="Andrew Parker">
+                        <div class="chat-details">
+                            <div id="chatName">Andrew Parker</div>
+                            <div class="friendship-status">vocês são amigos no synergy</div>
+                            <div class="mutual-friends">
+                                </div>
+                            <div class="friendship-date" id="friendshipDate">Diga oi para seu novo amigo Synergy, Andrew Parker</div>
+                        </div>
                     </div>
                 </div>
-                <div class="notification-item unread">
-                    <img src="assets/images/bruna.png" alt="">
-                    <div class="notification-content">
-                        <div class="notification-text"><strong>Bruna Gomes</strong> enviou uma mensagem</div>
-                        <div class="notification-time">5 min atrás</div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message received">
+                        <img src="assets/images/daniel.png" alt="daniel.png">
+                        <div class="message-content">
+                            <div class="message-bubble">Eai, Daniel!</div>
+                            <div class="message-time">23:46</div>
+                        </div>
+                    </div>
+                    <div class="message sent">
+                        <div class="message-content">
+                            <div class="message-bubble">Oi, Andrew!</div>
+                            <div class="message-time">23:46</div>
+                        </div>
+                        
+                    </div>
+                    <div class="message sent">
+                        <div class="message-content">
+                            <div class="message-bubble">Vamo ver o jogo juntos?</div>
+                            <div class="message-time">23:46</div>
+                        </div>
+                        
+                    </div>
+                    <div class="message received">
+                        <div class="message-content">
+                            <div class="message-bubble">Claro, estou indo agora pra sua casa!</div>
+                            <div class="message-time">23:47</div>
+                        </div>
                     </div>
                 </div>
-                <div class="notification-item">
-                    <img src= "assets/images/fernanda.png">
-                    <div class="notification-content">
-                        <div class="notification-text"><strong>Fernanda Bosco Maier</strong> enviou uma mensagem</div>
-                        <div class="notification-time">1 hora atrás</div>
-                    </div>
-                </div>
-                <div class="notification-item">
-                    <img src="assets/images/fernando costa.png" alt="">
-                    <div class="notification-content">
-                        <div class="notification-text"><strong>Fernando Costa</strong> enviou uma mensagem</div>
-                        <div class="notification-time">2 horas atrás</div>
+                <div class="chat-input">
+                    <div class="input-container">
+                        <i class="fas fa-smile"></i>
+                        <input type="text" placeholder="Enviar mensagens..." id="messageInput">
+                        <i class="fas fa-microphone"></i>
+                        <i class="fas fa-image"></i>
+                        <i class="fas fa-ellipsis-h"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="assets/js/conversas.js"></script>
-</body>
+</div>
+<script src="assets/js/conversas.js"></script>

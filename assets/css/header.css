@@ -71,7 +71,7 @@
   z-index: 1000;
   animation: fadeIn 0.3s ease;
   border: 1px solid #f5f5f5;
-  overflow: hidden;
+  overflow-y: auto; /* Permite scroll se o conteúdo for maior que a área do dropdown*/
 }
 
 .notification-dropdown.open,
@@ -381,11 +381,94 @@ li:has(a.menu-link.active) span.material-symbols-outlined {
     gap: 25px;
     border-top: 1px solid var(--cor-fundo);
   }
-
 }
 
-/* Animation */
-/* @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-} */
+  @media (max-width: 500px) {
+
+  /* MODIFICADO: Estilos Responsivos para Dropdowns - TELA CHEIA */
+    .notification-dropdown,
+    .config-dropdown {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        transform: none;
+        right: auto;
+        border-radius: 0;
+        padding: 0 20px 20px 20px; /* ALTERADO: Padding top para 0. O espaçamento virá do padding do header ou margin do primeiro item */
+        box-shadow: none;
+        background: #fff5f0;
+        z-index: 9999;
+        box-sizing: border-box;
+        overflow-y: auto; /* Manter para permitir rolagem interna se o conteúdo exceder a altura */
+    }
+
+    .notification-top {
+        /* Ajustes para o cabeçalho do modal */
+        border-radius: 0;
+        margin: 0 -20px 15px; /* ALTERADO: Remove margem negativa superior para que o conteúdo principal comece corretamente */
+        padding: 15px 20px;
+        width: calc(100% + 40px);
+        box-sizing: border-box;
+        position: sticky; /* ADICIONADO: Fixa o cabeçalho ao rolar */
+        top: 0; /* Alinha o cabeçalho ao topo do dropdown */
+        z-index: 10; /* Garante que fique acima do conteúdo ao rolar */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra sutil para indicar que é sticky */
+    }
+    
+    .notification-top h2 {
+        font-size: 20px;
+    }
+
+    .close-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    /* O section-title e os primeiros elementos devem ter um espaçamento superior, 
+       agora que o padding-top do dropdown foi zerado. */
+    .config-dropdown .section-title:first-of-type,
+    .notification-dropdown .section-title:first-of-type,
+    .config-dropdown .config-section-group:first-of-type,
+    .notification-dropdown .notification-card:first-of-type {
+        margin-top: 5px; /* ADICIONADO: Garante espaçamento inicial abaixo do cabeçalho fixo */
+    }
+
+    /* NOTIFICAÇÕES: Ajuste para o texto não sobrepor a bolinha */
+    .notification-card {
+        border-radius: 10px;
+        padding: 15px 45px 15px 15px; /* ALTERADO: Aumenta o padding-right para dar espaço à bolinha */
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        /* Adicionar display: flex; e justify-content: space-between; aqui pode ajudar, 
+           mas vamos manter a abordagem de padding-right para ser o mais minimalista */
+    }
+    
+    .notification-info {
+        flex: 1;
+        /* Remover margin-right se existir, ou garantir que não comprima */
+        /* max-width: calc(100% - 60px); /* Opcional: Limita a largura do texto para evitar sobreposição */
+    }
+
+    .notification-info p {
+        font-size: 15px;
+    }
+
+    .notification-info .time {
+        font-size: 13px;
+    }
+
+    /* GARANTE que a bolinha laranja esteja sempre à direita e sem sobreposição */
+    .dot.orange {
+        position: absolute;
+        top: 50%;
+        right: 15px; /* Ajuste para ter espaçamento da borda do card */
+        transform: translateY(-50%);
+        flex-shrink: 0; /* Garante que a bolinha não encolha */
+    }
+
+    /* ... os outros estilos de 800px ... */
+
+}

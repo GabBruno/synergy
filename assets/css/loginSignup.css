@@ -359,7 +359,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Responsivo - Mobile */
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
     .showcase-section-wrapper {
         display: none;
     }

@@ -1,8 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que padding e border não adicionem largura total */
+  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
 .page {
   display: flex;
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1200px; /* Largura máxima para o conteúdo principal */
   margin: auto;
+  padding: 0 1rem; /* Adiciona um padding lateral para evitar que o conteúdo encoste nas bordas em telas menores */
+  box-sizing: border-box; /* Garante que padding não adicione largura total */
 }
 
 .perfil {
@@ -12,14 +21,19 @@
   padding: 2rem;
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-sizing: border-box; /* Garante que padding não adicione largura total */
+  min-width: 0; /* Permite que o flex item encolha abaixo de seu conteúdo */
+  max-width: 700px; /* AJUSTADO: Diminui um pouco mais a largura máxima do perfil */
+  /* Você pode experimentar com valores como 600px, 700px, etc., dependendo do quão mais estreito você quer que fique */
 }
 
 .header-background { /* Classe que contém a imagem de capa */
   width: 100%;
-  height: 160px; /* Altura da área da imagem de capa */
-  /* Removemos o border-top-left-radius e border-top-right-radius daqui,
-     pois o border-radius do .perfil já fará o trabalho de arredondar a parte superior da capa */
+  height: 160px; /* Altura da área da imagem de capa, mantido como estava */
   position: relative;
+  overflow: hidden; /* Garante que a imagem não ultrapasse os limites do contêiner */
+  border-top-left-radius: 15px; /* Adicionado para arredondar a parte superior da capa */
+  border-top-right-radius: 15px; /* Adicionado para arredondar a parte superior da capa */
 }
 
 .header-bg-img {
@@ -28,12 +42,13 @@
   border-radius: 20px;
   max-width: 100%;
   overflow: hidden;
-  height: 220px;
+  height: 250px; /* AUMENTADO: Imagem de capa mais alta */
   object-fit: cover;
+  margin-top: -90px; /* AJUSTADO: Puxa a imagem mais para cima, atrás da foto de perfil */
 }
 
 .profile-content { /* Classe que contém a foto do usuário e outros detalhes */
-  margin-top: -80px; /* Puxa o conteúdo para cima, sobrepondo a imagem de capa */
+  margin-top: -140px; /* Puxa o conteúdo para cima, sobrepondo a imagem de capa */
   padding: 20px;
   position: relative;
   z-index: 1; /* Garante que o conteúdo apareça acima da imagem de capa */
@@ -49,7 +64,6 @@
   margin-bottom: -0.9rem;
 }
 
-
 h2 {
   margin-top: 16px;
   margin-bottom: 7px;
@@ -59,9 +73,9 @@ h2 {
 p {
   color: #777;
   font-size: 1.1em;
-  font-weight: semi-bold; 
-  margin-top: -5px; 
-  margin-bottom: 10px; 
+  font-weight: semi-bold;
+  margin-top: -5px;
+  margin-bottom: 10px;
 }
 
 .social-icons-wrapper { /* Novo wrapper para centralizar e espaçar os ícones */
@@ -70,13 +84,6 @@ p {
   gap: 15px;
   margin-bottom: 20px;
 }
-
-/* Removido este seletor, pois o tamanho será controlado por .social-icon-item para consistência */
-/* .social-icons i {
-  font-size: 1.5rem;
-  margin: 0 0.5rem;
-  cursor: pointer;
-} */
 
 .social-icon-item { /* Estilo para cada item de ícone social */
   width: 55px;
@@ -87,11 +94,6 @@ p {
   cursor: pointer;
 
   font-size: 2.2em; /* Aumentado o tamanho do ícone aqui */
-  /* Se você quiser adicionar uma cor, um fundo ou uma borda, faria aqui: */
-  /* background-color: #f0f2f5; */
-  /* border-radius: 50%; */
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
-  /* color: #666; */
 }
 
 .botoes {
@@ -116,7 +118,7 @@ p {
   justify-content: center;
   font-weight: bold; /* Deixa o texto dos botões em negrito */
   transition: background-color 0.3s ease; /* Transição suave no hover */
-  
+
   /* --- Alterações para deixar os botões do mesmo tamanho --- */
   flex-grow: 1; /* Faz com que os botões cresçam para ocupar o espaço disponível igualmente */
   max-width: 150px; /* Define uma largura máxima para evitar que fiquem excessivamente grandes em telas muito largas. Ajuste este valor se necessário. */
@@ -124,10 +126,9 @@ p {
   /* --- Fim das alterações --- */
 }
 
-/* Mantendo os estilos específicos para o botão de adicionar amigo */
 .botoes .button-add-friends {
-  background-color: #f78b31; /* Mantendo a mesma cor para ambos os botões, como na imagem fornecida anteriormente */
-  color: white; /* Cor do texto branco para o botão de adicionar amigo, como na imagem fornecida anteriormente */
+  background-color: #f78b31; /* Mantendo a mesma cor para ambos os botões */
+  color: white; /* Cor do texto branco para o botão de adicionar amigo */
 }
 
 .botoes button:hover,
@@ -160,7 +161,7 @@ p {
 
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* Padrão: 2 fotos por linha */
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -210,13 +211,72 @@ p {
   text-decoration: none;
 }
 
+/* Media Queries para responsividade */
 @media (max-width: 768px) {
   .page {
     flex-direction: column;
+    gap: 1rem; /* Ajusta o gap para telas menores */
+  }
+
+  .perfil {
+    padding: 1rem; /* Ajusta o padding do perfil para telas menores */
+    max-width: 100%; /* Em telas menores, o perfil ocupa a largura total disponível (com padding da .page) */
   }
 
   .amigos {
-    display: none;
+    display: none; /* Esconde a seção de amigos em telas menores */
+  }
+
+  .galeria {
+    grid-template-columns: repeat(1, 1fr); /* Telas pequenas: 1 foto por linha */
+  }
+
+  .botoes {
+    flex-direction: column; /* Coloca os botões em coluna em telas menores */
+    gap: 10px; /* Reduz o gap entre os botões */
+  }
+
+  .botoes button,
+  .botoes .button-add-friends {
+    max-width: 100%; /* Botões ocupam a largura total disponível */
+    min-width: unset; /* Remove a largura mínima para flexibilidade */
+    padding: 12px 20px; /* Ajusta o padding dos botões */
+  }
+
+  h2 {
+    font-size: 1.5em; /* Ajusta o tamanho da fonte do h2 */
+  }
+
+  p {
+    font-size: 1em; /* Ajusta o tamanho da fonte do parágrafo */
+  }
+
+  .social-icon-item {
+    font-size: 1.8em; /* Ajusta o tamanho dos ícones sociais */
+    width: 45px;
+    height: 45px;
+  }
+
+  .estatisticas span {
+    font-size: 1em;
+  }
+
+  .estatisticas strong {
+    font-size: 1.3em;
+  }
+}
+
+/* Ajustes para telas muito pequenas (ex: celulares antigos) */
+@media (max-width: 480px) {
+  .profile-content {
+    margin-top: -60px; /* Ajusta a margem superior para a imagem de perfil */
+    padding: 10px;
+  }
+
+  .perfil-img {
+    width: 120px;
+    height: 120px;
+    border-width: 3px; /* Ajusta a borda da imagem de perfil */
   }
 }
 
@@ -261,7 +321,6 @@ p {
 /* Note: Use a classe .edit-profile-modal-content para prefixar todos os seletores */
 
 .edit-profile-modal-content .form-box {
-    /* Se houver algum estilo em .form-box no seu editar-perfil.css, copie aqui */
     width: 100%; /* Garante que o formulário ocupe o espaço disponível */
 }
 
@@ -316,7 +375,7 @@ p {
         padding: 1.5rem !important;
     }
 
-    .edit-profile-modal-content .profile-image img { /* Ajustado para o seletor correto */
+    .edit-profile-modal-content .profile-image img {
         width: 120px;
         height: 120px;
     }

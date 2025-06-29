@@ -1,257 +1,224 @@
+<link rel="stylesheet" href="assets/css/friends.css">
 
-    <link rel="stylesheet" href="assets/css/friends.css">
+<div class="mobile-overlay" id="mobileOverlay"></div>
 
-    <div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="container">
+    <main class="main-content-friends">
+        <div class="content-header">
+            <div class="tabs">
+                <button class="tab active" data-tab="friends">
+                    <span class="tab-icon">👥</span>
+                    <span class="tab-text">AMIGOS</span>
+                    <span class="tab-count">10</span>
+                </button>
+                <button class="tab" data-tab="groups">
+                    <span class="tab-icon">🏢</span>
+                    <span class="tab-text">GRUPOS</span>
+                    <span class="tab-count">10</span>
+                </button>
+            </div>
+        </div>
 
-    <div class="container">
-        <main class="main-content-friends">
-            <div class="content-header">
-                <div class="tabs">
-                    <button class="tab active" data-tab="friends">
-                        <span class="tab-icon">👥</span>
-                        <span class="tab-text">AMIGOS</span>
-                        <span class="tab-count">10</span>
-                    </button>
-                    <button class="tab" data-tab="groups">
-                        <span class="tab-icon">🏢</span>
-                        <span class="tab-text">GRUPOS</span>
-                        <span class="tab-count">10</span>
-                    </button>
-                </div>
-                
-                <div class="content-actions">
-                    <button class="action-btn search-btn" title="Buscar">
-                        🔍
-                    </button>
-                    <button class="action-btn filter-btn" title="Filtrar">
-                        🔽
-                    </button>
+        <div class="friends-avatars">
+            <div class="avatars-scroll">
+                <img src="assets/images/amigo.png" alt="Friend" class="avatar">
+                <img src="assets/images/amigo2.png" alt="Friend" class="avatar">
+                <img src="assets/images/amigo3.png" alt="Friend" class="avatar">
+                <img src="assets/images/amigo4.png" alt="Friend" class="avatar">
+                <img src="assets/images/amigo5.png" alt="Friend" class="avatar">
+                <img src="assets/images/amigo6.png" alt="Friend" class="avatar">
+                <img src="assets/images/amigo7.png" alt="Friend" class="avatar">
+            </div>
+        </div>
+
+        <div class="friend-requests" id="friendRequests">
+            <div class="friend-card" data-name="Isabell Mafra">
+                <img src="assets/images/Isabell Mafra.png" alt="Isabell Mafra" class="friend-photo">
+                <h3 class="friend-name">Isabell Mafra</h3>
+                <p class="friend-mutual">5 amigos em comum</p>
+                <div class="card-actions">
+                    <button class="btn-accept">Aceitar</button>
+                    <button class="btn-reject">Rejeitar</button>
                 </div>
             </div>
 
-            <div class="friends-avatars">
-                <div class="avatars-scroll">
-                    <img src="assets/images/amigo.png" alt="Friend" class="avatar">
-                    <img src="assets/images/amigo2.png" alt="Friend" class="avatar">
-                    <img src="assets/images/amigo3.png" alt="Friend" class="avatar">
-                    <img src="assets/images/amigo4.png" alt="Friend" class="avatar">
-                    <img src="assets/images/amigo5.png" alt="Friend" class="avatar">
-                    <img src="assets/images/amigo6.png" alt="Friend" class="avatar">
-                    <img src="assets/images/amigo7.png" alt="Friend" class="avatar">
-                    <img src="assets/images/amigo8.png" alt="Friend" class="avatar">
-                    <img src="assets/images/amigo9.png" alt="Friend" class="avatar">
-                    <img src="assets/images/amigo10.png" alt="Friend" class="avatar">
+            <div class="friend-card" data-name="Jorge Cardoso">
+                <img src="assets/images/Jorge Cardoso.png" alt="Jorge Cardoso" class="friend-photo">
+                <h3 class="friend-name">Jorge Cardoso</h3>
+                <p class="friend-mutual">2 amigos em comum</p>
+                <div class="card-actions">
+                    <button class="btn-accept">Aceitar</button>
+                    <button class="btn-reject">Rejeitar</button>
                 </div>
             </div>
 
-            <div class="friend-requests" id="friendRequests">
-                <div class="friend-card" data-name="Isabell Mafra">
-                    <img src="assets/images/Isabell Mafra.png" alt="Isabell Mafra" class="friend-photo">
-                    <h3 class="friend-name">Isabell Mafra</h3>
-                    <p class="friend-mutual">5 amigos em comum</p>
-                    <div class="card-actions">
-                        <button class="btn-accept">Aceitar</button>
-                        <button class="btn-reject">Rejeitar</button>
-                    </div>
-                </div>
-
-                <div class="friend-card" data-name="Jorge Cardoso">
-                    <img src="assets/images/Jorge Cardoso.png" alt="Jorge Cardoso" class="friend-photo">
-                    <h3 class="friend-name">Jorge Cardoso</h3>
-                    <p class="friend-mutual">2 amigos em comum</p>
-                    <div class="card-actions">
-                        <button class="btn-accept">Aceitar</button>
-                        <button class="btn-reject">Rejeitar</button>
-                    </div>
-                </div>
-
-                <div class="friend-card" data-name="Rachel Podrez">
-                    <img src="assets/images/Rachel Podrez.png" alt="Rachel Podrez" class="friend-photo">
-                    <h3 class="friend-name">Rachel Podrez</h3>
-                    <p class="friend-mutual">8 amigos em comum</p>
-                    <div class="card-actions">
-                        <button class="btn-accept">Aceitar</button>
-                        <button class="btn-reject">Rejeitar</button>
-                    </div>
-                </div>
-
-                <div class="friend-card" data-name="Enzo Martins">
-                    <img src="assets/images/Enzo Martins.png" alt="Enzo Martins" class="friend-photo">
-                    <h3 class="friend-name">Enzo Martins</h3>
-                    <p class="friend-mutual">1 amigo em comum</p>
-                    <div class="card-actions">
-                        <button class="btn-accept">Aceitar</button>
-                        <button class="btn-reject">Rejeitar</button>
-                    </div>
-                </div>
-
-                <div class="friend-card" data-name="Matheus Reus">
-                    <img src="assets/images/Mattheu Reus.png" alt="Matheus Reus" class="friend-photo">
-                    <h3 class="friend-name">Matheus Reus</h3>
-                    <p class="friend-mutual">3 amigos em comum</p>
-                    <div class="card-actions">
-                        <button class="btn-accept">Aceitar</button>
-                        <button class="btn-reject">Rejeitar</button>
-                    </div>
-                </div>
-
-                <div class="friend-card" data-name="Michael Nunes">
-                    <img src="assets/images/Michael Nunes.png" alt="Michael Nunes" class="friend-photo">
-                    <h3 class="friend-name">Michael Nunes</h3>
-                    <p class="friend-mutual">6 amigos em comum</p>
-                    <div class="card-actions">
-                        <button class="btn-accept">Aceitar</button>
-                        <button class="btn-reject">Rejeitar</button>
-                    </div>
-                </div>
-
-                <div class="friend-card" data-name="Maria Avelar">
-                    <img src="assets/images/Maria Avelar.png" alt="Maria Avelar" class="friend-photo">
-                    <h3 class="friend-name">Maria Avelar</h3>
-                    <p class="friend-mutual">4 amigos em comum</p>
-                    <div class="card-actions">
-                        <button class="btn-accept">Aceitar</button>
-                        <button class="btn-reject">Rejeitar</button>
-                    </div>
-                </div>
-
-                <div class="friend-card" data-name="João Farias">
-                    <img src="assets/images/João Farias.png" alt="João Farias" class="friend-photo">
-                    <h3 class="friend-name">João Farias</h3>
-                    <p class="friend-mutual">7 amigos em comum</p>
-                    <div class="card-actions">
-                        <button class="btn-accept">Aceitar</button>
-                        <button class="btn-reject">Rejeitar</button>
-                    </div>
-                </div>
-
-                <div class="friend-card" data-name="Igor Paulo">
-                    <img src="assets/images/Igor Paulo.png" alt="Igor Paulo" class="friend-photo">
-                    <h3 class="friend-name">Igor Paulo</h3>
-                    <p class="friend-mutual">2 amigos em comum</p>
-                    <div class="card-actions">
-                        <button class="btn-accept">Aceitar</button>
-                        <button class="btn-reject">Rejeitar</button>
-                    </div>
-                </div>
-
-                <div class="friend-card" data-name="Safira Silva">
-                    <img src="assets/images/Safira Silva.png" alt="Safira Silva" class="friend-photo">
-                    <h3 class="friend-name">Safira Silva</h3>
-                    <p class="friend-mutual">9 amigos em comum</p>
-                    <div class="card-actions">
-                        <button class="btn-accept">Aceitar</button>
-                        <button class="btn-reject">Rejeitar</button>
-                    </div>
+            <div class="friend-card" data-name="Rachel Podrez">
+                <img src="assets/images/Rachel Podrez.png" alt="Rachel Podrez" class="friend-photo">
+                <h3 class="friend-name">Rachel Podrez</h3>
+                <p class="friend-mutual">8 amigos em comum</p>
+                <div class="card-actions">
+                    <button class="btn-accept">Aceitar</button>
+                    <button class="btn-reject">Rejeitar</button>
                 </div>
             </div>
 
-            <div class="groups-content" id="groupsContent" style="display: none;">
-                <div class="groups-grid">
-                    <div class="group-card" data-group="flamengo">
-                        <img src="assets/images/flamengo.png"alt="FLAMENGO" class="group-info"><div></div>
-                        <div class="group-info">
-                            <h3 class="group-name">FLAMENGO</h3>
-                            <p class="group-posts">55+ NOVAS PUBLICAÇÕES</p>
-                            <p class="group-members">1.2k membros</p>
-                        </div>
-                        <button class="btn-join">Entrar</button>
-                    </div>
-
-                    <div class="group-card" data-group="podpah">
-                        <img src="assets/images/podpah.png"alt="PODPAH"class="group-info"><div></div>
-                        <div class="group-info">
-                            <h3 class="group-name">PODPAH</h3>
-                            <p class="group-posts">25+ NOVAS PUBLICAÇÕES</p>
-                            <p class="group-members">856 membros</p>
-                        </div>
-                        <button class="btn-join">Entrar</button>
-                    </div>
-
-                    <div class="group-card" data-group="loud">
-                        <img src="assets/images/loud.png"alt="LOUD"class="group-info"><div></div>
-                        <div class="group-info">
-                            <h3 class="group-name">LOUD</h3>
-                            <p class="group-posts">543+ NOVAS PUBLICAÇÕES</p>
-                            <p class="group-members">2.1k membros</p>
-                        </div>
-                        <button class="btn-join">Entrar</button>
-                    </div>
-
-                    <div class="group-card" data-group="missa">
-                        <img src="assets/images/missa.png"alt="MISSA DE DOMINGO"class="group-info"><div></div>
-                        <div class="group-info">
-                            <h3 class="group-name">MISSA DE DOMINGO</h3>
-                            <p class="group-posts">25+ NOVAS PUBLICAÇÕES</p>
-                            <p class="group-members">432 membros</p>
-                        </div>
-                        <button class="btn-join">Entrar</button>
-                    </div>
-
-                    <div class="group-card" data-group="engenharia">
-                        <img src="assets/images/matue.png"alt="ENHENHARIA"class="group-info"><div></div>
-                        <div class="group-info">
-                            <h3 class="group-name">ENG. DE SOFTWARE</h3>
-                            <p class="group-posts">1+ NOVAS PUBLICAÇÕES</p>
-                            <p class="group-members">678 membros</p>
-                        </div>
-                        <button class="btn-join">Entrar</button>
-                    </div>
-
-                    <div class="group-card" data-group="SCCP NEWS">
-                        <img src="assets/images/news.png"alt="SCCP NEWS"class="group-info"><div></div>
-                        <div class="group-info">
-                            <h3 class="group-name">SCCP NEWS</h3>
-                            <p class="group-posts">3025+ NOVAS PUBLICAÇÕES</p>
-                            <p class="group-members">5.2k membros</p>
-                        </div>
-                        <button class="btn-join">Entrar</button>
-                    </div>
-
-                    <div class="group-card" data-group="valorant">
-                        <img src="assets/images/valorant.png"alt="VALORANT"class="group-info"><div></div>
-                        <div class="group-info">
-                            <h3 class="group-name">VALORANT</h3>
-                            <p class="group-posts">415+ NOVAS PUBLICAÇÕES</p>
-                            <p class="group-members">3.8k membros</p>
-                        </div>
-                        <button class="btn-join">Entrar</button>
-                    </div>
-
-                    <div class="group-card" data-group="pdz">
-                        <img src="assets/images/PDZ.png"alt="pdz"class="group-info"><div></div>
-                        <div class="group-info">
-                            <h3 class="group-name">FÃ CLUBE DO PDZ</h3>
-                            <p class="group-posts">Sem novas publicações</p>
-                            <p class="group-members">234 membros</p>
-                        </div>
-                        <button class="btn-join">Entrar</button>
-                    </div>
-
-                    <div class="group-card" data-group="futebol">
-                       <img src="assets/images/futebol.png"alt="futebol"class="group-info"><div></div>
-                        <div class="group-info">
-                            <h3 class="group-name">FUTEBOL DE SÁBADO</h3>
-                            <p class="group-posts">10+ NOVAS PUBLICAÇÕES</p>
-                            <p class="group-members">567 membros</p>
-                        </div>
-                        <button class="btn-join">Entrar</button>
-                    </div>
-
-                    <div class="group-card" data-group="fortnite">
-                        <img src="assets/images/fortnite.png"alt="fortnite"class="group-info"><div></div>
-                        <div class="group-info">
-                            <h3 class="group-name">FORTNITE</h3>
-                            <p class="group-posts">102+ NOVAS PUBLICAÇÕES</p>
-                            <p class="group-members">1.9k membros</p>
-                        </div>
-                        <button class="btn-join">Entrar</button>
-                    </div>
+            <div class="friend-card" data-name="Enzo Martins">
+                <img src="assets/images/Enzo Martins.png" alt="Enzo Martins" class="friend-photo">
+                <h3 class="friend-name">Enzo Martins</h3>
+                <p class="friend-mutual">1 amigo em comum</p>
+                <div class="card-actions">
+                    <button class="btn-accept">Aceitar</button>
+                    <button class="btn-reject">Rejeitar</button>
                 </div>
             </div>
-        </main>
-    </div>
 
-    <div class="toast" id="toast"></div>
+            <div class="friend-card" data-name="Matheus Reus">
+                <img src="assets/images/Mattheu Reus.png" alt="Matheus Reus" class="friend-photo">
+                <h3 class="friend-name">Matheus Reus</h3>
+                <p class="friend-mutual">3 amigos em comum</p>
+                <div class="card-actions">
+                    <button class="btn-accept">Aceitar</button>
+                    <button class="btn-reject">Rejeitar</button>
+                </div>
+            </div>
 
-    <script src="assets/js/friends.js"></script>
+            <div class="friend-card" data-name="Michael Nunes">
+                <img src="assets/images/Michael Nunes.png" alt="Michael Nunes" class="friend-photo">
+                <h3 class="friend-name">Michael Nunes</h3>
+                <p class="friend-mutual">6 amigos em comum</p>
+                <div class="card-actions">
+                    <button class="btn-accept">Aceitar</button>
+                    <button class="btn-reject">Rejeitar</button>
+                </div>
+            </div>
+
+            <div class="friend-card" data-name="Maria Avelar">
+                <img src="assets/images/Maria Avelar.png" alt="Maria Avelar" class="friend-photo">
+                <h3 class="friend-name">Maria Avelar</h3>
+                <p class="friend-mutual">4 amigos em comum</p>
+                <div class="card-actions">
+                    <button class="btn-accept">Aceitar</button>
+                    <button class="btn-reject">Rejeitar</button>
+                </div>
+            </div>
+
+            <div class="friend-card" data-name="João Farias">
+                <img src="assets/images/João Farias.png" alt="João Farias" class="friend-photo">
+                <h3 class="friend-name">João Farias</h3>
+                <p class="friend-mutual">7 amigos em comum</p>
+                <div class="card-actions">
+                    <button class="btn-accept">Aceitar</button>
+                    <button class="btn-reject">Rejeitar</button>
+                </div>
+            </div>
+
+            <div class="friend-card" data-name="Igor Paulo">
+                <img src="assets/images/Igor Paulo.png" alt="Igor Paulo" class="friend-photo">
+                <h3 class="friend-name">Igor Paulo</h3>
+                <p class="friend-mutual">2 amigos em comum</p>
+                <div class="card-actions">
+                    <button class="btn-accept">Aceitar</button>
+                    <button class="btn-reject">Rejeitar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="groups-content" id="groupsContent" style="display: none;">
+            <div class="groups-grid">
+                <div class="group-card" data-group="flamengo">
+                    <img src="assets/images/flamengo.png" alt="FLAMENGO" class="group-img">
+                    <div class="group-details">
+                        <h3 class="group-name">FLAMENGO</h3>
+                        <p class="group-posts">55+ NOVAS PUBLICAÇÕES</p>
+                        <p class="group-members">1.2k membros</p>
+                    </div>
+                    <button class="btn-join">Entrar</button>
+                </div>
+
+                <div class="group-card" data-group="podpah">
+                    <img src="assets/images/podpah.png" alt="PODPAH" class="group-img">
+                    <div class="group-details">
+                        <h3 class="group-name">PODPAH</h3>
+                        <p class="group-posts">25+ NOVAS PUBLICAÇÕES</p>
+                        <p class="group-members">856 membros</p>
+                    </div>
+                    <button class="btn-join">Entrar</button>
+                </div>
+
+                <div class="group-card" data-group="loud">
+                    <img src="assets/images/loud.png" alt="LOUD" class="group-img">
+                    <div class="group-details">
+                        <h3 class="group-name">LOUD</h3>
+                        <p class="group-posts">543+ NOVAS PUBLICAÇÕES</p>
+                        <p class="group-members">2.1k membros</p>
+                    </div>
+                    <button class="btn-join">Entrar</button>
+                </div>
+
+                <div class="group-card" data-group="missa">
+                    <img src="assets/images/missa.png" alt="MISSA DE DOMINGO" class="group-img">
+                    <div class="group-details">
+                        <h3 class="group-name">MISSA DE DOMINGO</h3>
+                        <p class="group-posts">25+ NOVAS PUBLICAÇÕES</p>
+                        <p class="group-members">432 membros</p>
+                    </div>
+                    <button class="btn-join">Entrar</button>
+                </div>
+
+                <div class="group-card" data-group="engenharia">
+                    <img src="assets/images/matue.png" alt="ENHENHARIA" class="group-img">
+                    <div class="group-details">
+                        <h3 class="group-name">ENG. DE SOFTWARE</h3>
+                        <p class="group-posts">1+ NOVAS PUBLICAÇÕES</p>
+                        <p class="group-members">678 membros</p>
+                    </div>
+                    <button class="btn-join">Entrar</button>
+                </div>
+
+                <div class="group-card" data-group="SCCP NEWS">
+                    <img src="assets/images/news.png" alt="SCCP NEWS" class="group-img">
+                    <div class="group-details">
+                        <h3 class="group-name">SCCP NEWS</h3>
+                        <p class="group-posts">3025+ NOVAS PUBLICAÇÕES</p>
+                        <p class="group-members">5.2k membros</p>
+                    </div>
+                    <button class="btn-join">Entrar</button>
+                </div>
+
+                <div class="group-card" data-group="valorant">
+                    <img src="assets/images/valorant.png" alt="VALORANT" class="group-img">
+                    <div class="group-details">
+                        <h3 class="group-name">VALORANT</h3>
+                        <p class="group-posts">415+ NOVAS PUBLICAÇÕES</p>
+                        <p class="group-members">3.8k membros</p>
+                    </div>
+                    <button class="btn-join">Entrar</button>
+                </div>
+
+                <div class="group-card" data-group="pdz">
+                    <img src="assets/images/PDZ.png" alt="pdz" class="group-img">
+                    <div class="group-details">
+                        <h3 class="group-name">FÃ CLUBE DO PDZ</h3>
+                        <p class="group-posts">Sem novas publicações</p>
+                        <p class="group-members">234 membros</p>
+                    </div>
+                    <button class="btn-join">Entrar</button>
+                </div>
+
+                <div class="group-card" data-group="futebol">
+                   <img src="assets/images/futebol.png" alt="futebol" class="group-img">
+                    <div class="group-details">
+                        <h3 class="group-name">FUTEBOL DE SÁBADO</h3>
+                        <p class="group-posts">10+ NOVAS PUBLICAÇÕES</p>
+                        <p class="group-members">567 membros</p>
+                    </div>
+                    <button class="btn-join">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/friends.js"></script>

@@ -1,12 +1,24 @@
+/* Regras descomentadas */
+#conteudo{
+  padding: 0px 0px 0px 0px !important;
+}
+.friends{
+  display: none !important;
+}
+
 .app-container {
-  height: 94vh;
+  height: 100vh; /* Ocupa 100% da altura da viewport */
   width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden; /* Garante que nada dentro estoure */
+  box-sizing: border-box; /* Adicionado anteriormente para garantir */
 }
 
-/* Header exato das screenshots */
+/* Header (assumindo que você tem um header no seu HTML completo) */
+/* Este header não estava no seu conversas.html original, mas foi adicionado em um HTML revisado */
+/* Caso não esteja usando, pode ignorar/remover o .app-header e seus estilos filhos */
 .app-header {
   background: white;
   padding: 15px 25px;
@@ -16,6 +28,13 @@
   border-bottom: 1px solid #e0e0e0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   z-index: 1000;
+  flex-shrink: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .logo-text {
@@ -31,20 +50,57 @@
   gap: 20px;
 }
 
-/* Main Content */
-.main-content {
-  display: flex;
-  flex: 1;
-  overflow: hidden;
+.notification-icon, .settings-icon {
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.notification-icon:hover, .settings-icon:hover {
+    color: #ff6b35;
 }
 
-/* Left Sidebar - exato das screenshots */
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none; /* Escondido por padrão, visível em mobile */
+  flex-direction: column;
+  width: 25px;
+  height: 18px;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.mobile-menu-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* Main Content Area */
+.main-content {
+  display: flex;
+  flex: 1; /* Ocupa o espaço restante verticalmente */
+  overflow: hidden; /* Gerencia overflow para seus filhos */
+  background-color: #f5f5f5; /* Cor de fundo */
+}
+
+/* Left Sidebar - Menu principal */
+/* Este elemento não estava no seu conversas.html original, mas foi adicionado em um HTML revisado */
+/* Caso não esteja usando, pode ignorar/remover o .left-sidebar e seus estilos filhos */
 .left-sidebar {
   width: 280px;
   background: #faf0ed;
   padding: 25px;
   overflow-y: auto;
   border-right: 1px solid #e8d5d0;
+  flex-shrink: 0; /* Garante que não encolhe abaixo de sua largura */
+  display: flex; /* Para que o conteúdo dentro dela seja flexível */
+  flex-direction: column; /* Conteúdo em coluna */
 }
 
 .user-profile {
@@ -74,6 +130,8 @@
 
 .sidebar-nav ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
   margin-bottom: 35px;
 }
 
@@ -105,6 +163,12 @@
 .sidebar-nav i {
   width: 18px;
   font-size: 16px;
+}
+
+.friends-section {
+    flex: 1; /* Permite que a seção de amigos ocupe espaço restante na sidebar */
+    display: flex;
+    flex-direction: column;
 }
 
 .friends-section h3 {
@@ -163,18 +227,20 @@
   background: rgba(255, 107, 53, 0.1);
 }
 
-/* Conversations Panel - exato das screenshots */
+/* Conversations Panel */
 .conversations-panel {
-  width: 350px;
+  width: 350px; /* Largura padrão */
   background: white;
   border-right: 1px solid #e0e0e0;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0; /* Garante que não encolhe */
 }
 
 .conversations-header {
   padding: 25px;
   border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0; /* Impede que o cabeçalho encolha */
 }
 
 .conversations-header h2 {
@@ -214,16 +280,30 @@
   box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
-/* Avatares circulares - exato das screenshots */
+/* Avatares circulares */
 .recent-contacts {
   padding: 5px 3px 5px 3px;
   border-bottom: 1px solid #e0e0e0;
-  /* overflow-x: auto; */
+  overflow-x: auto; /* Permite rolagem horizontal */
+  flex-shrink: 0; /* Impede que encolha */
+  -webkit-overflow-scrolling: touch; /* Rolagem suave em iOS */
+}
+/* Estilo para a barra de rolagem (opcional, para navegadores Webkit) */
+.recent-contacts::-webkit-scrollbar {
+    height: 6px;
+}
+.recent-contacts::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.recent-contacts::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
 }
 
 .contact-avatars {
   display: flex;
-  gap: 10px;
+  gap: 6px;
+  padding: 10px; /* Padding interno para as imagens dentro do scroll */
 }
 
 .contact-avatars img {
@@ -235,6 +315,7 @@
   transition: all 0.3s ease;
   border: 3px solid white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Impede que as imagens encolham */
 }
 
 .contact-avatars img:hover {
@@ -242,9 +323,9 @@
   box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
 }
 
-/* Lista de conversas - exato das screenshots */
+/* Lista de conversas */
 .conversations-list {
-  flex: 1;
+  flex: 1; /* Ocupa o espaço restante verticalmente */
   overflow-y: auto;
   padding: 25px;
 }
@@ -289,7 +370,7 @@
 
 .conversation-info {
   flex: 1;
-  min-width: 0;
+  min-width: 0; /* Permite que o flex item encolha */
   margin-right: 10px;
 }
 
@@ -308,7 +389,6 @@
   text-overflow: ellipsis;
 }
 
-/* Botões de ação das conversas */
 .conversation-actions {
   display: flex;
   gap: 6px;
@@ -348,7 +428,7 @@
 }
 
 .conversation-btn.call-btn {
-  background: #4caf50; /* Verde como na imagem */
+  background: #4caf50;
 }
 
 .conversation-btn.call-btn:hover {
@@ -356,30 +436,31 @@
 }
 
 .conversation-btn.video-btn {
-  background: #2196f3; /* Azul como na imagem */
+  background: #2196f3;
 }
 
 .conversation-btn.video-btn:hover {
   background: #1976d2;
 }
 
-/* Botão de três pontos permanece laranja */
 .conversation-btn:not(.call-btn):not(.video-btn) {
-  background: #ff6b35; /* Laranja como na imagem */
+  background: #ff6b35;
 }
 
 .conversation-btn:not(.call-btn):not(.video-btn):hover {
   background: #e55a2b;
 }
 
-/* Chat Panel - exato das screenshots */
+/* Chat Panel */
 .chat-panel {
-  flex: 1;
+  flex: 1; /* Ocupa o restante da largura */
   background: white;
   display: flex;
   flex-direction: column;
+  border-left: 1px solid #e0e0e0; /* Divisor com o painel de conversas */
 }
 
+/* Chat Welcome (tela de boas-vindas) */
 .chat-welcome {
   flex: 1;
   display: flex;
@@ -387,7 +468,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 60px;
+  padding: 240px; /* Reduzido o padding para não empurrar o conteúdo */
 }
 
 .synergy-logo {
@@ -412,58 +493,52 @@
   margin-bottom: 40px;
 }
 
-/* Exemplo das screenshots */
-.screenshot-example {
+.screenshot-example { /* Ajuste se for visível */
   background: #f8f8f8;
   padding: 20px;
   border-radius: 12px;
   margin-top: 30px;
   max-width: 400px;
+  display: none; /* Escondido por padrão, para evitar quebras de layout */
 }
 
-.example-title {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 15px;
-  font-weight: 500;
-}
-
-.example-conversation {
-  display: none;
-  align-items: center;
-  gap: 15px;
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.example-name {
-  font-weight: 600;
-  color: #333;
-  font-size: 15px;
-}
-
-.buttons-example {
-  height: 24px;
-  width: auto;
-  object-fit: contain;
-}
-
-/* Chat Window - exato das screenshots */
+/* Chat Window */
 .chat-window {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100%; /* Garante que a janela de chat preencha o pai */
 }
 
-/* Header do chat - exato das screenshots */
+/* Chat Header */
 .chat-header {
   padding: 30px;
   border-bottom: 1px solid #e0e0e0;
   text-align: center;
   background: #ffffff;
+  flex-shrink: 0;
+  display: flex; /* Para alinhar o botão de voltar */
+  align-items: center;
+  justify-content: center; /* Centraliza o conteúdo, botão de voltar absoluto */
+  position: relative; /* Para posicionar o botão de voltar */
 }
+
+.back-to-conversations {
+    display: none; /* Escondido por padrão, visível em mobile */
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    z-index: 10;
+}
+.back-to-conversations:hover {
+    color: #333;
+}
+
 
 .chat-user-info {
   display: flex;
@@ -514,9 +589,9 @@
   font-size: 12px;
 }
 
-/* Mensagens - exato das screenshots */
+/* Chat Messages */
 .chat-messages {
-  flex: 1;
+  flex: 1; /* Permite que as mensagens ocupem o espaço restante */
   padding: 30px;
   overflow-y: auto;
   display: flex;
@@ -529,7 +604,7 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  max-width: 80%;
+  max-width: 80%; /* Para que as mensagens não ocupem 100% da largura e não fiquem "coladas" */
 }
 
 .message.sent {
@@ -544,6 +619,7 @@
   object-fit: cover;
   border: 2px solid white;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Evita que a imagem do perfil na mensagem encolha */
 }
 
 .message-content {
@@ -584,11 +660,12 @@
   box-shadow: none !important;
 }
 
-/* Input de mensagem - exato das screenshots */
+/* Input de mensagem */
 .chat-input {
   padding: 25px;
   border-top: 1px solid #e0e0e0;
   background: white;
+  flex-shrink: 0; /* Impede que o input encolha */
 }
 
 .input-container {
@@ -627,9 +704,100 @@
   transform: scale(1.1);
 }
 
-/* Custom scrollbar */
+/* Notification Panel */
+/* Este elemento não estava no seu conversas.html original, mas foi adicionado em um HTML revisado */
+/* Caso não esteja usando, pode ignorar/remover o .notification-panel e seus estilos filhos */
+.notification-panel {
+  width: 350px; /* Largura padrão */
+  background: white;
+  border-left: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.notification-header {
+  padding: 25px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.notification-header h3 {
+  font-size: 20px;
+  color: #333;
+  font-weight: 700;
+}
+
+.mark-all-read {
+  background: none;
+  border: none;
+  color: #ff6b35;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.mark-all-read:hover {
+  text-decoration: underline;
+}
+
+.notification-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 25px;
+}
+
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background-color: #fcfcfc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.notification-item.unread {
+  background-color: #fff6f3;
+  border-left: 4px solid #ff6b35;
+}
+
+.notification-item img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-text {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.notification-text strong {
+  color: #ff6b35;
+}
+
+.notification-time {
+  font-size: 12px;
+  color: #999;
+}
+
+/* Custom scrollbar (global) */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px; /* Para scroll horizontal */
 }
 
 ::-webkit-scrollbar-track {
@@ -646,25 +814,268 @@
   background: #a8a8a8;
 }
 
-/* Smooth transitions */
-* {
-  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+/* -- Media Queries para Responsividade -- */
+
+/* Esconde sidebar e painel de notificações por padrão em telas menores */
+@media (max-width: 1024px) {
+    .left-sidebar,
+    .notification-panel {
+        display: none;
+    }
+
+    .main-content {
+        width: 100%; /* Ocupa 100% da largura quando sidebar/notificações estão escondidas */
+        justify-content: center; /* Tenta centralizar se houver um chat inativo */
+    }
+
+    .conversations-panel {
+        width: 100%; /* Conversas ocupa 100% em mobile */
+        border-right: none; /* Remove borda direita */
+        max-width: 450px; /* Limita a largura do painel de conversas em telas um pouco maiores que mobile puro */
+    }
+
+    .chat-panel {
+        width: 100%; /* Chat ocupa 100% em mobile */
+        position: absolute; /* Posiciona o chat sobre o painel de conversas */
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: white; /* Garante que o fundo cubra o painel de conversas */
+        z-index: 50; /* Garante que fique acima do painel de conversas */
+        transform: translateX(100%); /* Escondido para a direita */
+        transition: transform 0.3s ease-in-out;
+        border-left: none; /* Remove borda esquerda */
+    }
+
+    /* Classes para controlar a visibilidade via JS */
+    .conversations-panel.hidden-on-mobile {
+        transform: translateX(-100%); /* Esconde o painel de conversas */
+        position: absolute; /* Para não ocupar espaço */
+    }
+
+    .chat-panel.active-on-mobile {
+        transform: translateX(0); /* Mostra o painel de chat */
+    }
+
+    .mobile-menu-btn {
+        display: flex; /* Mostra o botão de menu em mobile */
+    }
+    .back-to-conversations {
+        display: block; /* Mostra o botão de voltar no chat em mobile */
+    }
+
+    /* Ajustes de padding e fontes para telas menores */
+    .app-header {
+        padding: 15px 20px;
+    }
+    .conversations-header, .conversations-list, .chat-header, .chat-messages, .chat-input {
+        padding: 15px 20px;
+    }
+    .conversations-header h2 {
+        font-size: 24px;
+    }
+    .search-bar input {
+        font-size: 13px;
+        padding: 10px 15px 10px 40px;
+    }
+    .contact-avatars img {
+        width: 50px;
+        height: 50px;
+    }
+    .conversation-item img {
+        width: 50px;
+        height: 50px;
+    }
+    .conversation-info .name {
+        font-size: 14px;
+    }
+    .conversation-info .last-message {
+        font-size: 12px;
+    }
+    .chat-user-info img {
+        width: 70px;
+        height: 70px;
+    }
+    .chat-details div:first-child {
+        font-size: 20px;
+    }
+    .chat-welcome h2 {
+        font-size: 24px;
+    }
+    .chat-welcome p {
+        font-size: 16px;
+    }
+    .synergy-logo {
+        font-size: 48px;
+    }
+    .message {
+        max-width: 90%; /* Ajuste para mensagens em telas menores */
+    }
+    .chat-input .input-container {
+        padding: 10px 15px;
+    }
+    .chat-input .input-container input {
+        font-size: 14px;
+    }
 }
 
-body{
-  overflow: hidden;
+@media (max-width: 480px) {
+    .app-header {
+        padding: 10px 15px;
+    }
+    .logo-text {
+        font-size: 20px;
+    }
+    .header-actions {
+        gap: 15px;
+    }
+    .notification-icon, .settings-icon {
+        font-size: 18px;
+    }
+
+    .conversations-header, .conversations-list, .chat-header, .chat-messages, .chat-input {
+        padding: 10px 15px;
+    }
+
+    .conversations-header h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    .search-bar input {
+        padding: 8px 12px 8px 35px;
+        font-size: 12px;
+    }
+    .search-bar i {
+        left: 12px;
+        font-size: 12px;
+    }
+
+    .recent-contacts .contact-avatars {
+        padding: 5px;
+        gap: 8px;
+    }
+    .contact-avatars img {
+        width: 45px;
+        height: 45px;
+        border-width: 2px;
+    }
+
+    .conversations-list h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .conversation-item {
+        padding: 10px;
+        gap: 10px;
+        padding-right: 100px; /* Ajuste para os botões */
+    }
+    .conversation-item img {
+        width: 45px;
+        height: 45px;
+        border-width: 2px;
+    }
+    .conversation-info .name {
+        font-size: 13px;
+    }
+    .conversation-info .last-message {
+        font-size: 11px;
+    }
+    .conversation-actions {
+        gap: 4px;
+        right: 10px;
+    }
+    .conversation-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+    }
+
+    .chat-welcome {
+        padding: 30px;
+    }
+    .synergy-logo {
+        font-size: 40px;
+    }
+    .chat-welcome h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .chat-welcome p {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .chat-header {
+        padding: 15px 10px; /* Ajuste para o padding geral do header do chat */
+    }
+    .back-to-conversations {
+        left: 10px;
+        font-size: 20px;
+    }
+    .chat-user-info img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+    .chat-details div:first-child {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .friendship-status, .friendship-date {
+        font-size: 12px;
+    }
+    .mutual-friends img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .message img {
+        width: 32px;
+        height: 32px;
+    }
+    .message-bubble {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    .message-time {
+        font-size: 10px;
+    }
+
+    .chat-input .input-container {
+        padding: 8px 12px;
+        gap: 10px;
+    }
+    .chat-input .input-container input {
+        font-size: 13px;
+    }
+    .input-container i {
+        font-size: 16px;
+    }
 }
 
-.friends{
-  display: none !important;
+/* Classe para o menu mobile quando ativo */
+.app-container.sidebar-active .left-sidebar {
+    display: flex; /* Mostra o sidebar */
+    position: fixed; /* Fixa ele na tela */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Ocupa a altura total */
+    width: 280px; /* Largura do sidebar */
+    z-index: 1000;
+    flex-direction: column; /* Garante layout de coluna */
 }
 
-#conteudo{
-  padding: 0px 0px 0px 10px !important;
+/* Overlay para quando o menu mobile está aberto */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none; /* Escondido por padrão */
 }
-
-@media (max-width: 1300px){
-  #conteudo{
-  padding: 0px !important;
-  }
+.app-container.sidebar-active .mobile-overlay {
+    display: block; /* Mostra o overlay quando sidebar está ativo */
 }

@@ -1,18 +1,18 @@
 
 const stories = [
     {
-      image: '/assets/images/woman.png',
-      avatar: '/assets/images/perfil1.png',
+      image: '../assets/images/woman.png',
+      avatar: '../assets/images/perfil1.png',
       username: 'Vish_Patil'
     },
     {
-      image: '/assets/images/camera2.png',
-      avatar: '/assets/images/perfil2.png',
+      image: '../assets/images/camera2.png',
+      avatar: '../assets/images/perfil2.png',
       username: 'Rakesh_Shetty'
     },
     {
-      image: '/assets/images/yoda2.png',
-      avatar: '/assets/images/perfil3.png',
+      image: '../assets/images/yoda2.png',
+      avatar: '../assets/images/perfil3.png',
       username: 'Master_Yoda'
     }
   ];

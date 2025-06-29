@@ -65,7 +65,7 @@ async function carregarConteudoPrincipal() {
     if (paginasComJS.includes(pagina)) {
       
       if (pagina === 'perfil') {
-     o
+    
         if (typeof window.initEditarPerfilModal === 'function') {
             window.initEditarPerfilModal();
         } else {

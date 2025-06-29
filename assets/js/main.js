@@ -3,7 +3,7 @@ if (localStorage.getItem('logado') !== 'true') {
   window.location.href = 'index.html';
 }
 
-// Carrega arquivos externos (como menu, footer, etc.)
+// Carrega arquivos externos
 async function carregarParcial(id, arquivo, callback = null) {
   const el = document.getElementById(id);
   try {
@@ -17,7 +17,7 @@ async function carregarParcial(id, arquivo, callback = null) {
   }
 }
 
-// ✅ NOVA FUNÇÃO para carregar scripts das páginas dinâmicas
+// Carregar scripts das páginas dinâmicas
 function carregarScriptPaginaUnica(pagina) {
   // Remove todos os scripts relacionados à página (independente da versão)
   document.querySelectorAll(`script[src*="${pagina}.js"]`).forEach(script => script.remove());
@@ -48,8 +48,8 @@ function capitalize(str) {
 async function carregarConteudoPrincipal() {
   const params = new URLSearchParams(window.location.search);
   const pagina = params.get('page') || 'feed';
-  const url = `pages/${pagina}.html`; // Supondo que perfil.html esteja em pages/perfil.html
-  const layout = document.querySelector('.layout'); // Se .layout for relevante no seu HTML principal
+  const url = `pages/${pagina}.html`; 
+  const layout = document.querySelector('.layout');
 
   try {
     const resposta = await fetch(url);
@@ -60,19 +60,15 @@ async function carregarConteudoPrincipal() {
 
     configurarBotoesToggle();
 
-    // Adiciona 'perfil' à lista de páginas com JS que precisam de inicialização
-    const paginasComJS = ['friends', 'conversas', 'perfil']; // Incluir 'perfil' aqui
+    // Adicionaà lista de páginas com JS que precisam de inicialização
+    const paginasComJS = ['friends', 'conversas', 'perfil']; 
     if (paginasComJS.includes(pagina)) {
-      // Para 'perfil', chamaremos a função específica do editarPerfil.js
+      
       if (pagina === 'perfil') {
-        // Verifica se a função openEditProfileModal já está disponível (pelo script carregado)
-        // e anexa o listener do botão
+     o
         if (typeof window.initEditarPerfilModal === 'function') {
             window.initEditarPerfilModal();
         } else {
-            // Se o script editarPerfil.js não foi carregado ainda, ou a função não está global
-            // Você pode carregar o script dinamicamente aqui, se necessário.
-            // Para este cenário, presumimos que editarPerfil.js será carregado no HTML principal.
             console.warn("⚠️ initEditarPerfilModal não disponível no carregamento dinâmico. Verifique a inclusão do script.");
         }
       } else {
@@ -81,7 +77,7 @@ async function carregarConteudoPrincipal() {
       }
     }
 
-  } catch (error) { // Captura o erro para melhor debug
+  } catch (error) { // Captura o erro
     console.error(`Erro ao carregar conteúdo principal para ${pagina}.html:`, error);
     document.getElementById('conteudo').innerHTML = '<h2>Página não encontrada</h2>';
   }
@@ -130,7 +126,7 @@ window.addEventListener('load', async () => {
 
   carregarParcial('friends-menu', 'includes/friends-menu.html');
   carregarParcial('footer', 'includes/footer.html');
-  carregarConteudoPrincipal(); // Esta função agora lida com a chamada para initEditarPerfilModal se for a página 'perfil'
+  carregarConteudoPrincipal();
   configurarLinksInternos();
   configurarBotoesToggle();
 

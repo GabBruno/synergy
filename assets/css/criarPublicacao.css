@@ -228,7 +228,7 @@
 }
 
 .publish-btn {
-  background: #2196f3;
+  background: var(--cor-icones);
   color: white;
   border: none;
   padding: 8px 20px;
@@ -327,28 +327,7 @@
     margin: 1rem;
     padding: 1.5rem;
   }
-/*
-  .buttons {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .story-options {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .story-option {
-    flex-direction: row;
-    justify-content: flex-start;
-    text-align: left;
-  }
-
-  .story-option-icon {
-    margin-right: 15px;
-    margin-bottom: 0;
-  }
-  */
   .file-preview {
     justify-content: center;
   }

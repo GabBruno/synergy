@@ -17,7 +17,6 @@
     --cor-icones: #f78b31;
 }
 
-
 .header-left {
     display: flex;
     align-items: center;
@@ -108,6 +107,7 @@
     width: 100%; /* Ocupa 100% da largura do pai */
     max-width: 1200px; /* Limite em telas grandes */
     /* Padding será controlado principalmente pelo main-content-friends ou media queries */
+    margin: 0 auto; /* Centraliza o container */
 }
 
 .sidebar {
@@ -291,6 +291,8 @@
 .main-content-friends {
     flex: 1;
     padding: 24px; /* Padding padrão para telas maiores */
+    /* Garante que o main-content-friends não crie overflow */
+    min-width: 0;
 }
 
 .content-header {
@@ -300,6 +302,7 @@
     margin-bottom: 24px;
     flex-wrap: wrap;
     gap: 16px;
+    justify-content: center;
 }
 
 .tabs {
@@ -380,7 +383,8 @@
     margin-bottom: 32px;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+
+    width: 100%; /* Garante que o contêiner dos avatares ocupe a largura total */
 }
 
 .avatars-scroll {
@@ -390,6 +394,8 @@
     overflow-x: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--border-color) transparent;
+    width: 100%; /* Garante que o scroll seja dentro do espaço disponível */
+    justify-content: center; /* CENTRALIZA OS AVATARES HORIZONTALMENTE */
 }
 
 .avatars-scroll::-webkit-scrollbar {
@@ -715,11 +721,8 @@
 
 @media (max-width: 768px) {
     .container {
-        /* Remove max-width para que ocupe 100% em mobile */
-        max-width: 100%;
-        /* Ajusta o padding lateral para telas menores. O ideal é que o padding do container */
-        /* seja suficiente e os elementos internos se adaptem. */
-        padding: 0 10px;
+        max-width: 100%; /* Garante que ocupe 100% em mobile */
+        padding: 0; /* Remova o padding aqui, ele será aplicado no main-content-friends */
     }
 
     .mobile-menu-btn {
@@ -740,10 +743,10 @@
     }
     
     .main-content-friends {
-        padding: 15px; /* Padding padrão para mobile */
+        padding: 15px; /* Padding padrão para mobile. Antes era muito alto */
         margin-left: 0; /* Garante que não há margem se a sidebar estiver escondida */
         width: 100%; /* Garante que ocupa 100% da largura disponível */
-        /* min-width: 0; Adicionado para flexbox caso esteja contendo algo que force largura */
+        /* min-width: 0; já está no global */
     }
     
     .header { /* Se houver um .header fora do .container, ajuste aqui */
@@ -766,7 +769,6 @@
     
     .friend-requests, .groups-grid {
         /* Força a preencher 100% da largura do pai com um padding interno. */
-        /* Se 280px for muito grande para 2 colunas, minmax(0, 1fr) seria outra opção */
         grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
         gap: 16px;
     }
@@ -795,7 +797,7 @@
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 5px; /* Reduz ainda mais o padding lateral em telas muito pequenas */
+        padding: 0; /* Garante que não haja padding no container, deixando o main-content-friends controlar */
     }
     .main-content-friends {
         padding: 10px; /* Padding menor para telas muito pequenas */
@@ -842,6 +844,21 @@
 }
 
 @media (max-width: 360px) {
+    
+    /* Garante que o box-sizing seja aplicado globalmente */
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%; /* Garante que ocupe 100% da largura da viewport */
+        overflow-x: hidden; /* CRUCIAL: Impede a rolagem horizontal no nível mais alto */
+        box-sizing: border-box; /* Boa prática: padding e border incluídos na width/height */
+    }
+
+    /* Aplicar box-sizing a todos os elementos */
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    
     .main-content-friends {
         padding: 8px; /* Padding mínimo */
     }
@@ -859,4 +876,5 @@
         width: 60px;
         height: 60px;
     }
+
 }

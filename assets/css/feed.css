@@ -1,141 +1,141 @@
-   /* --- Configurações Globais --- */
-   :root {
-       --cor-fundo: #f0f2f5;
-       --cor-principal: #ffffff;
-       --cor-borda: #ced0d4;
-       --cor-texto-principal: #535767;
-       --cor-icones: #F68548;
-       --cor-texto-secundario: #99A1BE;
-       --cor-azul: #1877f2;
-       --cor-verde: #42b72a;
-       --cor-vermelho-stories: #f52d4c;
-       --sombra-padrao: 0 1px 2px rgba(0, 0, 0, 0.1);
-   }
+/* --- Configurações Globais --- */
+:root {
+    --cor-fundo: #f0f2f5;
+    --cor-principal: #ffffff;
+    --cor-borda: #ced0d4;
+    --cor-texto-principal: #535767;
+    --cor-icones: #F68548;
+    --cor-texto-secundario: #99A1BE;
+    --cor-azul: #1877f2;
+    --cor-verde: #42b72a;
+    --cor-vermelho-stories: #f52d4c;
+    --sombra-padrao: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
 
-   /* --- Container Principal --- */
-   .feed-container {
-       max-width: 590px;
-       align-items: center;
-       margin: auto;
-       display: flex;
-       flex-direction: column;
-       gap: 20px;
-   }
+/* --- Container Principal --- */
+.feed-container {
+    max-width: 590px;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-   /* --- Estilos de Componentes Reutilizáveis (Cards) --- */
-   .card {
-       background-color: var(--cor-principal);
-       border-radius: 24px;
-       box-shadow: var(--sombra-padrao);
-       padding: 12px;
-   }
+/* --- Estilos de Componentes Reutilizáveis (Cards) --- */
+.card {
+    background-color: var(--cor-principal);
+    border-radius: 24px;
+    box-shadow: var(--sombra-padrao);
+    padding: 12px;
+}
 
-   img.profile-pic {
-       width: 50px;
-       height: 50PX;
-       border-radius: 50%;
-       object-fit: fill;
-   }
+img.profile-pic {
+    width: 50px;
+    height: 50PX;
+    border-radius: 50%;
+    object-fit: fill;
+}
 
-   /* --- Criar Postagem --- */
-   .create-post {
-       display: flex;
-       width: 100%;
-       flex-direction: column;
-       gap: 10px;
-   }
+/* --- Criar Postagem --- */
+.create-post {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
 
-   .create-post-input-area {
-       display: flex;
-       align-items: center;
-       gap: 8px;
-   }
+.create-post-input-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
-   .create-post-input-area input {
-       flex-grow: 1;
-       border: none;
-       background-color: var(--cor-fundo);
-       border-radius: 20px;
-       padding: 10px 15px;
-       font-size: 16px;
-       outline: none;
-   }
+.create-post-input-area input {
+    flex-grow: 1;
+    border: none;
+    background-color: var(--cor-fundo);
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    outline: none;
+}
 
-   .create-post-actions {
-       display: flex;
-       justify-content: center;
-       gap: 15px;
-       border-top: 1px solid var(--cor-fundo);
-       padding-top: 10px;
-   }
+.create-post-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border-top: 1px solid var(--cor-fundo);
+    padding-top: 10px;
+}
 
-   .create-action-button {
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       width: 150px;
-       height: 34px;
-       background-color: #F1F4F5;
-       text-align: center;
-       font-weight: 600;
-       color: var(--cor-texto-principal);
-       cursor: pointer;
-       border-radius: 10px;
-       transition: background-color 0.2s;
-       font-size: 15px;
-       gap: 10px;
-   }
+.create-action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 34px;
+    background-color: #F1F4F5;
+    text-align: center;
+    font-weight: 600;
+    color: var(--cor-texto-principal);
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+    font-size: 15px;
+    gap: 10px;
+}
 
-   .create-action-button:hover{
-      background-color: var(--cor-borda);
-   }
+.create-action-button:hover{
+   background-color: var(--cor-borda);
+}
 
-   .buttons {
-       display: flex;
-       justify-content: space-around;
-       gap: 15px;
-   }
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
 
-   .action-button {
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       width: 40px;
-       height: 40px;
-       background-color: #F1F4F5;
-       text-align: center;
-       font-weight: 600;
-       color: var(--cor-icones);
-       cursor: pointer;
-       border-radius: 100%;
-       transition: background-color 0.2s;
-       font-size: 16px;
-   }
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #F1F4F5;
+    text-align: center;
+    font-weight: 600;
+    color: var(--cor-icones);
+    cursor: pointer;
+    border-radius: 100%;
+    transition: background-color 0.2s;
+    font-size: 16px;
+}
 
-   .action-button:hover {
-       background-color: #C8CCCD;
-   }
+.action-button:hover {
+    background-color: #C8CCCD;
+}
 
-   .action-button.ativo {
-       background-color: var(--cor-icones);
-       color: #F1F4F5;
+.action-button.ativo {
+    background-color: var(--cor-icones);
+    color: #F1F4F5;
 
-   }
+}
 
-   .action-button .icon {
-       font-size: 20px;
-       margin-right: 8px;
-   }
+.action-button .icon {
+    font-size: 20px;
+    margin-right: 8px;
+}
 
-   .icon-video {
-       color: var(--cor-vermelho-stories);
-   }
+.icon-video {
+    color: var(--cor-vermelho-stories);
+}
 
-   .icon-photo {
-       color: var(--cor-verde);
-   }
+.icon-photo {
+    color: var(--cor-verde);
+}
 
-   /* --- Seção de Stories Responsiva --- */
+/* --- Seção de Stories Responsiva --- */
 .stories-card {
   padding: 12px 8px;
 }
@@ -204,155 +204,154 @@
   justify-content: center;
   color: white;
   font-size: 16px;
-  /* border: 2px solid white; */
 }
 
-   /* --- Postagem Individual --- */
-   .post {
-       display: flex;
-       width: 100%;
-       flex-direction: column;
-   }
+/* --- Postagem Individual --- */
+.post {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
 
-   .post-header {
-       display: flex;
-       align-items: center;
-       gap: 10px;
-   }
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-   .post-info {
-       flex-grow: 1;
-   }
+.post-info {
+    flex-grow: 1;
+}
 
-   .post-info .user-name {
-       font-weight: 600;
-       color: var(--cor-icones);
-       text-decoration: none;
-   }
+.post-info .user-name {
+    font-weight: 600;
+    color: var(--cor-icones);
+    text-decoration: none;
+}
 
-   .post-info .post-time {
-       font-size: 13px;
-       gap: 5px;
-       color: var(--cor-texto-secundario);
-       display: flex;
-       align-items: center;
-   }
+.post-info .post-time {
+    font-size: 13px;
+    gap: 5px;
+    color: var(--cor-texto-secundario);
+    display: flex;
+    align-items: center;
+}
 
-   .more-options {
-       cursor: pointer;
-   }
+.more-options {
+    cursor: pointer;
+}
 
-   .post-content {
-       margin: 12px 0;
-       font-size: 15px;
-       line-height: 1.4;
-       color: var(--cor-texto-principal);
-   }
+.post-content {
+    margin: 12px 0;
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--cor-texto-principal);
+}
 
-   .image-post {
-       display: flex;
-       margin: 12px;
-   }
+.image-post {
+    display: flex;
+    margin: 12px;
+}
 
-   .post-image {
-       width: calc(100% + 24px);
-       margin: 0 -12px;
-       max-height: 600px;
-       object-fit: cover;
-       border-radius: 14px;
-   }
+.post-image {
+    width: calc(100% + 24px);
+    margin: 0 -12px;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 14px;
+}
 
-   .post-footer {
-       padding: 10px 0;
-       display: flex;
-       flex-direction: column;
-       gap: 10px;
-   }
+.post-footer {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-   .post-stats {
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-       font-size: 12px;
-       color: var(--cor-texto-secundario);
-       padding-bottom: 10px;
-   }
+.post-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--cor-texto-secundario);
+    padding-bottom: 10px;
+}
 
-   .reactions {
-       display: flex;
-       align-items: center;
-       gap: 2px;
-   }
+.reactions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
 
-   .reaction-icon {
-       width: 54px;
-       height: 22px;
-       margin-left: 5px;
-   }
+.reaction-icon {
+    width: 54px;
+    height: 22px;
+    margin-left: 5px;
+}
 
-   .post-actions {
-       display: flex;
-       justify-content: space-between;
-       font-size: 12px;
-       color: var(--cor-texto-principal);
-   }
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--cor-texto-principal);
+}
 
-   /* --- Seção de Comentários --- */
-   .comments-section {
-       border-top: 1px solid #e4e6eb;
-       padding-top: 10px;
-       display: flex;
-       flex-direction: column;
-       gap: 10px;
-   }
+/* --- Seção de Comentários --- */
+.comments-section {
+    border-top: 1px solid #e4e6eb;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-   .comment {
-       display: flex;
-       gap: 8px;
-   }
+.comment {
+    display: flex;
+    gap: 8px;
+}
 
-   .comment-content {
-       background-color: var(--cor-fundo);
-       padding: 8px 12px;
-       border-radius: 18px;
-       font-size: 14px;
-   }
+.comment-content {
+    background-color: var(--cor-fundo);
+    padding: 8px 12px;
+    border-radius: 18px;
+    font-size: 14px;
+}
 
-   .comment-content .user-name {
-       font-weight: 600;
-       color: var(--cor-icones);
-       text-decoration: none;
+.comment-content .user-name {
+    font-weight: 600;
+    color: var(--cor-icones);
+    text-decoration: none;
 
-   }
+}
 
-   .comment-actions {
-       display: flex;
-       gap: 15px;
-       font-size: 12px;
-       color: var(--cor-texto-secundario);
-       padding-left: 50px;
-       /* Alinha com o conteúdo do comentário */
-       font-weight: bold;
-   }
+.comment-actions {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: var(--cor-texto-secundario);
+    padding-left: 50px;
+    /* Alinha com o conteúdo do comentário */
+    font-weight: bold;
+}
 
-   .comment-actions a {
-       color: var(--cor-texto-secundario);
-       text-decoration: none;
-   }
+.comment-actions a {
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+}
 
-   .comment-actions a:hover {
-       text-decoration: underline;
-   }
+.comment-actions a:hover {
+    text-decoration: underline;
+}
 
-   .fa-video{
+.fa-video{
     color: #63C48C;
-   }
+}
 
-   .fa-camera{
+.fa-camera{
     color: #F31954;
-   }
+}
 
-   /* --- Media Queries para Responsividade --- */
+/* --- Media Queries para Responsividade --- */
 
 /* Tablets */
 @media (max-width: 768px) {
@@ -392,8 +391,22 @@
 
 /* Mobile */
 @media (max-width: 480px) {
+
+  /* Garante que o box-sizing seja aplicado globalmente */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Isso é crucial para evitar a rolagem horizontal */
+    box-sizing: border-box; /* Crucial para um modelo de caixa consistente */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box; /* Aplicar a todos os elementos */
+}
+
   #conteudo {
-    padding: 8px;
+    padding: 10px 3px 10px 3px;
   }
 
   .feed-container {
@@ -511,23 +524,133 @@
 
 /* Mobile muito pequeno */
 @media (max-width: 360px) {
+
+  /* As configurações globais de box-sizing e overflow-x: hidden já estão definidas acima */
+
+  .feed-container {
+      gap: 10px; /* Reduz o espaçamento entre os cartões para mais espaço vertical */
+  }
+
+  .card {
+    padding: 6px; /* Preenchimento reduzido nos cartões para dar mais espaço horizontal */
+    border-radius: 12px;
+  }
+
+  .stories-card {
+    padding: 6px 0px; /* Preenchimento reduzido e preenchimento horizontal removido, dependa do preenchimento interno dos stories */
+  }
+
+  .stories {
+    gap: 5px; /* Reduz ainda mais o espaçamento entre os stories */
+    padding: 2px; /* Pequeno preenchimento para rolagem, se necessário */
+  }
+
   .story-content {
-    width: 70px;
-    height: 105px;
+    width: 60px; /* Largura ainda mais reduzida para os stories */
+    height: 90px; /* Altura ainda mais reduzida para os stories */
+    border-radius: 10px;
+  }
+
+  .story-profile,
+  .story-add-icon {
+    width: 22px; /* Fotos de perfil/ícones de adição menores nos stories */
+    height: 22px;
+    bottom: 3px;
+    font-size: 10px;
+  }
+
+  .create-post-input-area input {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+
+  .create-post-actions {
+    gap: 6px; /* Reduz o espaçamento entre os botões de ação de criação */
+    padding-top: 8px;
   }
 
   .create-action-button {
-    font-size: 12px;
-    padding: 0 8px;
+    font-size: 11px;
+    height: 28px; /* Altura ainda mais reduzida para os botões de ação */
+    gap: 4px;
+    padding: 0 4px; /* Redução mais agressiva do preenchimento */
   }
 
-  .action-button {
-    width: 32px;
-    height: 32px;
+  img.profile-pic { /* Para fotos de perfil gerais dentro de postagens */
+    width: 35px;
+    height: 35px;
+  }
+
+  .post-header {
+    gap: 8px;
+  }
+
+  .post-info .user-name {
     font-size: 13px;
   }
 
+  .post-info .post-time {
+    font-size: 11px;
+  }
+
+  .post-content {
+    font-size: 13px;
+    margin: 8px 0;
+  }
+
+  .image-post {
+    margin: 8px 0; /* Ajustar margem para a postagem de imagem para melhor ajuste */
+  }
+
+  .post-image {
+    width: 100%; /* Garantir que a imagem ocupe toda a largura de seu contêiner, sem margens negativas */
+    margin: 0; /* Remover margens negativas para imagens */
+    border-radius: 10px;
+  }
+
+  .post-stats {
+    font-size: 10px;
+    padding-bottom: 8px;
+  }
+
+  .action-button {
+    width: 28px; /* Botões de ação ainda menores */
+    height: 28px;
+    font-size: 11px;
+  }
+
   .buttons {
+    gap: 5px; /* Espaçamento ainda menor para os botões */
+  }
+
+  .reactions {
+    font-size: 10px;
+  }
+
+  .reaction-icon {
+    width: 40px; /* Imagem de ícone de reação menor */
+    height: 18px;
+    margin-left: 3px;
+  }
+
+  .comments-section {
+    padding-top: 8px;
     gap: 8px;
+  }
+
+  .comment .profile-pic {
+    width: 25px;
+    height: 25px;
+  }
+
+  .comment-content {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .comment-actions {
+    padding-left: 33px; /* Ajustar com base no novo tamanho da foto de perfil */
+    font-size: 10px;
+    gap: 10px;
   }
 }

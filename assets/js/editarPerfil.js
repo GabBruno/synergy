@@ -53,11 +53,8 @@ window.openEditProfileModal = () => {
         customClass: {
             container: 'swal2-container-edit-profile',
             popup: 'swal2-popup-edit-profile',
-            confirmButton: 'swal2-confirm-button-edit-profile',
+            confirmButton: 'swal2-confirm-button-edit-profile', // Esta classe já deve definir a cor para o botão principal
             htmlContainer: 'swal2-html-container-edit-profile'
-        },
-        didOpen: () => {
-            // Lógica para pré-preencher campos, se necessário
         },
         preConfirm: () => {
             const nome = Swal.getPopup().querySelector('#edit-nome').value;
@@ -75,9 +72,19 @@ window.openEditProfileModal = () => {
     }).then((result) => {
         if (result.isConfirmed) {
             console.log('Dados do perfil salvos:', result.value);
-            window.Swal.fire('Salvo!', 'Suas alterações no perfil foram salvas com sucesso.', 'success');
+            window.Swal.fire({ // Adicionado confirmButtonColor aqui
+                title: 'Salvo!',
+                text: 'Suas alterações no perfil foram salvas com sucesso.',
+                icon: 'success',
+                confirmButtonColor: '#F68548' // Define a cor laranja para o botão "OK"
+            });
         } else if (result.dismiss === Swal.DismissReason.cancel) {
-            window.Swal.fire('Cancelado', 'As alterações no perfil foram canceladas.', 'info');
+            window.Swal.fire({ // Adicionado confirmButtonColor aqui
+                title: 'Cancelado',
+                text: 'As alterações no perfil foram canceladas.',
+                icon: 'info',
+                confirmButtonColor: '#F68548' // Define a cor laranja para o botão "OK"
+            });
         }
     });
 };

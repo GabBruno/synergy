@@ -109,6 +109,7 @@ async function processFiles(files, isStory = false) {
       html: errors.join("<br>"),
       icon: "error",
       confirmButtonText: "OK",
+      confirmButtonColor: '#F68548',
     })
     return
   }
@@ -231,6 +232,7 @@ window.openStoryCreationModal = () => {
     showCloseButton: true,
     customClass: {
       popup: "story-modal",
+      confirmButton: 'swal2-confirm-button-edit-profile',
     },
     didOpen: () => {
       storyFiles = []
@@ -286,6 +288,7 @@ window.openPostCreationModal = () => {
     showCloseButton: true,
     customClass: {
       popup: "post-modal",
+      confirmButton: 'swal2-confirm-button-edit-profile',
     },
     didOpen: () => {
       selectedFiles = []
@@ -335,6 +338,7 @@ function initializeFileInputs() {
             icon: "success",
             timer: 2000,
             showConfirmButton: false,
+            confirmButtonColor: '#F68548', // Cor laranja para o botão "OK"
           })
         }
       }
@@ -367,6 +371,7 @@ window.selectStoryType = (type) => {
     icon: "success",
     timer: 2000,
     showConfirmButton: false,
+    confirmButtonColor: '#F68548', // Cor laranja para o botão "OK"
   })
 }
 
@@ -381,6 +386,7 @@ window.selectImage = (imageUrl) => {
     icon: "success",
     timer: 2000,
     showConfirmButton: false,
+    confirmButtonColor: '#F68548', // Cor laranja para o botão "OK"
   })
 }
 
@@ -409,6 +415,7 @@ window.toolbarAction = (action) => {
     icon: "info",
     timer: 1500,
     showConfirmButton: false,
+    confirmButtonColor: '#F68548', // Cor laranja para o botão "OK"
   })
 }
 
@@ -421,6 +428,7 @@ window.publishPost = () => {
       text: "Por favor, escreva algo ou adicione mídia para publicar.",
       icon: "warning",
       confirmButtonText: "OK",
+      confirmButtonColor: '#F68548', // Cor laranja para o botão "OK"
     })
     return
   }
@@ -432,6 +440,7 @@ window.publishPost = () => {
     text: `Sua publicação "${postText.substring(0, 50)}${postText.length > 50 ? "..." : ""}"${fileInfo} foi publicada com sucesso!`,
     icon: "success",
     confirmButtonText: "Ótimo!",
+    confirmButtonColor: '#F68548', // Cor laranja para o botão "Ótimo!"
   }).then(() => {
     selectedFiles = []
     const postTextElement = document.getElementById("postText")

@@ -1,5 +1,5 @@
 window.initConversasPage = function () {
-  // Chat data completo - todas as conversas
+  
   const chatData = {
     andrew: {
       name: "Andrew Parker",
@@ -181,9 +181,8 @@ window.initConversasPage = function () {
     },
   };
 
-  // DOM elements (verificando a existência para evitar erros se não estiverem no HTML)
   const conversationItems = document.querySelectorAll(".conversation-item");
-  const friendItems = document.querySelectorAll(".friend-item"); // Pode não existir no conversas.html isolado
+  const friendItems = document.querySelectorAll(".friend-item");
   const contactAvatars = document.querySelectorAll(".contact-avatars img");
   const chatWindow = document.getElementById("chatWindow");
   const chatWelcome = document.getElementById("chatWelcome");
@@ -196,19 +195,17 @@ window.initConversasPage = function () {
   const chatPanel = document.getElementById('chatPanel');
   const backToConversationsBtn = document.getElementById('backToConversations');
   
-  // Elementos do layout principal que podem não existir no conversas.html isolado
   const mobileMenuBtn = document.getElementById('mobileMenuBtn'); 
   const leftSidebar = document.getElementById('leftSidebar'); 
   const appContainer = document.querySelector('.app-container'); 
   const notificationIcon = document.getElementById('notificationIcon'); 
   const notificationPanel = document.getElementById('notificationPanel');
-  const markAllReadBtn = document.querySelector(".mark-all-read"); // Também pode não existir se notificationPanel não existir
-  let mobileOverlay = document.getElementById('mobileOverlay'); // Criado dinamicamente, mas verifica se já existe
+  const markAllReadBtn = document.querySelector(".mark-all-read"); 
+  let mobileOverlay = document.getElementById('mobileOverlay');
 
 
-  let currentUser = null; // Inicia sem conversa ativa
+  let currentUser = null; 
 
-  // Function to open chat
   function openChat(userId) {
     const userData = chatData[userId];
     if (!userData) return;
@@ -257,18 +254,15 @@ window.initConversasPage = function () {
         activeItem.classList.add("active");
     }
 
-    // Lógica de responsividade para mobile: Transição de painéis
-    // Apenas aplica se os painéis existirem e estivermos em mobile
     if (window.innerWidth <= 1024 && conversationsPanel && chatPanel && backToConversationsBtn) {
         conversationsPanel.classList.add('hidden-on-mobile');
         chatPanel.classList.add('active-on-mobile');
-        backToConversationsBtn.style.display = 'block'; // Mostra o botão ao abrir o chat em mobile
+        backToConversationsBtn.style.display = 'block'; 
     } else if (backToConversationsBtn) {
-        backToConversationsBtn.style.display = 'none'; // Esconde o botão em desktop
+        backToConversationsBtn.style.display = 'none'; 
     }
   }
 
-  // Add event listeners for conversation items
   conversationItems.forEach((item) => {
     item.addEventListener("click", () => {
       const userId = item.getAttribute("data-user");
@@ -276,8 +270,7 @@ window.initConversasPage = function () {
     });
   });
 
-  // Add event listeners for friend items (if they also open chat)
-  if (friendItems) { // Verifica se friendItems existe
+  if (friendItems) { 
     friendItems.forEach((item) => {
       item.addEventListener("click", () => {
         const userId = item.getAttribute("data-user");
@@ -286,7 +279,6 @@ window.initConversasPage = function () {
     });
   }
 
-  // Add event listeners for contact avatars
   contactAvatars.forEach((avatar) => {
     avatar.addEventListener("click", () => {
       const userId = avatar.getAttribute("data-user");
@@ -294,8 +286,7 @@ window.initConversasPage = function () {
     });
   });
 
-  // Send message functionality
-  if (messageInput && chatMessages) { // Verifica se os elementos existem
+  if (messageInput && chatMessages) { 
     messageInput.addEventListener("keypress", (e) => {
       if (e.key === "Enter" && messageInput.value.trim() && currentUser) {
         const messageText = messageInput.value.trim();
@@ -333,7 +324,6 @@ window.initConversasPage = function () {
     });
   }
 
-  // Search functionality
   const searchInput = document.querySelector(".search-bar input");
   if (searchInput) { // Verifica se searchInput existe
     searchInput.addEventListener("input", (e) => {
@@ -351,8 +341,7 @@ window.initConversasPage = function () {
     });
   }
 
-  // Notification functionality
-  if (notificationIcon && notificationPanel) { // Verifica se os elementos existem
+  if (notificationIcon && notificationPanel) { 
     notificationIcon.addEventListener("click", (e) => {
       e.stopPropagation();
       notificationPanel.classList.toggle('active');
@@ -389,7 +378,7 @@ window.initConversasPage = function () {
       }
     });
 
-    if (markAllReadBtn) { // Verifica se markAllReadBtn existe
+    if (markAllReadBtn) { 
       markAllReadBtn.addEventListener("click", () => {
         const unreadNotifications = document.querySelectorAll(".notification-item.unread");
         unreadNotifications.forEach((notification) => {
@@ -419,10 +408,9 @@ window.initConversasPage = function () {
         }
       });
     });
-  } // Fim do bloco if (notificationIcon && notificationPanel)
+  } 
 
-  // Lógica do botão "Voltar" no cabeçalho do chat (para mobile)
-  if (backToConversationsBtn && conversationsPanel && chatPanel && chatWelcome && chatWindow) { // Verifica se todos os elementos necessários existem
+  if (backToConversationsBtn && conversationsPanel && chatPanel && chatWelcome && chatWindow) { 
     backToConversationsBtn.addEventListener('click', () => {
       if (window.innerWidth <= 1024) {
           conversationsPanel.classList.remove('hidden-on-mobile');
@@ -431,11 +419,11 @@ window.initConversasPage = function () {
           chatWindow.style.display = 'none';
           chatWelcome.style.display = 'flex';
 
-          backToConversationsBtn.style.display = 'none'; // Esconde o botão ao voltar
+          backToConversationsBtn.style.display = 'none'; 
       } else {
           chatWindow.style.display = 'none';
           chatWelcome.style.display = 'flex';
-          backToConversationsBtn.style.display = 'none'; // Garante que esteja escondido em desktop
+          backToConversationsBtn.style.display = 'none'; 
       }
       
       document.querySelectorAll(".conversation-item").forEach((conv) => {
@@ -445,44 +433,39 @@ window.initConversasPage = function () {
     });
   }
 
-  // Lógica para o menu mobile (sidebar)
-  if (mobileMenuBtn && appContainer && leftSidebar) { // Verifica se os elementos existem
+  if (mobileMenuBtn && appContainer && leftSidebar) { 
       mobileMenuBtn.addEventListener('click', () => {
           appContainer.classList.toggle('sidebar-active');
-          if (notificationPanel) notificationPanel.classList.remove('active'); // Fecha notificação se sidebar abrir
+          if (notificationPanel) notificationPanel.classList.remove('active'); 
       });
   }
 
-  // Criar e adicionar o overlay mobile se não existir
-  if (appContainer) { // Só cria o overlay se o appContainer existir
-      if (!mobileOverlay) { // Cria apenas se não foi encontrado no DOM
+  if (appContainer) { 
+      if (!mobileOverlay) { 
           mobileOverlay = document.createElement('div');
           mobileOverlay.classList.add('mobile-overlay');
           mobileOverlay.id = 'mobileOverlay';
           appContainer.appendChild(mobileOverlay);
       }
       
-      // Fechar sidebar ao clicar fora (no overlay)
       mobileOverlay.addEventListener('click', () => {
           if (appContainer) appContainer.classList.remove('sidebar-active');
       });
   }
 
-
-  // Inicialização: Ajusta o layout na carga da página e no redimensionamento
   function initializeLayout() {
-      // Esconde o painel de notificações ao carregar ou redimensionar
+      
       if (notificationPanel) {
           notificationPanel.classList.remove('active');
-          notificationPanel.style.display = ''; // Reseta para o CSS controlar
+          notificationPanel.style.display = ''; 
       }
 
-      if (window.innerWidth > 1024) { // Desktop
+      if (window.innerWidth > 1024) { 
           if (leftSidebar) leftSidebar.style.display = 'flex';
           if (conversationsPanel) conversationsPanel.classList.remove('hidden-on-mobile');
           if (chatPanel) chatPanel.classList.remove('active-on-mobile');
           if (chatPanel) chatPanel.style.display = 'flex';
-          if (backToConversationsBtn) backToConversationsBtn.style.display = 'none'; // Esconde o botão em desktop
+          if (backToConversationsBtn) backToConversationsBtn.style.display = 'none'; 
           
           if (currentUser) {
               if (chatWelcome) chatWelcome.style.display = 'none';
@@ -491,32 +474,30 @@ window.initConversasPage = function () {
               if (chatWelcome) chatWelcome.style.display = 'flex';
               if (chatWindow) chatWindow.style.display = 'none';
           }
-      } else { // Mobile (largura <= 1024px)
+      } else { 
           if (leftSidebar) leftSidebar.style.display = 'none';
           
-          if (currentUser) { // Se houver um chat ativo, mostre-o e exiba o botão de voltar
+          if (currentUser) { 
               if (conversationsPanel) conversationsPanel.classList.add('hidden-on-mobile');
               if (chatPanel) chatPanel.classList.add('active-on-mobile');
               if (chatWelcome) chatWelcome.style.display = 'none';
               if (chatWindow) chatWindow.style.display = 'flex';
               if (backToConversationsBtn) backToConversationsBtn.style.display = 'block';
-          } else { // Caso contrário, mostre a lista de conversas e esconda o botão de voltar
+          } else { 
               if (conversationsPanel) conversationsPanel.classList.remove('hidden-on-mobile');
               if (chatPanel) chatPanel.classList.remove('active-on-mobile');
               if (chatWelcome) chatWelcome.style.display = 'flex';
               if (chatWindow) chatWindow.style.display = 'none';
               if (backToConversationsBtn) backToConversationsBtn.style.display = 'none';
           }
-          if (chatPanel) chatPanel.style.display = 'flex'; // Mantenha como flex para transição
+          if (chatPanel) chatPanel.style.display = 'flex'; 
       }
   }
 
-  // Chama a função de inicialização ao carregar e redimensionar
   initializeLayout();
   window.addEventListener('resize', initializeLayout);
 };
 
-// Executa a inicialização da página quando o DOM estiver pronto.
 document.addEventListener('DOMContentLoaded', () => {
     window.initConversasPage();
 });

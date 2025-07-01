@@ -1,17 +1,17 @@
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Garante que padding e border não adicionem largura total */
-  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+  box-sizing: border-box; 
+  overflow-x: hidden; 
 }
 
 .page {
   display: flex;
   gap: 2rem;
-  max-width: 1200px; /* Largura máxima para o conteúdo principal */
+  max-width: 1200px;
   margin: auto;
-  padding: 0 1rem; /* Adiciona um padding lateral para evitar que o conteúdo encoste nas bordas em telas menores */
-  box-sizing: border-box; /* Garante que padding não adicione largura total */
+  padding: 0 1rem; 
+  box-sizing: border-box; 
 }
 
 .perfil {
@@ -21,19 +21,18 @@ body {
   padding: 2rem;
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  box-sizing: border-box; /* Garante que padding não adicione largura total */
-  min-width: 0; /* Permite que o flex item encolha abaixo de seu conteúdo */
-  max-width: 700px; /* AJUSTADO: Diminui um pouco mais a largura máxima do perfil */
-  /* Você pode experimentar com valores como 600px, 700px, etc., dependendo do quão mais estreito você quer que fique */
+  box-sizing: border-box; 
+  min-width: 0; 
+  max-width: 700px; 
 }
 
-.header-background { /* Classe que contém a imagem de capa */
+.header-background { 
   width: 100%;
-  height: 160px; /* Altura da área da imagem de capa, mantido como estava */
+  height: 160px; 
   position: relative;
-  overflow: hidden; /* Garante que a imagem não ultrapasse os limites do contêiner */
-  border-top-left-radius: 15px; /* Adicionado para arredondar a parte superior da capa */
-  border-top-right-radius: 15px; /* Adicionado para arredondar a parte superior da capa */
+  overflow: hidden; 
+  border-top-left-radius: 15px; 
+  border-top-right-radius: 15px; 
 }
 
 .header-bg-img {
@@ -42,22 +41,22 @@ body {
   border-radius: 20px;
   max-width: 100%;
   overflow: hidden;
-  height: 250px; /* AUMENTADO: Imagem de capa mais alta */
+  height: 250px; 
   object-fit: cover;
-  margin-top: -90px; /* AJUSTADO: Puxa a imagem mais para cima, atrás da foto de perfil */
+  margin-top: -90px; 
 }
 
-.profile-content { /* Classe que contém a foto do usuário e outros detalhes */
-  margin-top: -140px; /* Puxa o conteúdo para cima, sobrepondo a imagem de capa */
+.profile-content { 
+  margin-top: -140px; 
   padding: 20px;
   position: relative;
-  z-index: 1; /* Garante que o conteúdo apareça acima da imagem de capa */
+  z-index: 1; 
 }
 
 .perfil-img {
   width: 160px;
   height: 160px;
-  border-radius: 20px; /* Cantos arredondados para a foto do usuário */
+  border-radius: 20px; 
   object-fit: cover;
   border: 5px solid white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -78,90 +77,88 @@ p {
   margin-bottom: 10px;
 }
 
-.social-icons-wrapper { /* Novo wrapper para centralizar e espaçar os ícones */
+.social-icons-wrapper { 
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-bottom: 20px;
 }
 
-.social-icon-item { /* Estilo para cada item de ícone social */
+.social-icon-item { 
   width: 55px;
   height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-  font-size: 2.2em; /* Aumentado o tamanho do ícone aqui */
+  font-size: 2.2em; 
 }
 
 .botoes {
   display: flex;
   justify-content: center;
-  gap: 60px; /* Espaço entre os botões */
+  gap: 60px; 
   margin-bottom: 20px;
 }
 
 .botoes button,
 .botoes .button-add-friends {
-  background: #f78b31; /* Cor laranja mais vibrante para o botão "Editar Perfil" */
-  font-size: 0.9em; /* Tamanho da fonte dos botões */
+  background: #f78b31; 
+  font-size: 0.9em; 
   color: white;
   border: none;
-  padding: 10px 25px; /* Ajusta o preenchimento para o tamanho do botão */
-  border-radius: 10px; /* Cantos mais arredondados para os botões */
+  padding: 10px 25px; 
+  border-radius: 10px; 
   cursor: pointer;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold; /* Deixa o texto dos botões em negrito */
-  transition: background-color 0.3s ease; /* Transição suave no hover */
+  font-weight: bold; 
+  transition: background-color 0.3s ease; 
 
-  /* --- Alterações para deixar os botões do mesmo tamanho --- */
-  flex-grow: 1; /* Faz com que os botões cresçam para ocupar o espaço disponível igualmente */
-  max-width: 150px; /* Define uma largura máxima para evitar que fiquem excessivamente grandes em telas muito largas. Ajuste este valor se necessário. */
-  min-width: 120px; /* Define uma largura mínima para garantir que não fiquem muito pequenos. Ajuste se necessário. */
-  /* --- Fim das alterações --- */
+  
+  flex-grow: 1; 
+  max-width: 150px; 
+  min-width: 120px; 
 }
 
 .botoes .button-add-friends {
-  background-color: #f78b31; /* Mantendo a mesma cor para ambos os botões */
-  color: white; /* Cor do texto branco para o botão de adicionar amigo */
+  background-color: #f78b31; 
+  color: white; 
 }
 
 .botoes button:hover,
 .botoes .button-add-friends:hover {
-  background-color: #e67d26; /* Laranja um pouco mais escuro no hover */
+  background-color: #e67d26; 
 }
 
 .estatisticas {
   display: flex;
   justify-content: space-around;
   margin: 1rem 0;
-  margin-bottom: 20px; /* Espaçamento após as estatísticas */
-  font-weight: normal; /* Remove negrito padrão, aplicar apenas em strong */
-  padding: 0 10px; /* Pequeno preenchimento lateral */
+  margin-bottom: 20px; 
+  font-weight: normal; 
+  padding: 0 10px;
 }
 
 .estatisticas span {
-  display: flex; /* Permite empilhar o número e o texto */
+  display: flex; 
   flex-direction: column;
   align-items: center;
-  font-size: 1.1em; /* Tamanho da fonte para o texto "Seguidores", "Seguindo", "Curtidas" */
-  color: #555; /* Cor do texto das estatísticas */
+  font-size: 1.1em; 
+  color: #555; 
 }
 
 .estatisticas strong {
-  font-size: 1.5em; /* Tamanho da fonte para os números */
-  color: #333; /* Cor dos números das estatísticas */
-  margin-bottom: 3px; /* Pequeno espaço entre o número e o texto */
+  font-size: 1.5em; 
+  color: #333; 
+  margin-bottom: 3px; 
 }
 
 .galeria {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Padrão: 2 fotos por linha */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -211,48 +208,48 @@ p {
   text-decoration: none;
 }
 
-/* Media Queries para responsividade */
+
 @media (max-width: 768px) {
   .page {
     flex-direction: column;
-    gap: 1rem; /* Ajusta o gap para telas menores */
+    gap: 1rem; 
   }
 
   .perfil {
-    padding: 1rem; /* Ajusta o padding do perfil para telas menores */
-    max-width: 100%; /* Em telas menores, o perfil ocupa a largura total disponível (com padding da .page) */
+    padding: 1rem; 
+    max-width: 100%; 
   }
 
   .amigos {
-    display: none; /* Esconde a seção de amigos em telas menores */
+    display: none; 
   }
 
   .galeria {
-    grid-template-columns: repeat(1, 1fr); /* Telas pequenas: 1 foto por linha */
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .botoes {
-    flex-direction: column; /* Coloca os botões em coluna em telas menores */
-    gap: 10px; /* Reduz o gap entre os botões */
+    flex-direction: column; 
+    gap: 10px; 
   }
 
   .botoes button,
   .botoes .button-add-friends {
-    max-width: 100%; /* Botões ocupam a largura total disponível */
-    min-width: unset; /* Remove a largura mínima para flexibilidade */
-    padding: 12px 20px; /* Ajusta o padding dos botões */
+    max-width: 100%; 
+    min-width: unset; 
+    padding: 12px 20px; 
   }
 
   h2 {
-    font-size: 1.5em; /* Ajusta o tamanho da fonte do h2 */
+    font-size: 1.5em; 
   }
 
   p {
-    font-size: 1em; /* Ajusta o tamanho da fonte do parágrafo */
+    font-size: 1em; 
   }
 
   .social-icon-item {
-    font-size: 1.8em; /* Ajusta o tamanho dos ícones sociais */
+    font-size: 1.8em; 
     width: 45px;
     height: 45px;
   }
@@ -266,62 +263,57 @@ p {
   }
 }
 
-/* Ajustes para telas muito pequenas (ex: celulares antigos) */
+
 @media (max-width: 480px) {
   .profile-content {
-    margin-top: -60px; /* Ajusta a margem superior para a imagem de perfil */
+    margin-top: -60px; 
     padding: 10px;
   }
 
   .perfil-img {
     width: 120px;
     height: 120px;
-    border-width: 3px; /* Ajusta a borda da imagem de perfil */
+    border-width: 3px; 
   }
 }
 
-/* Estilos para o popup do SweetAlert2 da modal de edição de perfil */
+
 .swal2-popup-edit-profile {
-    background: #fff !important; /* Cor de fundo branca */
-    padding: 2rem 2.5rem !important; /* Padding interno */
-    border-radius: 15px !important; /* Cantos arredondados */
-    box-shadow: 0 0 15px rgba(0,0,0,0.1) !important; /* Sombra */
+    background: #fff !important;
+    padding: 2rem 2.5rem !important; 
+    border-radius: 15px !important; 
+    box-shadow: 0 0 15px rgba(0,0,0,0.1) !important; 
     width: 100% !important;
-    max-width: 500px !important; /* Largura máxima do modal */
-    margin: auto !important; /* Centraliza */
+    max-width: 500px !important; 
+    margin: auto !important; 
 }
 
-/* Estilos para o contêiner HTML injetado dentro da modal */
 .swal2-html-container-edit-profile {
-    padding: 0 !important; /* Remove padding padrão do SweetAlert2 */
-    margin: 0 !important; /* Remove margem padrão do SweetAlert2 */
-    overflow: visible !important; /* Garante que elementos como imagem de perfil possam "sair" */
+    padding: 0 !important; 
+    margin: 0 !important; 
+    overflow: visible !important; 
 }
 
-/* Estilos para o botão de confirmação (Salvar Alterações) */
 .swal2-confirm-button-edit-profile {
-    background: #e06f04 !important; /* Cor laranja */
+    background: #e06f04 !important; 
     color: white !important;
     border: none !important;
     padding: 0.9rem !important;
     font-size: 1rem !important;
-    font-weight: bold !important; /* Deixa o texto em negrito */
+    font-weight: bold !important; 
     border-radius: 10px !important;
     cursor: pointer !important;
     transition: background 0.3s !important;
     margin-top: -0.1rem !important;
-    width: 100% !important; /* Deixa o botão ocupar a largura total dentro da área de botões do SA */
+    width: 100% !important; 
 }
 
 .swal2-confirm-button-edit-profile:hover {
     background: #cc5c02 !important;
 }
 
-/* ----- Adaptações dos estilos de editar-perfil.css para serem específicos da modal ----- */
-/* Note: Use a classe .edit-profile-modal-content para prefixar todos os seletores */
-
 .edit-profile-modal-content .form-box {
-    width: 100%; /* Garante que o formulário ocupe o espaço disponível */
+    width: 100%; 
 }
 
 .edit-profile-modal-content h2 {
@@ -367,9 +359,6 @@ p {
     box-sizing: border-box !important;
 }
 
-/* O botão submit já foi tratado pelas classes do SweetAlert2 */
-
-/* Responsividade para telas pequenas (adaptado para SweetAlert2) */
 @media (max-width: 480px) {
     .swal2-popup-edit-profile {
         padding: 1.5rem !important;

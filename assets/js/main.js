@@ -1,9 +1,7 @@
-// Se não estiver logado, volta pro login
 if (localStorage.getItem('logado') !== 'true') {
   window.location.href = 'index.html';
 }
 
-// Carrega arquivos externos
 async function carregarParcial(id, arquivo, callback = null) {
   const el = document.getElementById(id);
   try {
@@ -17,19 +15,16 @@ async function carregarParcial(id, arquivo, callback = null) {
   }
 }
 
-// Carregar scripts das páginas dinâmicas
 function carregarScriptPaginaUnica(pagina) {
-  // Remove todos os scripts relacionados à página (independente da versão)
+  
   document.querySelectorAll(`script[src*="${pagina}.js"]`).forEach(script => script.remove());
 
-  // Adiciona novo script com versão única para evitar cache
   const script = document.createElement('script');
   script.src = `assets/js/${pagina}.js?v=${Date.now()}`;
   script.onload = () => {
-    console.log(`✅ ${pagina}.js carregado`);
 
     const initFunctionName = `init${capitalize(pagina)}Page`;
-    // Verifica se a função de inicialização da página existe e a chama
+
     if (typeof window[initFunctionName] === 'function') {
       window[initFunctionName]();
     }
@@ -38,13 +33,10 @@ function carregarScriptPaginaUnica(pagina) {
   document.body.appendChild(script);
 }
 
-// Função auxiliar para capitalizar nomes de páginas
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-
-// Carrega a página principal dinamicamente
 async function carregarConteudoPrincipal() {
   const params = new URLSearchParams(window.location.search);
   const pagina = params.get('page') || 'feed';
@@ -60,7 +52,6 @@ async function carregarConteudoPrincipal() {
 
     configurarBotoesToggle();
 
-    // Adicionaà lista de páginas com JS que precisam de inicialização
     const paginasComJS = ['friends', 'conversas', 'perfil']; 
     if (paginasComJS.includes(pagina)) {
       
@@ -69,15 +60,14 @@ async function carregarConteudoPrincipal() {
         if (typeof window.initEditarPerfilModal === 'function') {
             window.initEditarPerfilModal();
         } else {
-            console.warn("⚠️ initEditarPerfilModal não disponível no carregamento dinâmico. Verifique a inclusão do script.");
+            console.warn("⚠️ initEditarPerfilModal não disponível no carregamento dinâmico.");
         }
       } else {
-          // Para outras páginas, usa a lógica carregarScriptPaginaUnica
           carregarScriptPaginaUnica(pagina);
       }
     }
 
-  } catch (error) { // Captura o erro
+  } catch (error) { 
     console.error(`Erro ao carregar conteúdo principal para ${pagina}.html:`, error);
     document.getElementById('conteudo').innerHTML = '<h2>Página não encontrada</h2>';
   }

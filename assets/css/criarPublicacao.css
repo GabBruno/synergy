@@ -55,7 +55,6 @@
   transform: translateY(-2px);
 }
 
-/* Estilos personalizados para SweetAlert */
 .story-options {
   display: flex;
   justify-content: space-around;
@@ -143,7 +142,7 @@
 .user-info h4 {
   margin: 0;
   font-size: 14px;
-  color: #333;
+  color: var(--cor-texto-principal);
 }
 
 .user-info p {
@@ -167,8 +166,8 @@
 
 .post-textarea:focus {
   outline: none;
-  border-color: #2196f3;
-  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+  border-color: var(--cor-icones);
+  box-shadow: 0 0 0 2px rgb(166 116 17 / 20%);
 }
 
 .media-upload {
@@ -182,7 +181,7 @@
 }
 
 .media-upload:hover {
-  border-color: #2196f3;
+  border-color: var(--cor-icones);
 }
 
 .media-upload.has-files {
@@ -221,6 +220,11 @@
   justify-content: center;
   transition: background-color 0.3s;
   font-size: 18px;
+  color: var(--cor-texto-principal) !important;
+}
+
+.toolbar-icon:hover{
+  color: var(--cor-icones);
 }
 
 .toolbar-icon:hover {
@@ -239,7 +243,7 @@
 }
 
 .publish-btn:hover {
-  background: #1976d2;
+  background: #e67d26;
 }
 
 .file-preview {

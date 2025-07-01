@@ -1,4 +1,3 @@
-// ✅ FUNÇÃO PRINCIPAL - Modal de Edição de Perfil
 window.openEditProfileModal = () => {
     const editProfileHtmlContent = `
         <div class="edit-profile-modal-content">
@@ -37,7 +36,6 @@ window.openEditProfileModal = () => {
         </div>
     `;
 
-    // Verifica se SweetAlert2 está disponível antes de usá-lo
     if (typeof Swal === 'undefined') {
         console.error("SweetAlert2 não está carregado. Certifique-se de que o CDN está incluído.");
         return;
@@ -53,7 +51,7 @@ window.openEditProfileModal = () => {
         customClass: {
             container: 'swal2-container-edit-profile',
             popup: 'swal2-popup-edit-profile',
-            confirmButton: 'swal2-confirm-button-edit-profile', // Esta classe já deve definir a cor para o botão principal
+            confirmButton: 'swal2-confirm-button-edit-profile',
             htmlContainer: 'swal2-html-container-edit-profile'
         },
         preConfirm: () => {
@@ -72,30 +70,26 @@ window.openEditProfileModal = () => {
     }).then((result) => {
         if (result.isConfirmed) {
             console.log('Dados do perfil salvos:', result.value);
-            window.Swal.fire({ // Adicionado confirmButtonColor aqui
+            window.Swal.fire({ 
                 title: 'Salvo!',
                 text: 'Suas alterações no perfil foram salvas com sucesso.',
                 icon: 'success',
-                confirmButtonColor: '#F68548' // Define a cor laranja para o botão "OK"
+                confirmButtonColor: '#F68548' 
             });
         } else if (result.dismiss === Swal.DismissReason.cancel) {
-            window.Swal.fire({ // Adicionado confirmButtonColor aqui
+            window.Swal.fire({ 
                 title: 'Cancelado',
                 text: 'As alterações no perfil foram canceladas.',
                 icon: 'info',
-                confirmButtonColor: '#F68548' // Define a cor laranja para o botão "OK"
+                confirmButtonColor: '#F68548' 
             });
         }
     });
 };
 
-// ✅ Função de inicialização para ser chamada externamente
 window.initEditarPerfilModal = () => {
-    // Adicionar event listener ao botão "Editar Perfil"
-    // Usamos document.querySelector pois o elemento pode ter sido carregado dinamicamente
     const editProfileBtn = document.querySelector('.botoes button');
     if (editProfileBtn) {
-        // Removendo listener duplicado se já houver um
         editProfileBtn.removeEventListener('click', window.openEditProfileModal);
         editProfileBtn.addEventListener('click', window.openEditProfileModal);
         console.log("✅ Listener para Editar Perfil anexado.");
@@ -103,5 +97,3 @@ window.initEditarPerfilModal = () => {
         console.warn("⚠️ Botão 'Editar Perfil' não encontrado. Verifique se o elemento está presente no DOM.");
     }
 };
-
-console.log("✅ editarPerfil.js carregado. Função initEditarPerfilModal() disponível.");

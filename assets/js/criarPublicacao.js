@@ -1,10 +1,8 @@
-// ✅ Variáveis globais para gerenciar arquivos
 let selectedFiles = []
 let storyFiles = []
 
-// ✅ Configurações de upload
 const uploadConfig = {
-  maxFileSize: 10 * 1024 * 1024, // 10MB
+  maxFileSize: 10 * 1024 * 1024, 
   maxFiles: 5,
   allowedTypes: {
     image: ["image/jpeg", "image/png", "image/gif", "image/webp"],
@@ -12,7 +10,6 @@ const uploadConfig = {
   },
 }
 
-// ✅ Dados simulados para a galeria
 const galleryImages = [
   "assets/images/img1.png",
   "assets/images/img2.jpeg",
@@ -22,7 +19,6 @@ const galleryImages = [
   "assets/images/img6.jpeg",
 ]
 
-// ✅ Função para validar arquivo
 function validateFile(file) {
   const errors = []
 
@@ -40,7 +36,6 @@ function validateFile(file) {
   return errors
 }
 
-// ✅ Função para formatar tamanho do arquivo
 function formatFileSize(bytes) {
   if (bytes === 0) return "0 Bytes"
   const k = 1024
@@ -49,14 +44,12 @@ function formatFileSize(bytes) {
   return Number.parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i]
 }
 
-// ✅ Função para obter ícone do tipo de arquivo
 function getFileTypeIcon(file) {
   if (file.type.startsWith("image/")) return "🖼️"
   if (file.type.startsWith("video/")) return "🎥"
   return "📄"
 }
 
-// ✅ Função para criar preview do arquivo
 function createFilePreview(file, index, isStory = false) {
   return new Promise((resolve) => {
     const reader = new FileReader()
@@ -87,7 +80,6 @@ function createFilePreview(file, index, isStory = false) {
   })
 }
 
-// ✅ Função para processar arquivos selecionados
 async function processFiles(files, isStory = false) {
   const fileArray = isStory ? storyFiles : selectedFiles
   const errors = []
@@ -121,7 +113,6 @@ async function processFiles(files, isStory = false) {
   await updateFilePreview(isStory)
 }
 
-// ✅ Função para atualizar preview dos arquivos
 async function updateFilePreview(isStory = false) {
   const fileArray = isStory ? storyFiles : selectedFiles
   const previewContainer = document.getElementById(isStory ? "storyFilePreview" : "filePreview")
@@ -166,7 +157,6 @@ async function updateFilePreview(isStory = false) {
   }
 }
 
-// ✅ Função para remover arquivo
 window.removeFile = (index) => {
   selectedFiles.splice(index, 1)
   updateFilePreview(false)
@@ -179,13 +169,11 @@ window.removeFile = (index) => {
   }
 }
 
-// ✅ Função para remover arquivo do story
 window.removeStoryFile = (index) => {
   storyFiles.splice(index, 1)
   updateFilePreview(true)
 }
 
-// ✅ FUNÇÃO PRINCIPAL - Modal de Story (GLOBAL)
 window.openStoryCreationModal = () => {
   const galleryHtml = galleryImages
     .map(
@@ -208,7 +196,7 @@ window.openStoryCreationModal = () => {
                     <div class="story-option-text">Música</div>
                 </div>
                 <div class="story-option" onclick="selectStoryType('upload')">
-                    <div class="story-option-icon">📁</div>
+                    <div class="story-option-icon"><i class="fa-solid fa-folder"></i></div>
                     <div class="story-option-text">Upload</div>
                 </div>
             </div>
@@ -241,7 +229,6 @@ window.openStoryCreationModal = () => {
   })
 }
 
-// ✅ FUNÇÃO PRINCIPAL - Modal de Publicação (GLOBAL)
 window.openPostCreationModal = () => {
   const postContent = `
         <div class="post-modal-content">
@@ -249,7 +236,6 @@ window.openPostCreationModal = () => {
                 <img src="assets/images/perfil.png" alt="" class="user-avatar">
                 <div class="user-info">
                     <h4>Daniel Trindade</h4>
-                    <p>4 horas</p>
                 </div>
             </div>
             
@@ -260,7 +246,7 @@ window.openPostCreationModal = () => {
             ></textarea>
             
             <div class="media-upload" onclick="selectMedia()">
-                <div class="media-upload-icon">🖼️</div>
+                <div class="media-upload-icon"><i class="fa-solid fa-image"></i></div>
                 <div>Clique para adicionar mídia</div>
             </div>
             
@@ -268,12 +254,12 @@ window.openPostCreationModal = () => {
             
             <div class="toolbar">
                 <div class="toolbar-icons">
-                    <button class="toolbar-icon" onclick="toolbarAction('image')" title="Imagem">🖼️</button>
-                    <button class="toolbar-icon" onclick="toolbarAction('people')" title="Marcar pessoas">👥</button>
-                    <button class="toolbar-icon" onclick="toolbarAction('location')" title="Localização">📍</button>
-                    <button class="toolbar-icon" onclick="toolbarAction('emoji')" title="Emoji">😊</button>
-                    <button class="toolbar-icon" onclick="toolbarAction('schedule')" title="Agendar">📅</button>
-                    <button class="toolbar-icon" onclick="toolbarAction('video')" title="Vídeo">🎥</button>
+                    <button class="toolbar-icon" onclick="toolbarAction('image')" title="Imagem"><i class="fa-solid fa-image"></i></button>
+                    <button class="toolbar-icon" onclick="toolbarAction('people')" title="Marcar pessoas"><i class="fa-solid fa-user-group"></i></button>
+                    <button class="toolbar-icon" onclick="toolbarAction('location')" title="Localização"><i class="fa-solid fa-map-pin"></i></button>
+                    <button class="toolbar-icon" onclick="toolbarAction('emoji')" title="Emoji"><i class="fa-solid fa-face-laugh"></i></button>
+                    <button class="toolbar-icon" onclick="toolbarAction('schedule')" title="Agendar"><i class="fa-solid fa-calendar-days"></i></button>
+                    <button class="toolbar-icon" onclick="toolbarAction('video')" title="Vídeo"><i class="fa-solid fa-video"></i></button>
                 </div>
                 <button class="publish-btn" onclick="publishPost()">Publicar</button>
             </div>
@@ -297,9 +283,8 @@ window.openPostCreationModal = () => {
   })
 }
 
-// ✅ Função para inicializar inputs de arquivo (chamada quando modal abre)
 function initializeFileInputs() {
-  // Criar inputs se não existirem
+  
   if (!document.getElementById("fileInput")) {
     const fileInput = document.createElement("input")
     fileInput.type = "file"
@@ -338,7 +323,7 @@ function initializeFileInputs() {
             icon: "success",
             timer: 2000,
             showConfirmButton: false,
-            confirmButtonColor: '#F68548', // Cor laranja para o botão "OK"
+            confirmButtonColor: '#F68548', 
           })
         }
       }
@@ -347,7 +332,6 @@ function initializeFileInputs() {
   }
 }
 
-// ✅ Funções de callback para Story (GLOBAIS)
 window.selectStoryType = (type) => {
   if (type === "upload") {
     const input = document.getElementById("storyFileInput")
@@ -371,7 +355,7 @@ window.selectStoryType = (type) => {
     icon: "success",
     timer: 2000,
     showConfirmButton: false,
-    confirmButtonColor: '#F68548', // Cor laranja para o botão "OK"
+    confirmButtonColor: '#F68548',
   })
 }
 
@@ -386,11 +370,10 @@ window.selectImage = (imageUrl) => {
     icon: "success",
     timer: 2000,
     showConfirmButton: false,
-    confirmButtonColor: '#F68548', // Cor laranja para o botão "OK"
+    confirmButtonColor: '#F68548',
   })
 }
 
-// ✅ Funções de callback para Publicação (GLOBAIS)
 window.selectMedia = () => {
   const input = document.getElementById("fileInput")
   if (input) input.click()
@@ -415,7 +398,7 @@ window.toolbarAction = (action) => {
     icon: "info",
     timer: 1500,
     showConfirmButton: false,
-    confirmButtonColor: '#F68548', // Cor laranja para o botão "OK"
+    confirmButtonColor: '#F68548',
   })
 }
 
@@ -428,7 +411,7 @@ window.publishPost = () => {
       text: "Por favor, escreva algo ou adicione mídia para publicar.",
       icon: "warning",
       confirmButtonText: "OK",
-      confirmButtonColor: '#F68548', // Cor laranja para o botão "OK"
+      confirmButtonColor: '#F68548', 
     })
     return
   }
@@ -440,7 +423,7 @@ window.publishPost = () => {
     text: `Sua publicação "${postText.substring(0, 50)}${postText.length > 50 ? "..." : ""}"${fileInfo} foi publicada com sucesso!`,
     icon: "success",
     confirmButtonText: "Ótimo!",
-    confirmButtonColor: '#F68548', // Cor laranja para o botão "Ótimo!"
+    confirmButtonColor: '#F68548',
   }).then(() => {
     selectedFiles = []
     const postTextElement = document.getElementById("postText")
@@ -450,9 +433,8 @@ window.publishPost = () => {
   })
 }
 
-// ✅ Inicialização quando o script é carregado
 document.addEventListener("DOMContentLoaded", () => {
-  // Drag and drop global
+  
   document.addEventListener("dragover", (e) => {
     e.preventDefault()
   })
@@ -470,7 +452,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 })
-
-// ✅ Log para debug
-console.log("✅ SweetAlert Modal Script carregado com sucesso!")
-console.log("✅ Funções disponíveis: openPostCreationModal(), openStoryCreationModal()")

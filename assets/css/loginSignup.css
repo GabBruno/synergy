@@ -1,4 +1,3 @@
-/* Variáveis */
 :root {
     --synergy-orange: #FF6B00;
     --synergy-orange-dark: #E65F00;
@@ -24,7 +23,6 @@
     --text-xl: 1.25rem;
 }
 
-/* CSS Base */
 *,
 *::before,
 *::after {
@@ -84,7 +82,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: inherit;
 }
 
-/* CSS Main */
 #app-container {
     display: flex;
     flex-direction: column;
@@ -337,7 +334,6 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: underline;
 }
 
-/* Responsivo - Desktop */
 @media (min-width: 768px) {
     #app-container {
         flex-direction: row;
@@ -358,7 +354,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Responsivo - Mobile */
 @media (max-width: 1000px) {
     .showcase-section-wrapper {
         display: none;

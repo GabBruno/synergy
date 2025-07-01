@@ -2,14 +2,12 @@
   width: 220px;
   padding: 40px 20px 20px 30px;
   background-color: #fff5f0;
-  /* height: 100vh; */
 }
 
-/* Seção do perfil do usuário */
 .profile {
     display: flex;
     align-items: center;
-    margin-bottom: 40px; /* Mais espaço abaixo do perfil */
+    margin-bottom: 40px; 
     text-decoration: none;
 }
 
@@ -17,24 +15,23 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 15px; /* Mais espaço ao lado do avatar */
+    margin-right: 15px; 
     object-fit: fill;
 }
 
 .profile span {
-    font-weight: 700; /* Peso da fonte para o nome */
+    font-weight: 700; 
     font-size: 16px;
     color: #3f4257;
 }
 
-/* Lista de opções do menu */
 .menu ul {
     list-style: none;
     padding-left: 7px;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Espaçamento moderno entre os itens */
+    gap: 25px; 
 }
 
 .menu li {
@@ -44,11 +41,10 @@
     cursor: pointer;
 }
 
-/* Estilo para os ícones - Cor padrão é cinza */
 .menu li i,
 .menu li span.material-symbols-outlined {
     font-size: 26px;
-    color: #3f4257; /* Cor padrão escura para os ícones */
+    color: #3f4257; 
     width: 35px;
     flex-shrink: 0;
     transition: color 0.2s ease-in-out;
@@ -58,10 +54,9 @@
     cursor: pointer;
 }
 
-/* Estilo para os links de texto - Cor padrão é cinza */
 .menu a.menu-link, a.publicacao {
     text-decoration: none;
-    color: #3f4257; /* Cor padrão escura para os links */
+    color: #3f4257; 
     font-weight: 700;
     font-size: 16px;
     transition: color 0.2s ease-in-out;
@@ -70,34 +65,30 @@
     cursor:pointer;
 }
 
-/* EFEITO HOVER GERAL: Muda a cor do ícone e do texto ao passar o mouse */
 .menu li:hover i,
 .menu li:hover span.material-symbols-outlined,
 .menu li:hover a.menu-link,
 .menu li:hover a.publicacao {
-    color: #F68548; /* Sua cor laranja principal */
+    color: #F68548; 
 }
 
-/* ESTADO ATIVO PADRÃO: Mantém o ícone e o texto com a cor de destaque para itens como "Página Inicial" */
+
 .menu li a.menu-link.active, .menu a.menu-link.active span{
     color: #F68548;
     font-weight: 700;
 }
 
-/* Regra para o ícone do item ativo padrão também ficar laranja */
 .menu li:has(a.menu-link.active) i,
 .menu li:has(a.menu-link.active) span.material-symbols-outlined {
     color: #F68548;
 }
 
-/* NOVO: Garante que o item de configurações inicie na cor padrão com mais especificidade */
 #menuConfigToggle i,
 #menuConfigToggle a.menu-link {
-    color: #3f4257; /* Garante que o ícone e o link comecem na cor padrão*/
+    color: #3f4257; 
 }
 
-/* NOVO: Aumenta a especificidade do HOVER para o item de Configurações*/
 #menuConfigToggle:hover i,
 #menuConfigToggle:hover a.menu-link {
-    color: #F68548; /* Laranja ao passar o mouse no item de configurações*/
+    color: #F68548; 
 }

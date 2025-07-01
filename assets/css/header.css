@@ -1,9 +1,7 @@
-/* HEADER */
 .header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /*align-items: center;*/
   background-color: #fff;
   padding: 10px 20px;
   box-shadow: 0px 0px 10px #00000020;
@@ -55,7 +53,6 @@
   right: 4px;
 }
 
-/* NOTIFICATION DROPDOWN & CONFIG DROPDOWN (Estilos compartilhados) */
 .notification-dropdown,
 .config-dropdown {
   position: absolute;
@@ -71,7 +68,7 @@
   z-index: 1000;
   animation: fadeIn 0.3s ease;
   border: 1px solid #f5f5f5;
-  overflow-y: auto; /* Permite scroll se o conteúdo for maior que a área do dropdown*/
+  overflow-y: auto;
 }
 
 .notification-dropdown.open,
@@ -134,7 +131,6 @@
   margin: 14px 0 8px;
 }
 
-/* Estilos específicos para Notification Card */
 .notification-card {
   display: flex;
   gap: 12px;
@@ -218,13 +214,11 @@
   color: #f68548;
 }
 
-/* Estilos para Configurações Dropdown */
 .config-dropdown {
   right: 20px;
   padding-bottom: 18px;
 }
 
-/* Estilo para agrupar os itens de configuração */
 .config-section-group {
   background-color: #ffffff;
   border-radius: 18px;
@@ -235,7 +229,6 @@
 
 .config-section-group:first-of-type {
   margin-top: 0%;
-  /* Aumentei o espaçamento superior*/
 }
 
 .config-section-group:last-of-type {
@@ -293,7 +286,6 @@ li {
   cursor: pointer;
 }
 
-/* Estilo para os ícones - Cor padrão é cinza */
 li i,
 li span.material-symbols-outlined {
   font-size: 26px;
@@ -307,7 +299,6 @@ li span.material-symbols-outlined {
   cursor: pointer;
 }
 
-/* Estilo para os links de texto - Cor padrão é cinza */
 a.menu-link,
 a.publicacao {
   text-decoration: none;
@@ -321,22 +312,18 @@ a.publicacao {
   cursor: pointer;
 }
 
-/* EFEITO HOVER GERAL: Muda a cor do ícone e do texto ao passar o mouse */
 li:hover i,
 li:hover span.material-symbols-outlined,
 li:hover a.menu-link,
 li:hover a.publicacao {
   color: #F68548;
-  /* Sua cor laranja principal */
 }
 
-/* ESTADO ATIVO PADRÃO: Mantém o ícone e o texto com a cor de destaque para itens como "Página Inicial" */
 li a.menu-link.active {
   color: #F68548;
   font-weight: 700;
 }
 
-/* Regra para o ícone do item ativo padrão também ficar laranja */
 li:has(a.menu-link.active) i,
 li:has(a.menu-link.active) span.material-symbols-outlined {
   color: #F68548;
@@ -385,7 +372,6 @@ li:has(a.menu-link.active) span.material-symbols-outlined {
 
   @media (max-width: 500px) {
 
-  /* MODIFICADO: Estilos Responsivos para Dropdowns - TELA CHEIA */
     .notification-dropdown,
     .config-dropdown {
         position: fixed;
@@ -396,25 +382,24 @@ li:has(a.menu-link.active) span.material-symbols-outlined {
         transform: none;
         right: auto;
         border-radius: 0;
-        padding: 0 20px 20px 20px; /* ALTERADO: Padding top para 0. O espaçamento virá do padding do header ou margin do primeiro item */
+        padding: 0 20px 20px 20px; 
         box-shadow: none;
         background: #fff5f0;
         z-index: 9999;
         box-sizing: border-box;
-        overflow-y: auto; /* Manter para permitir rolagem interna se o conteúdo exceder a altura */
+        overflow-y: auto; 
     }
 
     .notification-top {
-        /* Ajustes para o cabeçalho do modal */
         border-radius: 0;
-        margin: 0 -20px 15px; /* ALTERADO: Remove margem negativa superior para que o conteúdo principal comece corretamente */
+        margin: 0 -20px 15px; 
         padding: 15px 20px;
         width: calc(100% + 40px);
         box-sizing: border-box;
-        position: sticky; /* ADICIONADO: Fixa o cabeçalho ao rolar */
-        top: 0; /* Alinha o cabeçalho ao topo do dropdown */
-        z-index: 10; /* Garante que fique acima do conteúdo ao rolar */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra sutil para indicar que é sticky */
+        position: sticky; 
+        top: 0; 
+        z-index: 10;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     
     .notification-top h2 {
@@ -427,29 +412,23 @@ li:has(a.menu-link.active) span.material-symbols-outlined {
         font-size: 18px;
     }
 
-    /* O section-title e os primeiros elementos devem ter um espaçamento superior, 
-       agora que o padding-top do dropdown foi zerado. */
     .config-dropdown .section-title:first-of-type,
     .notification-dropdown .section-title:first-of-type,
     .config-dropdown .config-section-group:first-of-type,
     .notification-dropdown .notification-card:first-of-type {
-        margin-top: 5px; /* ADICIONADO: Garante espaçamento inicial abaixo do cabeçalho fixo */
+        margin-top: 5px; 
     }
 
-    /* NOTIFICAÇÕES: Ajuste para o texto não sobrepor a bolinha */
+   
     .notification-card {
         border-radius: 10px;
-        padding: 15px 45px 15px 15px; /* ALTERADO: Aumenta o padding-right para dar espaço à bolinha */
+        padding: 15px 45px 15px 15px; 
         margin-bottom: 10px;
         box-sizing: border-box;
-        /* Adicionar display: flex; e justify-content: space-between; aqui pode ajudar, 
-           mas vamos manter a abordagem de padding-right para ser o mais minimalista */
     }
     
     .notification-info {
         flex: 1;
-        /* Remover margin-right se existir, ou garantir que não comprima */
-        /* max-width: calc(100% - 60px); /* Opcional: Limita a largura do texto para evitar sobreposição */
     }
 
     .notification-info p {
@@ -460,15 +439,11 @@ li:has(a.menu-link.active) span.material-symbols-outlined {
         font-size: 13px;
     }
 
-    /* GARANTE que a bolinha laranja esteja sempre à direita e sem sobreposição */
     .dot.orange {
         position: absolute;
         top: 50%;
-        right: 15px; /* Ajuste para ter espaçamento da borda do card */
+        right: 15px; 
         transform: translateY(-50%);
-        flex-shrink: 0; /* Garante que a bolinha não encolha */
+        flex-shrink: 0; 
     }
-
-    /* ... os outros estilos de 800px ... */
-
 }

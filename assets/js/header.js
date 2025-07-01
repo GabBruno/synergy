@@ -4,8 +4,8 @@ class DropdownManager {
     this.notificationDropdown = null;
     this.closeNotificationBtn = null;
 
-    this.configToggle = null; // Ícone de engrenagem no cabeçalho
-    this.menuConfigToggle = null; // Item de "Configurações" no menu lateral
+    this.configToggle = null; 
+    this.menuConfigToggle = null; 
     this.configDropdown = null;
     this.closeConfigBtn = null;
 
@@ -23,12 +23,10 @@ class DropdownManager {
       this.configDropdown = document.querySelector('#configDropdown');
       this.closeConfigBtn = document.querySelector('#closeConfigDropdownBtn');
 
-      // Verifica se TODOS os elementos essenciais para AMBOS os dropdowns estão presentes
       if (this.notificationToggle && this.notificationDropdown &&
-          this.configToggle && this.configDropdown) { // Removi menuConfigToggle daqui, pois ele é opcional
+          this.configToggle && this.configDropdown) {
         this.setupListeners();
       } else {
-        // Se os elementos ainda não existirem, tenta novamente após um curto período
         setTimeout(tryInit, 100);
       }
     };
@@ -37,44 +35,38 @@ class DropdownManager {
   }
 
   setupListeners() {
-    // Listener para o toggle de notificações
     this.notificationToggle.addEventListener('click', (e) => {
-      e.stopPropagation(); // Evita que o clique se propague para o document e feche imediatamente
+      e.stopPropagation(); 
       this.toggleDropdown(this.notificationDropdown);
     });
 
-    // Listener para o toggle de configurações (ícone do cabeçalho)
     this.configToggle.addEventListener('click', (e) => {
-      e.stopPropagation(); // Evita que o clique se propague para o document e feche imediatamente
+      e.stopPropagation();
       this.toggleDropdown(this.configDropdown);
     });
 
-    // Listener para o toggle de configurações (menu lateral)
-    if (this.menuConfigToggle) { // Garante que o elemento existe antes de adicionar o listener
+    if (this.menuConfigToggle) {
         this.menuConfigToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            e.preventDefault(); // Evita que o link # navegue para o topo da página
+            e.preventDefault(); 
             this.toggleDropdown(this.configDropdown);
         });
     }
 
-    // Listener para fechar dropdown de notificações
     if (this.closeNotificationBtn) {
       this.closeNotificationBtn.addEventListener('click', () => {
         this.notificationDropdown.classList.remove('open');
-        this.checkBodyScroll(); // Verifica e ajusta a rolagem do body
+        this.checkBodyScroll();
       });
     }
 
-    // Listener para fechar dropdown de configurações
     if (this.closeConfigBtn) {
       this.closeConfigBtn.addEventListener('click', () => {
         this.configDropdown.classList.remove('open');
-        this.checkBodyScroll(); // Verifica e ajusta a rolagem do body
+        this.checkBodyScroll();
       });
     }
 
-    // Fechar dropdowns ao clicar fora
     document.addEventListener('click', (e) => {
       const isClickInsideNotification = this.notificationToggle.contains(e.target) || this.notificationDropdown.contains(e.target);
       const isClickInsideConfigHeader = this.configToggle.contains(e.target) || this.configDropdown.contains(e.target);
@@ -86,38 +78,35 @@ class DropdownManager {
       if (!isClickInsideConfigHeader && !isClickInsideConfigMenu) {
         this.configDropdown.classList.remove('open');
       }
-      this.checkBodyScroll(); // Verifica e ajusta a rolagem do body
+      this.checkBodyScroll();
     });
   }
 
   toggleDropdown(targetDropdown) {
-    // Fecha o outro dropdown se estiver aberto
+    
     if (targetDropdown === this.notificationDropdown && this.configDropdown.classList.contains('open')) {
       this.configDropdown.classList.remove('open');
     } else if (targetDropdown === this.configDropdown && this.notificationDropdown.classList.contains('open')) {
       this.notificationDropdown.classList.remove('open');
     }
 
-    // Abre/fecha o dropdown clicado
     targetDropdown.classList.toggle('open');
-    this.checkBodyScroll(); // Verifica e ajusta a rolagem do body após a alteração de estado
+    this.checkBodyScroll(); 
   }
 
-  // Novo método para verificar e aplicar/remover a classe 'no-scroll' no body
   checkBodyScroll() {
-    // Verifica se algum dropdown está aberto
+    
     const isAnyDropdownOpen = this.notificationDropdown.classList.contains('open') ||
                              this.configDropdown.classList.contains('open');
 
-    // Aplica ou remove a classe 'no-scroll' com base na largura da tela
-    if (window.innerWidth <= 800) { // Conforme sua media query para tela cheia
+    
+    if (window.innerWidth <= 800) { 
       if (isAnyDropdownOpen) {
         document.body.classList.add('no-scroll');
       } else {
         document.body.classList.remove('no-scroll');
       }
     } else {
-      // Em telas maiores, garanta que a classe seja removida (se por acaso foi aplicada)
       document.body.classList.remove('no-scroll');
     }
   }

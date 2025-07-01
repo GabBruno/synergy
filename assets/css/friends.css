@@ -104,10 +104,9 @@
 .container {
     display: flex;
     min-height: calc(100vh - var(--header-height));
-    width: 100%; /* Ocupa 100% da largura do pai */
-    max-width: 1200px; /* Limite em telas grandes */
-    /* Padding será controlado principalmente pelo main-content-friends ou media queries */
-    margin: 0 auto; /* Centraliza o container */
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 .sidebar {
@@ -290,8 +289,7 @@
 
 .main-content-friends {
     flex: 1;
-    padding: 24px; /* Padding padrão para telas maiores */
-    /* Garante que o main-content-friends não crie overflow */
+    padding: 24px; 
     min-width: 0;
 }
 
@@ -384,7 +382,7 @@
     overflow: hidden;
     display: flex;
 
-    width: 100%; /* Garante que o contêiner dos avatares ocupe a largura total */
+    width: 100%;
 }
 
 .avatars-scroll {
@@ -394,8 +392,8 @@
     overflow-x: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--border-color) transparent;
-    width: 100%; /* Garante que o scroll seja dentro do espaço disponível */
-    justify-content: center; /* CENTRALIZA OS AVATARES HORIZONTALMENTE */
+    width: 100%; 
+    justify-content: center; 
 }
 
 .avatars-scroll::-webkit-scrollbar {
@@ -671,7 +669,6 @@
     content: ' ✓';
 }
 
-/* Media Queries para Responsividade */
 @media (max-width: 1200px) {
     :root {
         --sidebar-width: 240px;
@@ -709,20 +706,20 @@
 
 @media (max-width: 840px){
     .main-content-friends{
-        padding: 20px 15px; /* Ajuste para ter padding lateral */
+        padding: 20px 15px; 
     }
 }
 
 @media (max-width: 800px){
    .avatars-scroll{
-    padding: 0 5px; /* Padding lateral menor para o scroll */
+    padding: 0 5px;
    }
 }
 
 @media (max-width: 768px) {
     .container {
-        max-width: 100%; /* Garante que ocupe 100% em mobile */
-        padding: 0; /* Remova o padding aqui, ele será aplicado no main-content-friends */
+        max-width: 100%;
+        padding: 0; 
     }
 
     .mobile-menu-btn {
@@ -743,13 +740,12 @@
     }
     
     .main-content-friends {
-        padding: 15px; /* Padding padrão para mobile. Antes era muito alto */
-        margin-left: 0; /* Garante que não há margem se a sidebar estiver escondida */
-        width: 100%; /* Garante que ocupa 100% da largura disponível */
-        /* min-width: 0; já está no global */
+        padding: 15px;
+        margin-left: 0; 
+        width: 100%; 
     }
     
-    .header { /* Se houver um .header fora do .container, ajuste aqui */
+    .header { 
         padding: 12px 16px;
     }
     
@@ -768,7 +764,6 @@
     }
     
     .friend-requests, .groups-grid {
-        /* Força a preencher 100% da largura do pai com um padding interno. */
         grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
         gap: 16px;
     }
@@ -797,14 +792,14 @@
 
 @media (max-width: 480px) {
     .container {
-        padding: 0; /* Garante que não haja padding no container, deixando o main-content-friends controlar */
+        padding: 0; 
     }
     .main-content-friends {
-        padding: 10px; /* Padding menor para telas muito pequenas */
+        padding: 10px; 
     }
 
     .friend-requests, .groups-grid {
-        grid-template-columns: 1fr; /* Força uma coluna em telas muito pequenas */
+        grid-template-columns: 1fr; 
         gap: 16px;
     }
     
@@ -845,22 +840,20 @@
 
 @media (max-width: 360px) {
     
-    /* Garante que o box-sizing seja aplicado globalmente */
     html, body {
         margin: 0;
         padding: 0;
-        width: 100%; /* Garante que ocupe 100% da largura da viewport */
-        overflow-x: hidden; /* CRUCIAL: Impede a rolagem horizontal no nível mais alto */
-        box-sizing: border-box; /* Boa prática: padding e border incluídos na width/height */
+        width: 100%; 
+        overflow-x: hidden; 
+        box-sizing: border-box; 
     }
 
-    /* Aplicar box-sizing a todos os elementos */
     *, *::before, *::after {
         box-sizing: border-box;
     }
     
     .main-content-friends {
-        padding: 8px; /* Padding mínimo */
+        padding: 8px; 
     }
     
     .friend-card, .group-card {

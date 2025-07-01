@@ -1,6 +1,4 @@
-/* Footer Acadêmico */
 .academic-footer {
-  /* background: #eee; */
   color: var(--cor-texto-principal);
   margin-top: auto;
   position: relative;
@@ -23,7 +21,6 @@
   padding: 40px 20px 20px;
 }
 
-/* Seção Principal */
 .footer-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -50,7 +47,6 @@
   font-weight: 600;
 }
 
-/* Informações do Projeto */
 .project-badge {
   display: inline-flex;
   align-items: center;
@@ -78,7 +74,6 @@
   line-height: 1.6;
 }
 
-/* Informações da Instituição */
 .institution-name {
   font-size: 20px;
   font-weight: 700;
@@ -110,7 +105,6 @@
   width: 16px;
 }
 
-/* Seção de Desenvolvedores */
 .footer-developers {
   margin-bottom: 30px;
 }
@@ -136,13 +130,15 @@
   gap: 12px;
   transition: all 0.3s ease;
   border: 1px solid rgba(246, 133, 72, 0.2);
+  cursor:pointer;
 }
 
 .developer-card:hover {
-  background: rgba(52, 73, 94, 1);
+  background: rgb(246 133 72 / 42%);
   transform: translateY(-2px);
   border-color: rgba(246, 133, 72, 0.4);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor:pointer;
 }
 
 .developer-card i {
@@ -157,7 +153,6 @@
   font-size: 15px;
 }
 
-/* Rodapé Final */
 .footer-bottom {
   border-top: 1px solid rgba(189, 195, 199, 0.2);
   padding-top: 20px;
@@ -198,9 +193,6 @@
   border: 1px solid rgba(246, 133, 72, 0.3);
 }
 
-/* Responsividade */
-
-/* Tablets */
 @media (max-width: 768px) {
   .footer-container {
     padding: 30px 15px 15px;
@@ -240,7 +232,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
   .footer-container {
     padding: 25px 10px 15px;
@@ -335,7 +326,6 @@
   }
 }
 
-/* Animações */
 @keyframes fadeInUp {
   from {
     opacity: 0;
